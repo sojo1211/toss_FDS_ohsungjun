@@ -251,65 +251,12 @@
 <section id="about" class="alt fade-in">
   <div class="wrap">
     <div class="section-head"><h2 class="section-title">About <span class="b">Me</span></h2><p class="section-desc">금융 안전망 구축을 향한 여정</p></div>
-    <!-- 2x2 Matrix Grid -->
-    <style>
-      .about-matrix { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 860px; margin: 0 auto; }
-      @media (max-width: 640px) { .about-matrix { grid-template-columns: 1fr; } }
-      .about-matrix-cell { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 32px 28px; transition: all .25s ease-in-out; position: relative; overflow: hidden; }
-      .about-matrix-cell::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), #6ea8fc); opacity: 0; transition: opacity .25s; }
-      .about-matrix-cell:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: var(--shadow-md); }
-      .about-matrix-cell:hover::before { opacity: 1; }
-      .about-matrix-icon { font-size: 28px; margin-bottom: 14px; display: block; }
-      .about-matrix-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; margin-bottom: 14px; }
-      .about-matrix-tag.system { background: #eef6ff; color: #1b64da; }
-      .about-matrix-tag.role { background: #f0fdf4; color: #15803d; }
-      .about-matrix-tag.field { background: #fff7ed; color: #c2410c; }
-      .about-matrix-tag.tech { background: #faf5ff; color: #7c3aed; }
-      .about-matrix-title { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.01em; }
-      .about-matrix-desc { font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); }
-      .about-matrix-desc strong { color: var(--ink); font-weight: 600; }
-      .about-connector { max-width: 860px; margin: 28px auto 0; text-align: center; }
-      .about-connector p { font-size: 15.5px; line-height: 1.8; color: var(--ink); margin-bottom: 16px; }
-      .about-connector p strong { color: var(--blue-deep); font-weight: 700; }
-    </style>
-
-    <div class="about-matrix">
-      <!-- Cell 1: FDS 시스템 -->
-      <div class="about-matrix-cell">
-        <span class="about-matrix-icon">🖥️</span>
-        <span class="about-matrix-tag system">SYSTEM</span>
-        <div class="about-matrix-title">FDS (이상금융거래탐지시스템)</div>
-        <p class="about-matrix-desc">실시간 거래 데이터 속에서 사기 거래를 감지하여 <strong>결제를 차단하거나 경고(Alert)를 띄우는 프로그램 및 알고리즘</strong>입니다. 제가 매일 마주하는 시스템이자, 이해하고 고도화해야 할 대상입니다.</p>
-      </div>
-
-      <!-- Cell 2: Anti-Fraud Manager -->
-      <div class="about-matrix-cell">
-        <span class="about-matrix-icon">🛡️</span>
-        <span class="about-matrix-tag role">ROLE</span>
-        <div class="about-matrix-title">Anti-Fraud Manager</div>
-        <p class="about-matrix-desc">FDS 시스템을 <strong>운영·감시하며, 규칙(Rule)을 지속적으로 개선하고 고도화하는 전문 직무</strong>입니다. 경고 중 진짜 사기를 분석(Deep Dive)하고, 시스템이 놓친 사기 트렌드를 방어할 새로운 차단 룰을 설계하는 전략가입니다.</p>
-      </div>
-
-      <!-- Cell 3: 현장 실무 -->
-      <div class="about-matrix-cell">
-        <span class="about-matrix-icon">🔍</span>
-        <span class="about-matrix-tag field">FIELD EXPERIENCE</span>
-        <div class="about-matrix-title">현장 리스크 운영 실무 (Toss CX)</div>
-        <p class="about-matrix-desc">RMS 및 어드민 시스템 기반 <strong>가맹점 리스크 모니터링, 14대 기준 라벨링, 약관·계약 시점별 소명 및 공문 통제 실무</strong>를 수행하며, 이상 거래 패턴 포착과 자금 손실 사전 예방의 <strong>도메인 분석 감각</strong>을 닦고 있습니다.</p>
-      </div>
-
-      <!-- Cell 4: 데이터/AI 역량 -->
-      <div class="about-matrix-cell">
-        <span class="about-matrix-icon">⚙️</span>
-        <span class="about-matrix-tag tech">DATA & AI</span>
-        <div class="about-matrix-title">데이터/AI 역량 (연구 & 프로젝트)</div>
-        <p class="about-matrix-desc">SRHS 논문(리스크 지표 정량화), SafeFall(시계열 이상 탐지), KB RAG(비대면 서류 검증) 등에서 <strong>Python·PyTorch·AI 도구로 데이터를 직접 분석하고 리스크 로직을 구현</strong>한 경험이 있습니다.</p>
-      </div>
-    </div>
-
-    <div class="about-connector">
-      <p><strong>현장의 리스크 모니터링 실무 감각</strong>과 <strong>파이썬으로 리스크 로직을 직접 다룰 수 있는 데이터 역량</strong>을 모두 갖추고 있습니다. 토스뱅크의 Anti-Fraud Manager로서, 가설을 세우고 데이터 속 행간을 읽어내어 이를 Fraud-Rule로 정량화하는 <strong>Data Deep Dive</strong>를 실현하겠습니다.</p>
-      <div class="about-quote">"단순히 도구를 다루는 것이 아니라, 데이터 속 숨겨진 리스크 패턴을 역추적해 실무 통제 Rule로 변환하는 것 — 그것이 제가 추구하는 Anti-Fraud의 본질입니다."</div>
+    <div class="about-card">
+      <p>저는 사후 분석보다 <strong>작은 이상 신호를 먼저 포착해 위험을 예방</strong>하는 데 더 큰 가치를 둡니다. AI Service Lab에서 시계열 이상 탐지 연구를 수행하며 형성된 이 관점을, 낙상 예측 프로젝트(SafeFall)에서 실현했습니다. "사고 후 감지"에 머무른 기존 연구의 한계를 발견하고, 팀장으로서 <strong>Decision 라벨 기준을 직접 설계</strong>한 뒤 K-Means로 사용자별 전조 신호를 도출해 사고 이전 단계에서 위험을 예측하는 모델을 만들었습니다. 이 프로젝트로 용인대 창업경진대회 최우수상을 받았고, 데이터는 과거를 설명하는 도구가 아니라 <strong>미래의 위험을 예측하고 더 나은 의사결정을 돕는 도구</strong>라는 걸 배웠습니다.</p>
+      <p>이 문제의식을 금융 리스크 분야로 확장해 스테이블코인의 건전성을 정량화하는 <strong>SRHS(Stablecoin Risk Health Score) 평가 모델</strong>을 설계했습니다. 5개 핵심 리스크 지표를 구성해 3대 실물 금융 위기 사례 백테스팅을 거쳤고, 이를 통해 경영컨설팅학회 최우수상 수상 및 KCI 등재지 논문 게재(경영컨설팅연구 제26권 3호)의 결실을 맺었습니다. 이때 정답이 없는 금융 위험을 데이터와 근거로 정량화하는 설계 감각을 익혔습니다.</p>
+      <p>모델 설계를 넘어 <strong>실제 거래 현장에서 작동하는 금융 리스크 운영</strong>을 직접 경험하고자 <strong>토스씨엑스(Toss CX) FDS Team</strong>에 합류했습니다. 가맹점 온보딩 정보 매칭 검수, RMS alert 실사 및 14대 정량 라벨링, 약관 기준 소명 통제 및 공식 공문 집행, 최종 결제 OFF 제재 등을 현장에서 기민하게 조치했습니다. FDS 자동화 시스템 뒤에 존재하는 세밀한 틈새를 메우는 규제 준수와 자금 통제의 막중함을 배웠습니다.</p>
+      <p>이제는 현장의 리스크 운영 경험과 학업에서 다진 AI 기술 및 리스크 설계 역량을 유기적으로 결합하고자 합니다. <strong>토스뱅크의 Anti-Fraud Manager</strong>로서, 사기 거래의 맥락과 가맹점 패턴을 입체적으로 포착하고 선제적으로 차단하여 사용자가 가장 신뢰할 수 있는 토스뱅크의 금융 안전망을 구축하겠습니다.</p>
+      <div class="about-quote">"이상 신호 탐지부터 금융 리스크 지표 설계, 그리고 토스 현장의 실무 운영까지, 저의 목표는 항상 '거래 위험을 선제적으로 통제한다'는 한 방향을 향해 있었습니다."</div>
     </div>
   </div>
 </section>
