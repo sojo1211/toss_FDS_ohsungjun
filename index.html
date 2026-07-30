@@ -251,12 +251,65 @@
 <section id="about" class="alt fade-in">
   <div class="wrap">
     <div class="section-head"><h2 class="section-title">About <span class="b">Me</span></h2><p class="section-desc">금융 안전망 구축을 향한 여정</p></div>
-    <div class="about-card">
-      <p>저는 사후 분석보다 <strong>작은 이상 신호를 먼저 포착해 위험을 선제적으로 예방</strong>하는 데 집중합니다. 이 관점은 AI Service Lab에서 시계열 이상 탐지 연구를 리드하며 시작됐습니다. 낙상 예측 프로젝트(SafeFall)에서 "사고 후 감지"의 한계를 깨닫고, <strong>전조 신호의 임계 영역을 알고리즘으로 설계</strong>해 사전 포착률 83%를 달성하며 예방 중심의 사고를 정립했습니다.</p>
-      <p>이 문제의식을 금융 리스크 분야로 확장해 스테이블코인의 건전성을 정량화하는 <strong>SRHS(Stablecoin Risk Health Score) 평가 모델</strong>을 설계했습니다. 5개 핵심 리스크 지표를 구성해 3대 실물 금융 위기 사례 백테스팅을 거쳤고, 이를 통해 경영컨설팅학회 최우수상 수상 및 KCI 등재지 논문 게재(경영컨설팅연구 제26권 3호)의 결실을 맺었습니다. 이때 정답이 없는 금융 위험을 데이터와 근거로 정량화하는 설계 감각을 익혔습니다.</p>
-      <p>모델 설계를 넘어 <strong>실제 거래 현장에서 작동하는 금융 리스크 운영</strong>을 직접 경험하고자 <strong>토스씨엑스(Toss CX) FDS Team</strong>에 합류했습니다. 가맹점 온보딩 정보 매칭 검수, RMS alert 실사 및 14대 정량 라벨링, 약관 기준 소명 통제 및 공식 공문 집행, 최종 결제 OFF 제재 등을 현장에서 기민하게 조치했습니다. FDS 자동화 시스템 뒤에 존재하는 세밀한 틈새를 메우는 규제 준수와 자금 통제의 막중함을 배웠습니다.</p>
-      <p>이제는 현장의 리스크 운영 경험과 학업에서 다진 AI 기술 및 리스크 설계 역량을 유기적으로 결합하고자 합니다. <strong>토스뱅크의 Anti-Fraud Manager</strong>로서, 사기 거래의 맥락과 가맹점 패턴을 입체적으로 포착하고 선제적으로 차단하여 사용자가 가장 신뢰할 수 있는 토스뱅크의 금융 안전망을 구축하겠습니다.</p>
-      <div class="about-quote">"이상 신호 탐지부터 금융 리스크 지표 설계, 그리고 토스 현장의 실무 운영까지, 저의 목표는 항상 '거래 위험을 선제적으로 통제한다'는 한 방향을 향해 있었습니다."</div>
+    <!-- 2x2 Matrix Grid -->
+    <style>
+      .about-matrix { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 860px; margin: 0 auto; }
+      @media (max-width: 640px) { .about-matrix { grid-template-columns: 1fr; } }
+      .about-matrix-cell { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 32px 28px; transition: all .25s ease-in-out; position: relative; overflow: hidden; }
+      .about-matrix-cell::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--blue), #6ea8fc); opacity: 0; transition: opacity .25s; }
+      .about-matrix-cell:hover { border-color: var(--blue); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+      .about-matrix-cell:hover::before { opacity: 1; }
+      .about-matrix-icon { font-size: 28px; margin-bottom: 14px; display: block; }
+      .about-matrix-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; padding: 4px 10px; border-radius: 6px; margin-bottom: 14px; }
+      .about-matrix-tag.system { background: #eef6ff; color: #1b64da; }
+      .about-matrix-tag.role { background: #f0fdf4; color: #15803d; }
+      .about-matrix-tag.field { background: #fff7ed; color: #c2410c; }
+      .about-matrix-tag.tech { background: #faf5ff; color: #7c3aed; }
+      .about-matrix-title { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 10px; letter-spacing: -0.01em; }
+      .about-matrix-desc { font-size: 14.5px; line-height: 1.75; color: var(--ink-soft); }
+      .about-matrix-desc strong { color: var(--ink); font-weight: 600; }
+      .about-connector { max-width: 860px; margin: 28px auto 0; text-align: center; }
+      .about-connector p { font-size: 15.5px; line-height: 1.8; color: var(--ink); margin-bottom: 16px; }
+      .about-connector p strong { color: var(--blue-deep); font-weight: 700; }
+    </style>
+
+    <div class="about-matrix">
+      <!-- Cell 1: FDS 시스템 -->
+      <div class="about-matrix-cell">
+        <span class="about-matrix-icon">🖥️</span>
+        <span class="about-matrix-tag system">SYSTEM</span>
+        <div class="about-matrix-title">FDS (이상금융거래탐지시스템)</div>
+        <p class="about-matrix-desc">실시간 거래 데이터 속에서 사기 거래를 감지하여 <strong>결제를 차단하거나 경고(Alert)를 띄우는 프로그램 및 알고리즘</strong>입니다. 제가 매일 마주하는 시스템이자, 이해하고 고도화해야 할 대상입니다.</p>
+      </div>
+
+      <!-- Cell 2: Anti-Fraud Manager -->
+      <div class="about-matrix-cell">
+        <span class="about-matrix-icon">🛡️</span>
+        <span class="about-matrix-tag role">ROLE</span>
+        <div class="about-matrix-title">Anti-Fraud Manager</div>
+        <p class="about-matrix-desc">FDS 시스템을 <strong>운영·감시하며, 규칙(Rule)을 지속적으로 개선하고 고도화하는 전문 직무</strong>입니다. 경고 중 진짜 사기를 분석(Deep Dive)하고, 시스템이 놓친 사기 트렌드를 방어할 새로운 차단 룰을 설계하는 전략가입니다.</p>
+      </div>
+
+      <!-- Cell 3: 현장 실무 -->
+      <div class="about-matrix-cell">
+        <span class="about-matrix-icon">🔍</span>
+        <span class="about-matrix-tag field">FIELD EXPERIENCE</span>
+        <div class="about-matrix-title">현장 리스크 운영 실무 (Toss CX)</div>
+        <p class="about-matrix-desc">RMS 및 어드민 시스템 기반 <strong>가맹점 리스크 모니터링, 14대 기준 라벨링, 약관·계약 시점별 소명 및 공문 통제 실무</strong>를 수행하며, 이상 거래 패턴 포착과 자금 손실 사전 예방의 <strong>도메인 분석 감각</strong>을 닦고 있습니다.</p>
+      </div>
+
+      <!-- Cell 4: 데이터/AI 역량 -->
+      <div class="about-matrix-cell">
+        <span class="about-matrix-icon">⚙️</span>
+        <span class="about-matrix-tag tech">DATA & AI</span>
+        <div class="about-matrix-title">데이터/AI 역량 (연구 & 프로젝트)</div>
+        <p class="about-matrix-desc">SRHS 논문(리스크 지표 정량화), SafeFall(시계열 이상 탐지), KB RAG(비대면 서류 검증) 등에서 <strong>Python·PyTorch·AI 도구로 데이터를 직접 분석하고 리스크 로직을 구현</strong>한 경험이 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="about-connector">
+      <p><strong>현장의 리스크 모니터링 실무 감각</strong>과 <strong>파이썬으로 리스크 로직을 직접 다룰 수 있는 데이터 역량</strong>을 모두 갖추고 있습니다. 토스뱅크의 Anti-Fraud Manager로서, 가설을 세우고 데이터 속 행간을 읽어내어 이를 Fraud-Rule로 정량화하는 <strong>Data Deep Dive</strong>를 실현하겠습니다.</p>
+      <div class="about-quote">"단순히 도구를 다루는 것이 아니라, 데이터 속 숨겨진 리스크 패턴을 역추적해 실무 통제 Rule로 변환하는 것 — 그것이 제가 추구하는 Anti-Fraud의 본질입니다."</div>
     </div>
   </div>
 </section>
@@ -447,22 +500,92 @@
   </div>
 </section>
 
-<section id="projects" class="fade-in">
+<section id="working-level" class="fade-in">
+  <div class="wrap">
+    <div class="section-head">
+      <h2 class="section-title">Working-level <span class="b">Experience</span></h2>
+      <p class="section-desc">금융 혁신의 최전선에서 증명해낸 리스크 통제 실무</p>
+    </div>
+    
+    <style>
+      .working-card {
+        padding: 24px;
+        background: var(--bg-soft);
+        border-radius: 14px;
+        border: 1px solid var(--line-soft);
+        transition: all 0.25s ease-in-out;
+      }
+      .working-card:hover {
+        transform: translateY(-4px);
+        border-color: var(--blue);
+        box-shadow: var(--shadow-md);
+        background: #ffffff;
+      }
+      .working-card h4 {
+        font-size: 17px;
+        font-weight: 700;
+        color: var(--blue-deep);
+        margin-bottom: 10px;
+        letter-spacing: -0.01em;
+      }
+      .working-card p {
+        font-size: 14px;
+        color: var(--ink-soft);
+        line-height: 1.7;
+        margin: 0 !important;
+      }
+    </style>
+
+    <div class="about-card" style="max-width: 1040px; width: 100%; border-left: 6px solid var(--blue); position: relative; overflow: hidden; box-shadow: var(--shadow-md); padding: 48px;">
+      <div style="position: absolute; top: 24px; right: 28px; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-soft); padding: 8px 16px; border-radius: 20px; letter-spacing: -0.01em; box-shadow: var(--shadow-sm);">재직 중 (Operations Supporter)</div>
+      
+      <h3 style="font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--ink); letter-spacing: -0.03em;">토스씨엑스 (Toss CX)</h3>
+      <p style="font-size: 16px; color: var(--ink-faint); margin-bottom: 36px; font-weight: 600; letter-spacing: -0.01em;">FDS Team · 리스크운영 | 2026.07 ~ 현재 (연장 계약 포함)</p>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; text-align: left;">
+        <div class="working-card">
+          <h4>🔍 온보딩 팩터 vs 실제 운영 갭 검수</h4>
+          <p>가맹점 입점 시 등록된 <strong>6대 리스크 팩터</strong>(배송종류, 객단가, 판매형태, 실물/비실물 등)와 실제 웹사이트 및 거래 데이터 간의 불일치를 모니터링하여 정밀 검수합니다.</p>
+        </div>
+        
+        <div class="working-card">
+          <h4>📊 RMS 14대 기준 정량 라벨링</h4>
+          <p>RMS alert 발생 시 토스페이파트너스(TOI/Paybiz)를 통해 MID 기반으로 가맹점 웹사이트를 실사하고, <strong>환금성·배송기간 초과·상품 변질 등 14가지 RMS 기준표</strong>에 의거해 리스크 사유 정량 라벨링을 수행합니다.</p>
+        </div>
+        
+        <div class="working-card">
+          <h4>✉️ 가입 시점 분기별 소명 및 공문 통제</h4>
+          <p><strong>2023년 07월 10일 이후 가입 건</strong>은 약관 기준의 전자 메일 소명 프로세스를 집행하고, <strong>2023년 07월 10일 이전 가입 건</strong>은 내부 결재를 거친 공식 인감 공식 공문을 발송하여 제재 및 통제를 집행합니다.</p>
+        </div>
+        
+        <div class="working-card">
+          <h4>🛡️ 선제적 자금 손실 차단 & AML 내실화</h4>
+          <p>미소명 및 고위험 가맹점 대상 <strong>지급보류, 결제 OFF(연동 해제), 토스페이 비활성화</strong> 등 End-to-End 리스크 통제 실무를 수행하여 자금 손실을 선제적으로 차단하고, <strong>AML 이상거래 탐지/대응 프로세스</strong>를 체득했습니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="projects" class="alt fade-in">
   <div class="wrap">
     <div class="section-head"><h2 class="section-title">Featured <span class="b">Projects</span></h2><p class="section-desc">카드를 클릭하면 GitHub 레포에서 자세히 보실 수 있어요<br/><span style="font-size:12.5px; color: var(--ink-faint);">KB 프로젝트를 제외한 SRHS·SafeFall·DSA는 모두 팀 프로젝트이며, 설명은 제가 직접 담당한 역할을 기준으로 작성했습니다.</span></p></div>
     <div class="proj-grid">
       <div class="proj-card">
-        <div class="proj-banner b4"><span class="proj-banner-tag">AI · SECURITY (MAIN)</span><span class="proj-banner-text">Safe-Trade</span></div>
+        <div class="proj-banner b4 clickable" data-image="kb_dm.png" role="button" tabindex="0" aria-label="KB 소상공인 금융 AI 에이전트 미리보기 이미지 보기"><span class="proj-banner-tag">MAIN PROJECT · MERCHANT 연결</span><span class="proj-banner-text">KB</span></div>
         <div class="proj-body">
-          <div class="proj-title">Safe-Trade AI — 지능형 중고거래 사기 방지 시스템</div>
-          <div class="proj-date">2026 · 개인 프로젝트</div>
-          <p class="proj-desc">중고거래 플랫폼 내 빈번한 사기 피해를 방지하기 위해 금융권의 비대면 실명 확인(e-KYC) 프로세스를 C2C 거래 환경에 이식한 안전 거래 서비스입니다. 신분증/사업자등록증 OCR을 통한 판매자 신원 검증과 더치트 API(Mock-up) 및 공공데이터포털 실시간 사업자 진위 조회를 결합했습니다. 특히 단순 조회를 넘어, <strong>LangChain 기반 AI Agent가 판매자의 거래 패턴과 신고 맥락을 종합 분석하여 위험도를 다각도로 산정</strong>하고 사용자에게 실시간 대응 가이드를 제공합니다. 민감 정보 유출 방지를 위한 자동 마스킹 필터링(Privacy by Design)과 데이터 암호화 저장 로직을 적용했습니다.</p>
-          <div class="proj-stack"><b>Tech:</b> React 18, FastAPI, LangChain, OpenAI GPT-4o, OCR 모듈, 공공데이터 API</div>
-          <div class="proj-award">🔒 금융급 e-KYC 및 실시간 위험 분석 Agent 아키텍처</div>
+          <div class="proj-title">KB 소상공인 금융 AI 에이전트</div>
+          <div class="proj-date">2026 · KB국민은행 현직자 PICK 주제 · 제8회 AI Challenge 경진대회</div>
+          <p class="proj-desc">소상공인이 정책자금 신청 자격·규제 조건·근거 문서를 스스로 찾는 데 오랜 시간이 걸린다는 문제를 해결하기 위해, 근거 문서를 인용해 답변하는 <strong>RAG 기반 금융 에이전트</strong>를 구축했습니다. KB국민은행 <strong>2026 현직자 PICK 주제</strong> 중 "소상공인 금융 에이전트"를 선택해 진행했으며, 저는 <strong>챗봇 프론트엔드 UI/UX 설계</strong>와 <strong>정책자금·금융상품 데이터 파이프라인 구축</strong>을 담당했습니다. 정책 정보가 PDF·HWP 등 다양한 형식으로 분산되어 있어 검색 정확도가 낮고 생성형 AI의 <strong>환각(Hallucination)</strong> 가능성이 있다는 문제를 해결하기 위해, PDF·HWP 문서를 <strong>마크다운(.md)으로 변환</strong>한 뒤 <strong>Gemini 2.5 모델</strong>로 전처리해 <strong>벡터DB</strong>를 구축했습니다. 답변 지침서(시스템 프롬프트)에 <strong>"문서에 있는 내용만 답변하고, 근거 문서에서 확인되지 않는 질문은 추측하지 않고 안내 문구로 우회 응답한다"</strong>는 규칙을 명시해, 모델이 아는 범위 밖의 내용은 지어내지 않고 우회하도록 설계했습니다. 또한 답변마다 <strong>참고 출처와 근거 문서를 함께 제시</strong>해 금융 서비스에서 중요한 신뢰성과 설명 가능성을 확보했으며, GitHub Pages를 통해 실시간 데모를 배포했습니다.</p>
+          <div class="proj-stack"><b>Tech:</b> RAG, React, Gemini 2.5, PDF→Markdown 파이프라인, GitHub Pages</div>
+          <div class="proj-award">🏦 KB 국민은행 제8회 AI Challenge 경진대회 참가작</div>
           <div class="proj-actions">
-            <a href="https://github.com/sojo1211/toss_FDS_ohsungjun" target="_blank" rel="noopener" class="primary" style="width: auto; padding: 0 14px; gap: 6px; font-weight: 600; font-size: 13px;" aria-label="GitHub 레포지토리">
-              <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-              GitHub 보기
+            <a href="https://sojo1211.github.io/2026_KB_AI_Challenge_Small-business-financial-agent_ohsungjun/" target="_blank" rel="noopener" class="primary" style="width: auto; padding: 0 14px; gap: 6px; font-weight: 600; font-size: 13px;" aria-label="데모 사이트 보기">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
+              데모 보기
+            </a>
+            <a href="https://github.com/sojo1211/2026_KB_AI_Challenge_Small-business-financial-agent_ohsungjun" target="_blank" rel="noopener" aria-label="GitHub 레포지토리">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
             </a>
           </div>
         </div>
