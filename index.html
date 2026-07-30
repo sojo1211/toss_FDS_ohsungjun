@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>오성준 · Oh Sungjun — Portfolio</title>
+<title>오성준 · Oh Sungjun Portfolio</title>
 <meta name="description" content="용인대 AI학과 · AI비즈니스 융합전공. AI로 금융 리스크를 정량화합니다." />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -39,6 +39,7 @@
   .hero h1 .b { color: var(--blue); }
   .hero h1 .wave { display: inline-block; animation: wave 2.4s ease-in-out infinite; transform-origin: 70% 70%; }
   @keyframes wave { 0%, 60%, 100% { transform: rotate(0deg); } 10% { transform: rotate(14deg); } 20% { transform: rotate(-8deg); } 30% { transform: rotate(14deg); } 40% { transform: rotate(-4deg); } 50% { transform: rotate(10deg); } }
+  .hero-role { display: inline-block; font-size: 15px; font-weight: 700; color: var(--blue-deep); background: var(--blue-soft); padding: 8px 16px; border-radius: 10px; margin-bottom: 20px; letter-spacing: -0.01em; }
   .hero-sub { font-size: 17px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 32px; max-width: 520px; }
   .hero-sub strong { color: var(--ink); font-weight: 700; }
   @media (max-width: 768px) { .hero-sub { margin: 0 auto 32px; } }
@@ -92,16 +93,18 @@
   .stack-item span { font-size: 12px; font-weight: 600; color: var(--ink-soft); letter-spacing: -0.01em; }
   .stack-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 760px; margin: 18px auto 0; }
   .stack-chips span { font-size: 12px; padding: 6px 12px; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; color: var(--ink-soft); font-weight: 500; }
-  .proj-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px; }
+  .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
+  @media (max-width: 640px) { .proj-grid { grid-template-columns: 1fr; } }
   .proj-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; transition: all .25s; display: flex; flex-direction: column; }
   .proj-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--blue); }
   .proj-banner { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
   .proj-banner.b1 { background: linear-gradient(135deg, #1b64da 0%, #3182f6 60%, #6ea8fc 100%); }
   .proj-banner.b2 { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
   .proj-banner.b3 { background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%); }
-  .proj-banner.b4 { background: linear-gradient(135deg, #10b981 0%, #059669 100%); }
-  .proj-banner-text { font-size: 64px; font-weight: 800; letter-spacing: -0.05em; color: white; text-shadow: 0 2px 12px rgba(0,0,0,0.18); }
+  .proj-banner.b4 { background: linear-gradient(135deg, #FFB800 0%, #FFD400 60%, #FFE680 100%); }
+  .proj-banner-text { font-size: 60px; font-weight: 800; letter-spacing: -0.05em; color: white; text-shadow: 0 2px 12px rgba(0,0,0,0.18); }
   .proj-banner.b3 .proj-banner-text { color: #92400e; text-shadow: none; }
+  .proj-banner.b4 .proj-banner-text { color: #191f28; text-shadow: none; }
   .proj-banner-tag { position: absolute; top: 14px; right: 14px; font-size: 11px; padding: 5px 10px; background: rgba(255,255,255,0.92); color: var(--ink); border-radius: 6px; font-weight: 600; letter-spacing: 0.02em; }
   .proj-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
   .proj-title { font-size: 19px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.01em; }
@@ -122,7 +125,7 @@
   .why-card { max-width: 820px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 44px; box-shadow: var(--shadow-sm); }
   @media (max-width: 640px) { .why-card { padding: 28px 24px; } }
   .why-card p { font-size: 16px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 16px; }
-  .why-card p strong { color: var(--ink); font-weight: 700; }
+  .why-card p strong { color: var(--blue-deep); font-weight: 700; }
   .why-targets { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
   @media (max-width: 640px) { .why-targets { grid-template-columns: 1fr; } }
   .why-target { padding: 20px; background: var(--blue-soft); border-radius: 12px; }
@@ -225,7 +228,8 @@
 <header class="hero wrap">
   <div>
     <h1>안녕하세요 <span class="wave">👋</span><br/>저는 <span class="b">오성준</span> 입니다.<br/><span class="b">비즈니스 문제</span>를<br/><span class="b">AI</span>로 해결합니다.</h1>
-    <p class="hero-sub">저는 모델 자체보다 모델이 풀어야 할 <strong>비즈니스 문제를 먼저 정의</strong>합니다. 도출된 데이터가 실제 서비스 환경에서 어떻게 활용될지를 <strong>기술적 구현에 앞서 고민</strong>하는 것이 제 출발점입니다.</p>
+    <span class="hero-role">금융 FDS 및 리스크 분야에서 안심 거래망을 구축하는 Anti-Fraud Specialist</span>
+    <p class="hero-sub">저는 모델 자체보다 모델이 풀어야 할 <strong>비즈니스 문제를 먼저 정의</strong>합니다. 특히 토스씨엑스 FDS 실무를 통해 사기 거래를 현업에서 예방해왔고, <strong>이 현장 감각과 AI 이상 탐지 기술을 결합하여 금융 거래의 안전망을 고도화</strong>합니다.</p>
     <div class="hero-tags">
       <span>AI · Business</span>
       <span>Anti-Fraud Strategy</span>
@@ -246,12 +250,13 @@
 
 <section id="about" class="alt fade-in">
   <div class="wrap">
-    <div class="section-head"><h2 class="section-title">About <span class="b">Me</span></h2><p class="section-desc">한 문장으로 저를 요약합니다</p></div>
+    <div class="section-head"><h2 class="section-title">About <span class="b">Me</span></h2><p class="section-desc">금융 안전망 구축을 향한 여정</p></div>
     <div class="about-card">
-      <p>AI Service Lab에서 시계열 데이터로 낙상·농업 물류·위탁 등 다양한 비즈니스 문제를 풀어왔습니다. 특히 낙상 예측 프로젝트에서는 <strong>"사고 발생 후 감지"</strong>에 머무르던 기존 92% 정확도 연구의 한계를 발견하고, K-Means로 사용자별 전조 신호 경계를 알고리즘으로 도출해 <strong>사전 포착 정확도 83% · F1-Score 82%</strong>를 달성했습니다.</p>
-      <p><strong>리스크는 사후가 아니라 신호 단계에서 잡아야 한다</strong>는 사고방식이 여기서 시작됐습니다.</p>
-      <p>이 관점을 실제 금융 운영 현장으로 옮겨, 현재 <strong>토스씨엑스(Toss CX) FDS Team의 Operations Supporter(리스크운영)</strong>로서 실무를 수행하고 있습니다. 현장에서 입점 정보와 실거래 데이터 간의 갭을 발견하고 가맹점을 실사/제재하는 프로세스를 직접 운영하며, FDS 자동화 시스템 뒤에 도사리는 미세한 틈새를 메우는 규제 준수 및 자금 통제에 깊은 매력을 느꼈습니다. 이제는 이러한 현장 감각과 리스크 지표 설계(SRHS 논문) 및 AI 탐지 기술을 결합하여, <strong>토스뱅크의 Anti-Fraud Manager</strong>로서 비대면 대출 및 여신 상품의 사기 리스크를 선제적·입체적으로 차단하는 전문가로 도약하고자 합니다.</p>
-      <div class="about-quote">"낙상 위험이든 결제 거래 리스크이든, 결국 같은 사고방식으로 풀립니다. 문제를 분해하고, 지표로 정량화하고, 시스템으로 만든다."</div>
+      <p>저는 사후 분석보다 <strong>작은 이상 신호를 먼저 포착해 위험을 선제적으로 예방</strong>하는 데 집중합니다. 이 관점은 AI Service Lab에서 시계열 이상 탐지 연구를 리드하며 시작됐습니다. 낙상 예측 프로젝트(SafeFall)에서 "사고 후 감지"의 한계를 깨닫고, <strong>전조 신호의 임계 영역을 알고리즘으로 설계</strong>해 사전 포착률 83%를 달성하며 예방 중심의 사고를 정립했습니다.</p>
+      <p>이 문제의식을 금융 리스크 분야로 확장해 스테이블코인의 건전성을 정량화하는 <strong>SRHS(Stablecoin Risk Health Score) 평가 모델</strong>을 설계했습니다. 5개 핵심 리스크 지표를 구성해 3대 실물 금융 위기 사례 백테스팅을 거쳤고, 이를 통해 경영컨설팅학회 최우수상 수상 및 KCI 등재지 논문 게재(경영컨설팅연구 제26권 3호)의 결실을 맺었습니다. 이때 정답이 없는 금융 위험을 데이터와 근거로 정량화하는 설계 감각을 익혔습니다.</p>
+      <p>모델 설계를 넘어 <strong>실제 거래 현장에서 작동하는 금융 리스크 운영</strong>을 직접 경험하고자 <strong>토스씨엑스(Toss CX) FDS Team</strong>에 합류했습니다. 가맹점 온보딩 정보 매칭 검수, RMS alert 실사 및 14대 정량 라벨링, 약관 기준 소명 통제 및 공식 공문 집행, 최종 결제 OFF 제재 등을 현장에서 기민하게 조치했습니다. FDS 자동화 시스템 뒤에 존재하는 세밀한 틈새를 메우는 규제 준수와 자금 통제의 막중함을 배웠습니다.</p>
+      <p>이제는 현장의 리스크 운영 경험과 학업에서 다진 AI 기술 및 리스크 설계 역량을 유기적으로 결합하고자 합니다. <strong>토스뱅크의 Anti-Fraud Manager</strong>로서, 사기 거래의 맥락과 가맹점 패턴을 입체적으로 포착하고 선제적으로 차단하여 사용자가 가장 신뢰할 수 있는 토스뱅크의 금융 안전망을 구축하겠습니다.</p>
+      <div class="about-quote">"이상 신호 탐지부터 금융 리스크 지표 설계, 그리고 토스 현장의 실무 운영까지, 저의 목표는 항상 '거래 위험을 선제적으로 통제한다'는 한 방향을 향해 있었습니다."</div>
     </div>
   </div>
 </section>
@@ -325,10 +330,10 @@
 
 <section id="education" class="alt fade-in">
   <div class="wrap">
-    <div class="section-head"><h2 class="section-title">Education & <span class="b">활동</span></h2><p class="section-desc">학업 · 리스크/보안 전문 교육 이력</p></div>
+    <div class="section-head"><h2 class="section-title">Education & <span class="b">활동</span></h2><p class="section-desc">학업 · 연구실 · 금융 IT 교육 이력</p></div>
     <div class="edu-grid">
       <div class="edu-card">
-        <span class="edu-tag">학력 · GPA 3.85</span>
+        <span class="edu-tag">학력 · GPA 3.81</span>
         <div class="edu-title">용인대학교</div>
         <div class="edu-sub">AI학과 · AI비즈니스 융합전공 · 3학년 2학기 재학 · 2022.03 ~</div>
         <div class="edu-desc">AI 전공으로 입학했지만 <strong>"AI는 결국 비즈니스 문제를 푸는 도구"</strong>라는 결론에 도달, 비즈니스 사고를 더하기 위해 <strong>AI비즈니스 융합전공</strong>을 추가 선택. 모델 성능보다 문제 정의를 먼저 고민하는 사고방식의 출발점.</div>
@@ -421,6 +426,12 @@
       </div>
     </div>
     <div class="stack-group">
+      <div class="stack-label">Financial Domain</div>
+      <div class="stack-chips" style="margin-top:0;">
+        <span>Risk Quantification</span><span>KYC</span><span>AML</span><span>Stablecoin Risk</span><span>정책자금 검증</span><span>PG Risk</span>
+      </div>
+    </div>
+    <div class="stack-group">
       <div class="stack-label">Frontend · Tools · AI Coding</div>
       <div class="stack-grid">
         <div class="stack-item"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" loading="lazy" /><span>React</span></div>
@@ -438,32 +449,40 @@
 
 <section id="projects" class="fade-in">
   <div class="wrap">
-    <div class="section-head"><h2 class="section-title">Featured <span class="b">Projects</span></h2><p class="section-desc">카드를 클릭하면 GitHub 레포에서 자세히 보실 수 있어요</p></div>
+    <div class="section-head"><h2 class="section-title">Featured <span class="b">Projects</span></h2><p class="section-desc">카드를 클릭하면 GitHub 레포에서 자세히 보실 수 있어요<br/><span style="font-size:12.5px; color: var(--ink-faint);">KB 프로젝트를 제외한 SRHS·SafeFall·DSA는 모두 팀 프로젝트이며, 설명은 제가 직접 담당한 역할을 기준으로 작성했습니다.</span></p></div>
     <div class="proj-grid">
       <div class="proj-card">
-        <div class="proj-banner b4"><span class="proj-banner-tag">AI · SECURITY</span><span class="proj-banner-text">Safe-Trade</span></div>
+        <div class="proj-banner b4"><span class="proj-banner-tag">AI · SECURITY (MAIN)</span><span class="proj-banner-text">Safe-Trade</span></div>
         <div class="proj-body">
-          <div class="proj-title">Safe-Trade AI — 중고거래 사기 방지</div>
-          <div class="proj-date">2026 · KB AI Challenge (소상공인 금융 에이전트)</div>
-          <p class="proj-desc">금융권 비대면 실명 확인(e-KYC) 프로세스를 중고거래에 이식한 사기 방지 플랫폼. 단순 이력 조회를 넘어 사기 이력 및 거래 패턴 맥락을 <strong>LangChain 기반 AI Agent가 분석하여 실시간 위험도 및 거래 대응 가이드</strong>를 사용자에게 제시.</p>
-          <div class="proj-stack"><b>Tech:</b> React 18, FastAPI, LangChain (GPT-4o), OCR 모듈, 공공데이터 API</div>
-          <div class="proj-award">🔒 비대면 KYC 및 실시간 위험 분석 Agent</div>
+          <div class="proj-title">Safe-Trade AI — 지능형 중고거래 사기 방지 시스템</div>
+          <div class="proj-date">2026 · 개인 프로젝트</div>
+          <p class="proj-desc">중고거래 플랫폼 내 빈번한 사기 피해를 방지하기 위해 금융권의 비대면 실명 확인(e-KYC) 프로세스를 C2C 거래 환경에 이식한 안전 거래 서비스입니다. 신분증/사업자등록증 OCR을 통한 판매자 신원 검증과 더치트 API(Mock-up) 및 공공데이터포털 실시간 사업자 진위 조회를 결합했습니다. 특히 단순 조회를 넘어, <strong>LangChain 기반 AI Agent가 판매자의 거래 패턴과 신고 맥락을 종합 분석하여 위험도를 다각도로 산정</strong>하고 사용자에게 실시간 대응 가이드를 제공합니다. 민감 정보 유출 방지를 위한 자동 마스킹 필터링(Privacy by Design)과 데이터 암호화 저장 로직을 적용했습니다.</p>
+          <div class="proj-stack"><b>Tech:</b> React 18, FastAPI, LangChain, OpenAI GPT-4o, OCR 모듈, 공공데이터 API</div>
+          <div class="proj-award">🔒 금융급 e-KYC 및 실시간 위험 분석 Agent 아키텍처</div>
           <div class="proj-actions">
-            <a href="https://sojo1211.github.io/2026_KB_AI_Challenge_Small-business-financial-agent_ohsungjun/" target="_blank" rel="noopener" class="primary" aria-label="데모 페이지">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+            <a href="https://github.com/sojo1211/toss_FDS_ohsungjun" target="_blank" rel="noopener" class="primary" style="width: auto; padding: 0 14px; gap: 6px; font-weight: 600; font-size: 13px;" aria-label="GitHub 레포지토리">
+              <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px;height:16px;"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
+              GitHub 보기
             </a>
           </div>
         </div>
       </div>
       <div class="proj-card">
-        <div class="proj-banner b1 clickable" data-image="스테이블.jpg" role="button" tabindex="0" aria-label="SRHS 미리보기 이미지 보기"><span class="proj-banner-tag">MAIN PROJECT</span><span class="proj-banner-text">SRHS</span></div>
+        <div class="proj-banner b1 clickable" data-image="스테이블.jpg" role="button" tabindex="0" aria-label="SRHS 미리보기 이미지 보기"><span class="proj-banner-tag">RISK MODELING</span><span class="proj-banner-text">SRHS</span></div>
         <div class="proj-body">
           <div class="proj-title">스테이블코인 리스크 평가</div>
           <div class="proj-date">2026 · 경영학과 팀 협업 · 한국경영컨설팅학회</div>
-          <p class="proj-desc">경영학과 팀과 협업한 스테이블코인 리스크 평가 프로젝트. 저는 <strong>AI 리스크 지표 5종(PD·LS·CR·TI·RR) 설계와 점수화 모델</strong>을 담당, USDT·USDC·DAI·PYUSD 4종 실시간 모니터링 시스템으로 구현. 한국 외국환거래법·CARF MCAA 규제 컨텍스트 반영. KCI 등재지 논문화 진행 중.</p>
-          <div class="proj-stack"><b>Tech:</b> React, CoinGecko API, DeFiLlama API, 순수 SVG 차트</div>
+          <p class="proj-desc"><strong>기존에 스테이블코인 리스크를 정량적으로 평가하는 표준 지표가 없다는 문제를 발견하고, 선행연구를 기반으로 SRHS(Stablecoin Risk Health Score)를 직접 설계했습니다.</strong><br/><br/><strong>Problem</strong> 선행연구들은 담보·유동성·규제 등 위험요인을 개별적으로만 다뤄, 서로 다른 스테이블코인의 위험도를 동일한 기준으로 비교할 방법이 없었습니다.<br/><strong>Solution</strong> 여러 붕괴 사례와 선행연구에서 반복적으로 제시되는 위험요인을 추출·통합해 하나의 점수 체계로 구조화했습니다. 경영학과 팀과 협업해 저는 <strong>AI 리스크 지표 5종(PD·LS·CR·TI·RR) 설계와 점수화 모델</strong>을 담당, <strong>무역결제에서 1대1 달러와 연동되는 USDT·USDC·DAI·PYUSD 4종 실시간 모니터링 시스템</strong>으로 구현했습니다. 한국 외국환거래법·CARF MCAA 규제 컨텍스트를 반영했고, Terra-Luna·FTX·USDC(SVB) 등 실제 붕괴 사례에 적용해 위험도를 비교·검증한 뒤 KCI 등재지에 논문을 게재했습니다.<br/><br/>5개 지표의 가중치는 릿지 회귀로 초기값을 추정한 뒤, <strong>FTX 파산·테라-루나 붕괴·빗썸 규제 리스크 3개 실제 위기 사례</strong>에 위기 발생 전 정상구간과 위기구간을 함께 복원해 역적용하는 백테스팅으로 검증·확정했습니다. 10%p 단위로 구성한 5개 가중치 시나리오 중, <strong>CR(담보건전성) 25% · PD(부도확률) 20% · LS(유동성) 20% · TI(거래지표) 20% · RR(규제) 15%</strong> 조합만이 세 사례 전부에서 <strong>위기 5일 전 조기 경보 + 오경보(False Positive) 0건</strong>을 동시에 충족했습니다. 이후 ±5%p 민감도 분석에서도 등급 변동 없이 점수 변동폭 10점 이내를 유지해 모델의 강건성을 추가로 검증했습니다.<br/><br/>가장 중요하게 생각한 것은 모델의 성능이 아니라 <strong>평가 기준 자체의 타당성</strong>이었습니다. 이 경험을 통해 정답이 없는 위험을 데이터와 근거로 기준화하는 역량을 키웠습니다.<br/><br/><strong>Application</strong> 같은 원리를 Merchant 심사에도 적용할 수 있다고 생각합니다. 가입 단계에서 사업자 정보·거래 패턴·업종 특성으로 위험도를 사전 산출하고, 고위험 Merchant는 추가 확인 절차로 연결해 심사 효율성과 고객 경험을 함께 개선하는 방식입니다.</p>
+          <div class="proj-stack">
+            <b>Tech:</b> React, CoinGecko API, DeFiLlama API, 순수 SVG 차트<br/>
+            <b>Validation:</b> Ridge Regression 가중치 최적화 → 3개 위기 사례 백테스팅 (FTX·테라-루나·빗썸) → 5일 조기경보·오경보 0건 · 민감도 분석 강건성 검증
+          </div>
           <div class="proj-award">🏆 한국경영컨설팅학회 최우수상</div>
           <div class="proj-actions">
+            <a href="최종본_PDF.pdf" target="_blank" rel="noopener" class="primary pdf" style="width: auto; padding: 0 14px; gap: 6px; font-weight: 600; font-size: 13px;" aria-label="논문 보기">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              논문 보기
+            </a>
             <a href="스테이블코인.pptx" target="_blank" rel="noopener" class="ppt" aria-label="발표자료 PPT">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="7" y="18" font-size="6" font-weight="700" fill="currentColor" stroke="none">PPT</text></svg>
             </a>
@@ -478,8 +497,11 @@
         <div class="proj-body">
           <div class="proj-title">SafeFall Intelligence</div>
           <div class="proj-date">2025.09 ~ 현재 · 팀장 · Code UP</div>
-          <p class="proj-desc">다중 바이오신호(IMU·HRV·SpO₂) 기반 낙상 사고 예측 AI 플랫폼. 저는 <strong>Decision 라벨 기준 설계(정상·미끄러짐·낙상) 및 정합성 검증</strong>을 담당하고, 이상치 제거·정규화·노이즈 필터링 등 <strong>센서 데이터 전처리 전반</strong>을 수행. <strong>클래스 불균형 처리 및 Feature Engineering</strong>으로 RF·K-Means 모델 학습 기반 데이터를 직접 구축, 안정적인 낙상 예측 모델 개발에 기여.</p>
-          <div class="proj-stack"><b>Tech:</b> PyTorch, RandomForest, K-means, Linear Regression, IMU/HRV/SpO₂</div>
+          <p class="proj-desc"><strong>기존 낙상 탐지 연구들은 92~99%의 높은 정확도에도 불구하고 대부분 "낙상이 이미 발생한 후"를 감지하는 사후 대응 방식이라는 공통된 한계를 가진다는 문제를 발견하고, 사고 이전 단계에서 위험을 예측하는 SafeFall Intelligence를 설계했습니다.</strong><br/><br/><strong>Problem</strong> 산업재해 사망 원인 1위가 추락·낙상(41.6%)이며 65세 이상 낙상 사고도 4년 새 3.2배 증가했지만, "넘어진 뒤의 알림"은 골절과 2차 사고를 막기엔 이미 늦은 대응이었습니다. 가장 큰 난관은 라벨링이었습니다 낙상 직전 전조 증상은 사용자마다 패턴이 너무 다양해, 고정된 임곗값 하나로 위험 신호를 정의할 수 없는, <strong>사람이 경계선을 직접 그을 수 없는 문제</strong>였습니다.<br/><strong>Solution</strong> 사람이 규칙으로 정의할 수 없는 문제였기에 <strong>비지도 학습(K-Means)</strong>을 도입해, 상관계수와 센서 특징점 기반 군집화로 전조 증상의 경계를 알고리즘이 데이터 기반으로 도출하도록 설계했습니다. 저는 거리·압력·HRV·혈당·SpO₂·가속도 등 다중 센서 데이터를 모델이 학습할 수 있는 형태로 만드는 전 과정을 담당했습니다: <strong>Decision 라벨 기준 설계(정상·미끄러짐·낙상)</strong>, 이상치 제거·정규화·노이즈 필터링 등 <strong>전처리</strong>, <strong>라벨 정합성 검증 및 클래스 불균형 처리</strong>, 전체 사용자 데이터에 대한 <strong>상관분석 → 히트맵 시각화</strong>로 실제 낙상과 유의미하게 연관된 센서를 확인하는 작업입니다. 상관분석 결과 압력·심박수·산소포화도는 낙상과 높은 상관성을, 혈당은 낮은 상관성을 보여 이를 특징 선택의 근거로 활용했습니다. 모델 학습에는 GitHub의 사전학습 모델을 <strong>전이학습(Transfer Learning)</strong>으로 활용했으며, 구체적으로는 사전학습된 가중치를 모두 고정(freeze)하고 <strong>출력층(Classifier)만 새로운 라벨(정상·미끄러짐·낙상)에 맞게 교체해 재학습하는 특징 추출(Feature Extraction) 방식</strong>을 적용했습니다.<br/><br/>비지도 학습 기반임에도 정확도 약 83%, F1-Score 약 82%를 달성해 "사후 감지"가 아닌 <strong>사전 예방</strong>의 실효성을 데이터로 입증했습니다.<br/><br/><strong>Application</strong> 사람마다 패턴이 달라 고정 규칙이 통하지 않는 문제는, 사람이 아니라 데이터가 경계를 찾게 해야 한다는 것이 이 프로젝트의 핵심 배움입니다. 센서 데이터 지연 0.5초가 사고를 막지 못하는 상황을 겪으며 "데이터 오류가 곧 실제 피해로 이어지는 도메인"의 무게를 체감했고, 이는 가맹점마다 거래 패턴이 제각각인 <strong>KYC·FDS 이상 탐지</strong> 문제와 본질적으로 같은 구조라고 생각합니다 정답이 정해진 규칙이 아니라, 데이터 안에서 위험의 경계를 찾아내는 일이라는 점입니다.</p>
+          <div class="proj-stack">
+            <b>Tech:</b> PyTorch, RandomForest, K-means, Linear Regression, IMU/HRV/SpO₂, Transfer Learning(특징 추출)<br/>
+            <b>Result:</b> 정확도 약 83% · F1-Score 약 82% · 비지도 학습 기반 사전 예측 검증
+          </div>
           <div class="proj-award">🏆 용인대 창업경진대회 최우수상</div>
           <div class="proj-actions">
             <a href="폴링팀_오성준_김태호_윤주영__창업동아리-codeUP.pptx" target="_blank" rel="noopener" class="ppt" aria-label="발표자료 PPT">
@@ -494,10 +516,13 @@
       <div class="proj-card">
         <div class="proj-banner b3 clickable" data-image="dsa.png" role="button" tabindex="0" aria-label="DSA 수상 인증서 보기"><span class="proj-banner-tag">DATA · BIZ</span><span class="proj-banner-text">DSA</span></div>
         <div class="proj-body">
-          <div class="proj-title">DSA — IT 아웃소싱 분석</div>
+          <div class="proj-title">DSA IT 아웃소싱 분석</div>
           <div class="proj-date">2025.03 ~ 2025.04 · DSA 19기 4팀 펜타바이트</div>
-          <p class="proj-desc">IT 아웃소싱 플랫폼 소비자 니즈 분석 기반 수수료율 책정 및 매출 증가 전략 도출 프로젝트. 저는 <strong>거래 로그·소비자 프로필 데이터 병합 및 통합 분석 프레임 설계</strong>를 담당. 서비스 가격·평점·고객 특성·거래 패턴을 하나의 구조로 연결해 <strong>차등 수수료율 전략과 타겟 마케팅 세그먼트</strong>를 데이터 기반으로 도출.</p>
-          <div class="proj-stack"><b>Tech:</b> Python, Pandas, 데이터 시각화, 통계 분석</div>
+          <p class="proj-desc"><strong>IT 아웃소싱 플랫폼에서 서비스 가격·평점이 총 구매 금액에 미치는 영향과 고객 특성·거래 패턴을 결합해 수수료율 책정 기준과 매출 증가 전략을 도출하는 것이 팀에 주어진 주제였습니다.</strong><br/><br/><strong>Role</strong> 저는 <strong>"로그 + 소비자 패턴"을 통합해 서비스 가격·평점·고객 특성과 총 구매 금액을 연결하는 분석 설계</strong>를 담당했습니다. IT 아웃소싱 플랫폼의 거래 로그 데이터와 소비자 프로필 데이터를 병합하고, 서비스 가격·평점·총 구매 금액 간 관계를 보는 분석 프레임을 설계했습니다. 거래 패턴은 <strong>거래 성사율(X)</strong>과 <strong>거래 취소 원인(Y)</strong>의 함수로 정의해, 어떤 조건(가격·평점·카테고리·고객 특성)에서 취소가 많이 발생하는지 확인할 수 있는 분석 구조를 만들었습니다.<br/><br/><strong>분석 축</strong>은 크게 세 가지였습니다. ① <strong>고객 특성 분석</strong> 연령·성별·거주지에 따라 어떤 서비스가 더 잘 팔리는지, 고가 서비스 구매 비율이 높은 고객군은 누구인지, 자주 결제하는 핵심 고객군(Heavy User)을 정의해 타겟 마케팅 세그먼트로 연결했습니다. ② <strong>가격·평점 영향 분석</strong> 가격·평점과 총 구매 금액·재구매율 간의 관계를 <strong>상관분석·회귀분석</strong>으로 검증해, 가격이 높을수록 객단가는 오르지만 구매 빈도는 줄어드는 경향, 평점이 높을수록 재구매율·매출 기여도가 높아지는 경향을 확인했습니다. 이를 바탕으로 수수료율을 일괄 책정하는 대신 가격·평점·카테고리·고객 특성을 종합 반영한 <strong>차등 수수료 전략</strong>의 가능성을 검증했습니다. ③ <strong>거래 패턴 분석</strong> 거래 성사율(X)과 취소 사유(Y, 가격 불만·일정 문제·신뢰도 부족 등)를 <strong>X, Y 회귀분석</strong>으로 검증해 어떤 조건에서 취소가 몰리는지 정량적으로 확인하고, 이를 수수료·환불 정책과 UI/UX 개선 포인트를 도출하는 근거로 활용했습니다.<br/><br/><strong>수치로 보면</strong> 거래 성사율은 <strong>(성공 거래 수 ÷ 총 거래 수) × 100</strong>으로 정의해 전체 4,146건에 적용했는데, 대부분의 값이 0~0.01 구간에 몰려 있는 극단적으로 낮은 성사율 분포를 보였고 0.04 부근에서만 소수의 이례적 급증 구간이 관측됐습니다. 서비스가격·평점·총구매금액을 함께 본 결과 가격 10만 원·평점 5.0인 항목의 총구매금액이 0으로 나타나는 사례도 다수 확인되어, <strong>가격·평점이 높다고 반드시 매출로 이어지지 않는다</strong>는 점을 데이터로 확인했습니다.<br/><br/><strong>Learning</strong> 단순 집계가 아니라 가격·평점·고객 특성·거래 패턴·구매 금액을 한 구조 안에서 연결해야 실제 비즈니스 인사이트가 나온다는 점, 그리고 데이터 병합·전처리·스키마 정의가 모델링보다 결과 품질에 더 큰 영향을 준다는 점을 이 프로젝트에서 배웠습니다. 연령·성별·지역별로 구매 행동이 뚜렷하게 갈린다는 것을 확인하며 <strong>"동일한 전략은 모든 고객에게 효과가 없다"</strong>는 결론도 얻었습니다.<br/><br/><strong>Application</strong> 이 구조는 Merchant 심사 문제와 맞닿아 있다고 생각합니다. 플랫폼의 "서비스 제공자"를 가맹점으로, "가격·평점·거래 성사율·취소 패턴"을 가맹점의 업종·거래 규모·정산 이력으로 바꿔보면 같은 분석 구조가 성립합니다. 모든 가맹점에 동일한 수수료율·심사 기준을 적용하는 대신, 업종·거래 패턴·과거 이력을 종합해 <strong>차등화된 기준</strong>을 세우는 방식입니다. 특히 "어떤 조건에서 거래 취소·이상 거래가 몰리는가"를 구조화했던 경험은, 가맹점 온보딩 단계에서 이상 거래 패턴을 조기에 잡아내는 <strong>KYC·FDS</strong> 문제와 본질적으로 같은 접근이라고 생각합니다.</p>
+          <div class="proj-stack">
+            <b>Tech:</b> Python, Pandas, 상관분석·회귀분석, 데이터 시각화<br/>
+            <b>Framework:</b> 가격·평점·고객특성·거래패턴·구매금액 통합 분석 구조 설계
+          </div>
           <div class="proj-award">🏆 데이터스테이션 실무 분석 최우수상</div>
           <div class="proj-actions">
             <a href="[DSA19기]펜타바이트_IT아웃소싱.pdf" target="_blank" rel="noopener" class="pdf" aria-label="PDF 문서">
@@ -519,13 +544,15 @@
     <div class="why-card">
       <p>이론적 리스크 평가 모델(SRHS 논문 최우수상)을 설계하며 <strong>'금융 거래의 신뢰성을 어떻게 사전에 정량화할 것인가'</strong>라는 깊은 문제의식을 가졌습니다. 여기에 안주하지 않고 실제 작동하는 시스템을 체득하고자 <strong>토스씨엑스 FDS Team의 Operations Supporter</strong>로 합류해 실무 데이터와 룰 사이의 갭을 검수하고 고위험 거래를 차단하는 <strong>현장 모니터링 및 실무 제재 프로세스</strong>를 직접 운영했습니다. 이 과정에서 규제 준수 검증과 자금세탁방지(AML) 영역에 큰 흥미를 갖게 되었습니다.</p>
       <p>이제 저는 리스크 모델 설계 능력과 현장에서 온몸으로 체득한 실무 운영 감각을 융합하여, <strong>토스뱅크의 Anti-Fraud Manager</strong>로 도약하고자 합니다. 토스뱅크의 소매 여신 및 전월세대출 심사 신청 단계에서 발생할 수 있는 부정 의심 거래와 사기 패턴을 Python/SQL 데이터 Deep Dive를 통해 선제 규명하고, 트렌드를 반영하여 FDS 예방 룰을 지능적으로 고도화하겠습니다.</p>
+      <p>다만 학생 프로젝트나 단순 모니터링 운영 데이터와 토스뱅크의 대규모 금융 거래 데이터는 차원이 다릅니다. 금융 사기 및 위조 서류 사기 패턴은 탐지 기준에 맞춰 교묘하게 우회하며 계속 진화합니다. 이 간극은 완성형 모델 도입만으로 메워지지 않고, 현장의 실무 이상징후와 도메인 지식, 그리고 <strong>현업 부서와의 유기적인 소통 피드백 루프(HITL)</strong>를 통해서만 극복할 수 있다고 믿습니다.</p>
+      <p>입사 후에는 토스뱅크의 여신·수신 상품 구조와 심사/운영 프로세스를 빠르게 학습하겠습니다. 데이터 분석을 기반으로 이상 거래 탐지 룰을 설계/업데이트하고, 오탐을 줄이면서 탐지 정밀도를 높여 업무 효율성과 고객 편의를 동시에 지켜내겠습니다. 나아가 <strong>AML과 결제 리스크 관리를 아우르는 통제 전문가</strong>로 확실히 자리잡기 위해, <span style="color: var(--blue-deep); font-weight: 700;">한국금융연수원 자금세탁방지(AML) 핵심요원(기초) 과정을 이수 완료(2026.08~10)하여 통제 역량의 내실을 이미 다졌습니다.</span> 데이터로 금융의 안전을 지키고 사용자가 가장 신뢰할 수 있는 토스뱅크를 만드는 주역이 되겠습니다.</p>
     </div>
   </div>
 </section>
 
 <section id="awards" class="fade-in">
   <div class="wrap">
-    <div class="section-head"><h2 class="section-title">Awards & <span class="b">Certificate</span></h2><p class="section-desc">수상 6회 · 자격증 · KCI 논문 진행 중</p></div>
+    <div class="section-head"><h2 class="section-title">Awards & <span class="b">Certificate</span></h2><p class="section-desc">수상 6회 · 자격증 · 경영컨설팅연구, 제26권, 제3호 등재</p></div>
     <div class="award-grid">
       <div class="award-item top"><div class="award-info"><div class="award-name">한국경영컨설팅학회 학술대회 · SRHS</div><div class="award-meta">2026 · 황상원 교수님 지도</div></div><span class="award-badge">🏆 최우수상</span></div>
       <div class="award-item top"><div class="award-info"><div class="award-name">용인대 제2회 창업아이디어 경진대회 · SafeFall</div><div class="award-meta">2025 · 팀장 · AI 설계 총괄</div></div><span class="award-badge">🏆 최우수상</span></div>
@@ -533,10 +560,10 @@
       <div class="award-item"><div class="award-info"><div class="award-name">단국 창업 해커톤 · Agri-SCM Intelligence</div><div class="award-meta">2025 · G7 분야 · 공급망 예측</div></div><span class="award-badge">🥉 장려상</span></div>
     </div>
     <div class="cert-row">
-      <div class="cert"><b>🛡️</b> AML (자금세탁방지) 기초 자격 취득</div>
+      <div class="cert"><b>🛡️</b> 자금세탁방지(AML) 핵심요원 기초 수료 (2026.10)</div>
       <div class="cert"><b>📜</b> SQLD · SQL Developer (2024.09)</div>
       <div class="cert"><b>📊</b> ADsP · 데이터분석 준전문가 (2026.02)</div>
-      <div class="cert"><b>📄</b> KCI 등재지 논문화 진행 중</div>
+      <div class="cert"><b>📄</b> 경영컨설팅연구, 제26권, 제3호 등재 (B2B 무역결제에서 스테이블 코인의 안정성 평가 모델 개발: 실시간 건전성 지수(SRHS)와 규제 통합 프레임워크 중심)</div>
     </div>
     <div class="awards-more">
       <a href="https://github.com/sojo1211/Portfolio-Ohsungjun" target="_blank" rel="noopener">모든 수상 내역 GitHub에서 보기 →</a>
@@ -582,7 +609,7 @@
         </a>
       </div>
     </div>
-    <div class="footer-copy">© 2026 Oh Sungjun · 오성준 · Built for <a href="https://toss.im" target="_blank" rel="noopener">Toss</a></div>
+    <div class="footer-copy">© 2026 Oh Sungjun · 오성준</div>
   </div>
 </footer>
 
