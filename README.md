@@ -4,10 +4,6 @@
   <img src="./성준사진.jpg" width="300" alt="오성준 프로필 사진" style="border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);" />
 </p>
 
-# 프로젝트 명세서: 토스뱅크 Anti-Fraud Manager 맞춤형 포트폴리오 (toss_FDS_ohsungjun)
-
-**Toss CX FDS/RMS 실무 역량**과 **AI 데이터 분석/리스크 정량화 학술 연구 성과**를 결합하여, **토스뱅크 Anti-Fraud Manager** 직무에 최적화된 오성준 님의 싱글 페이지 포트폴리오 웹사이트 구축을 목표로 합니다.
-
 ---
 
 ## 👤 프로필 개요 (Profile Overview)
