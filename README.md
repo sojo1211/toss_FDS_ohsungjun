@@ -6,7 +6,7 @@
 
 # Risk Operations · AI Developer · Risk Analyst
 
-> **Toss CX FDS/RMS 리스크 운영 경험과 AI 기반 금융 리스크 정량화 연구를 바탕으로 데이터 기반 리스크 분석 역량을 쌓아온 오성준입니다.**
+> **Toss CX FDS/RMS 리스크 운영 경험과 금융 리스크 정량화 연구를 바탕으로 데이터 기반 리스크 분석 및 통제 역량을 쌓아온 오성준입니다.**
 
 ---
 
@@ -20,21 +20,21 @@
 
 # 🔍 Core Competencies
 
-### Risk Operations
+## Risk Operations
 
 - Merchant Onboarding Risk Review
 - RMS Labeling
 - Merchant Risk Assessment
 - Risk Review
-- Pre-signal Control
+- Pre-signal Risk Control
 
-### Financial Risk Modeling
+## Financial Risk Modeling
 
 - Stablecoin Risk Health Score (SRHS)
 - Risk Scoring Framework
 - Financial Risk Quantification
 
-### Data Analysis
+## Data Analysis
 
 - Python
 - SQL
@@ -42,7 +42,7 @@
 - NumPy
 - scikit-learn
 
-### AI Development
+## AI Development
 
 - LangChain
 - Claude Code
@@ -68,13 +68,13 @@
 - 실물 / 비실물 여부
 - 취소 및 환불 정책
 
-이를 통해 **등록 정보와 실제 운영 정보 간의 불일치를 확인하고 리스크를 사전에 검토하는 업무**를 수행했습니다.
+등록 정보와 실제 운영 정보 간의 불일치를 확인하여 정책 위반 가능성을 검토하고 리스크를 사전에 식별하는 업무를 수행했습니다.
 
 ---
 
 ### ② RMS Labeling
 
-RMS Alert 발생 건을 MID 단위로 추적하여 실제 가맹점을 조사하고 **14대 RMS 기준**에 따라 리스크 사유를 정량 라벨링했습니다.
+RMS Alert 발생 건을 **MID 단위로 추적**하여 TOI / Paybiz에서 가맹점 정보를 확인하고, 실제 웹사이트 운영 현황을 조사한 뒤 **14대 RMS 기준**에 따라 리스크 사유를 라벨링했습니다.
 
 **대표 검수 항목**
 
@@ -92,13 +92,13 @@ RMS Alert 발생 건을 MID 단위로 추적하여 실제 가맹점을 조사하
 - 취소주기
 - 상품 변질
 
-라벨링 결과를 기반으로 **운영 정책에 따른 후속 리스크 검토 및 통제 절차를 지원**했습니다.
+라벨링 결과를 기반으로 운영 정책에 따른 후속 리스크 검토 및 통제 절차를 지원했습니다.
 
 ---
 
 ### ③ Risk Control
 
-계약 시점에 따라 리스크 통제를 수행했습니다.
+계약 시점과 리스크 수준에 따라 다양한 운영 통제를 수행했습니다.
 
 - 메일 소명 요청
 - 공문 발송
@@ -106,7 +106,7 @@ RMS Alert 발생 건을 MID 단위로 추적하여 실제 가맹점을 조사하
 - 결제 OFF
 - MID 분리
 
-고위험 가맹점에 대해서는 운영 정책에 따라 **선제적인 리스크 통제 업무**를 수행했습니다.
+고위험 가맹점에 대해서는 운영 정책에 따라 선제적인 리스크 통제 업무를 수행했습니다.
 
 ---
 
@@ -120,7 +120,7 @@ RMS Alert 발생 건을 MID 단위로 추적하여 실제 가맹점을 조사하
 
 소명 회신이 지연되는 경우에는 **3일 경과 시점에 Outbound(OB) 연락을 요청**하여 회신을 독려했고, 최종적으로 제출된 소명 자료를 검토하여 내부 기준에 따라 후속 절차를 진행했습니다.
 
-이 경험을 통해 **자동화된 Alert 결과뿐만 아니라 운영 데이터와 실제 정보를 함께 검토하여 사실관계를 확인하고, 내부 정책에 따라 리스크를 판단하는 운영 역량**을 쌓을 수 있었습니다.
+이 경험을 통해 **자동화된 Alert 결과뿐만 아니라 운영 데이터와 실제 정보를 함께 검토하여 사실관계를 확인하고, 내부 정책에 따라 리스크를 판단하고 의사결정을 지원하는 운영 역량**을 쌓을 수 있었습니다.
 
 ---
 
@@ -128,25 +128,21 @@ RMS Alert 발생 건을 MID 단위로 추적하여 실제 가맹점을 조사하
 
 ## 🏆 Stablecoin Risk Health Score (SRHS)
 
-스테이블코인의 건전성을 사전에 평가하기 위한 **Financial Risk Scoring Framework**를 연구했습니다.
+스테이블코인의 건전성을 **사전에 평가하기 위한 Financial Risk Scoring Framework**를 연구했습니다.
 
 ### 연구 배경
 
-### 연구 배경
+Terra-LUNA 붕괴와 FTX 파산 등 연이은 시장 사건은 디지털 자산에 대한 신뢰를 크게 훼손했고, 대규모 자금 인출(Bank Run)과 유동성 위기를 초래했습니다.
 
-Terra-LUNA 붕괴, FTX 파산, 국내 가상자산 거래소(빗썸) 이슈 등 연이은 시장 사건을 통해 **스테이블코인과 디지털 자산에 대한 신뢰가 급격히 훼손되었으며, 대규모 자금 인출(Bank Run)과 유동성 위기가 발생**했습니다.
+이러한 사례는 **위험이 현실화된 이후 대응하는 방식만으로는 투자자와 시장을 보호하기 어렵다**는 점을 보여주었으며, 스테이블코인의 건전성을 **사전에 객관적으로 평가할 수 있는 정량적 기준**의 필요성을 시사했습니다.
 
-이러한 사건은 **위험이 현실화된 이후 대응하는 방식만으로는 투자자와 시장을 보호하기 어렵다**는 점을 보여주었으며, 스테이블코인의 건전성을 **사전에 객관적으로 평가할 수 있는 정량적 기준**의 필요성을 시사했습니다.
+기존 평가는 담보비율(Collateral Ratio)이나 페그(Peg) 유지 여부 등 일부 지표 중심으로 이루어져 **유동성, 준비자산의 신뢰성, 정보공개 수준 등 다양한 리스크 요인을 종합적으로 반영하지 못하는 한계**가 있었습니다.
 
-기존 평가는 담보비율(Collateral Ratio)이나 페그(Peg) 유지 여부 등 일부 지표를 중심으로 이루어져 **유동성, 준비자산의 신뢰성, 정보공개 수준 등 다양한 리스크 요인을 종합적으로 반영하지 못하는 한계**가 있었습니다.
-
-이에 저는 **사고 발생 이후의 사후 분석이 아닌, 사고 이전에 스테이블코인의 건전성을 정량적으로 평가할 수 있는 금융 리스크 평가 프레임워크인 SRHS(Stablecoin Risk Health Score)** 를 설계했습니다.
-
----
+이에 **사고 발생 이후의 사후 분석이 아닌, 사고 이전에 스테이블코인의 건전성을 정량적으로 평가할 수 있는 금융 리스크 평가 프레임워크인 SRHS(Stablecoin Risk Health Score)를 설계**했습니다.
 
 ### 주요 내용
 
-SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 다음 **5개의 핵심 리스크 지표**로 평가하는 금융 리스크 모델입니다.
+SRHS는 스테이블코인의 건전성을 다음 **5개의 핵심 리스크 지표**로 평가하는 금융 리스크 모델입니다.
 
 - **PD (Peg Deviation)** : 목표 가격 유지 안정성
 - **LS (Liquidity Stability)** : 유동성 안정성
@@ -154,9 +150,7 @@ SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 다음 
 - **TI (Transparency Index)** : 정보공개 투명성
 - **RR (Reserve Reliability)** : 준비자산 신뢰성
 
-각 리스크 요인을 정량화하여 하나의 **Risk Health Score**로 통합하고, 스테이블코인의 건전성을 객관적으로 비교·평가할 수 있는 프레임워크를 제안했습니다.
-
----
+각 리스크 요인을 정량화하여 하나의 **Risk Health Score**로 통합하고, 스테이블코인의 건전성을 객관적으로 비교·평가할 수 있는 **Risk Scoring Framework**를 제안했습니다.
 
 ### 연구 의의
 
@@ -166,12 +160,11 @@ SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 다음 
 - Risk Factor 설계
 - Risk Scoring Framework 구축
 - 금융 리스크 정량화 모델 설계
+- 데이터 기반 의사결정 지표 설계
 
 역량을 쌓을 수 있었습니다.
 
-이러한 경험은 현재 Toss CX에서 수행하고 있는 **Merchant Risk Review**, **RMS Labeling**, **Risk Assessment** 업무와도 자연스럽게 연결되고 있습니다.
-
----
+이러한 경험은 현재 Toss CX에서 수행하고 있는 **Merchant Risk Review, RMS Labeling, Risk Assessment** 업무와도 자연스럽게 연결되고 있습니다.
 
 ### 연구 성과
 
@@ -181,19 +174,21 @@ SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 다음 
 
 👨‍💻 **공동 저자**
 
-📄 **https://github.com/sojo1211/toss_FDS_ohsungjun/blob/master/SRHS.pdf**
+📄 **Paper (PDF)**  
+https://github.com/sojo1211/toss_FDS_ohsungjun/blob/master/SRHS.pdf
 
 ---
 
 ## 🏆 SafeFall Intelligence
 
-생체신호 기반 이상탐지(Anomaly Detection)
+**시계열 생체신호 기반 이상탐지(Anomaly Detection) 프로젝트**
 
 ### 주요 내용
 
 - Time Series Analysis
 - AI Classification
-- Decision Labeling
+- Decision Label 설계
+- 이상 상황 탐지 모델 개발
 
 ### 성과
 
@@ -203,7 +198,7 @@ SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 다음 
 
 ## 🏆 KB국민은행 제8회 AI Challenge
 
-비대면 정책자금 사전검증 AI Agent
+**비대면 정책자금 사전검증 AI Agent 개발**
 
 ### 주요 내용
 
@@ -218,35 +213,19 @@ SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 다음 
 
 ## Financial Risk
 
-`FDS`
-`RMS`
-`AML`
-`TOI`
-`Paybiz`
+`FDS` `RMS` `AML` `TOI` `Paybiz`
 
 ## Data Analysis
 
-`Python`
-`SQL`
-`Pandas`
-`NumPy`
-`scikit-learn`
+`Python` `SQL` `Pandas` `NumPy` `scikit-learn`
 
 ## AI
 
-`LangChain`
-`Claude Code`
-`RAG`
-`Vector DB`
+`LangChain` `Claude Code` `RAG` `Vector DB`
 
 ## Collaboration
 
-`Git`
-`React`
-`Tailwind CSS`
-`Figma`
-`Slack`
-`Notion`
+`Git` `React` `Tailwind CSS` `Figma` `Slack` `Notion`
 
 ---
 
@@ -260,23 +239,17 @@ SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 다음 
 
 # 💡 My Story
 
-저는 **"사고를 탐지하는 것보다 사고를 예방하는 것이 리스크 관리의 본질"** 이라는 문제의식을 바탕으로 금융 리스크를 연구해왔습니다.
+저는 **"사고를 탐지하는 것보다 사고를 예방하는 것이 리스크 관리의 본질"**이라는 문제의식을 바탕으로 금융 리스크를 연구해왔습니다.
 
-이러한 문제의식은 **SRHS(Stablecoin Risk Health Score)** 연구로 이어졌습니다.
+이러한 문제의식은 **SRHS(Stablecoin Risk Health Score)** 연구로 이어졌습니다. 스테이블코인의 건전성을 사전에 평가하기 위해 **5개의 핵심 리스크 지표(PD · LS · CR · TI · RR)를 설계**하고, 이를 하나의 **Risk Health Score**로 통합하는 금융 리스크 정량화 모델을 제안했습니다. 해당 연구는 **한국경영컨설팅학회 최우수 논문상**과 **KCI 등재 논문 게재**라는 성과로 이어졌습니다.
 
-스테이블코인의 건전성을 사전에 평가하기 위해 **5개의 핵심 리스크 지표(PD · LS · CR · TI · RR)** 를 설계하고 이를 하나의 Risk Health Score로 통합하는 **금융 리스크 정량화 모델**을 제안했습니다.
+연구를 통해 **리스크를 정의하고 정량화하는 방법**을 익혔다면, Toss CX에서는 **실제 금융 서비스에서 리스크를 운영하고 통제하는 경험**을 쌓았습니다.
 
-해당 연구는 **한국경영컨설팅학회 최우수 논문상**과 **KCI 등재 논문 게재**라는 성과로 이어졌습니다.
-
-이후 실제 금융 환경에서 리스크 관리가 어떻게 운영되는지 경험하기 위해 **Toss CX FDS Team / Pay Risk Management Team**에 합류했습니다.
-
-현재는 **Merchant Onboarding Risk Review, RMS Labeling, 지급보류, 결제 OFF, MID 분리** 등 다양한 리스크 운영 업무를 수행하며 실무 경험을 쌓고 있습니다.
-
-특히 **자동화된 RMS Alert를 운영 데이터와 함께 재검토하고, 소명 절차와 운영 정보를 종합적으로 확인하여 리스크를 판단하는 과정**에서 가장 큰 흥미를 느꼈습니다.
+현재는 **Merchant Onboarding Risk Review, RMS Labeling, 지급보류, 결제 OFF, MID 분리** 등 다양한 리스크 운영 업무를 수행하고 있으며, 특히 **자동화된 RMS Alert를 운영 데이터와 함께 재검토하고, 소명 절차와 운영 정보를 종합적으로 확인하여 리스크를 판단하는 과정**에서 가장 큰 흥미를 느꼈습니다.
 
 이러한 경험을 통해 **데이터를 기반으로 리스크를 분석하고, 운영 관점에서 사실관계를 검증하며 의사결정을 지원하는 역량**을 쌓을 수 있었습니다.
 
-앞으로는 이러한 연구 경험과 실무 경험을 바탕으로 **토스뱅크 Anti-Fraud Manager**로서 데이터 기반 분석과 Fraud Rule 고도화에 기여하며 더욱 안전한 금융 서비스를 만드는 데 기여하고 싶습니다.
+앞으로는 **금융 리스크 모델링 연구 경험과 Toss CX에서의 리스크 운영 경험을 바탕으로**, 토스뱅크 Anti-Fraud Manager로서 **데이터 기반 분석과 Fraud Rule 고도화에 기여하고, 더욱 안전한 금융 서비스를 만드는 데 기여하고 싶습니다.**
 
 ---
 
@@ -288,4 +261,8 @@ SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 다음 
 
 🐙 **GitHub**
 
-**https://github.com/sojo1211**
+https://github.com/sojo1211
+
+📂 **Portfolio**
+
+https://github.com/sojo1211/toss_FDS_ohsungjun
