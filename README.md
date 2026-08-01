@@ -92,6 +92,7 @@ RMS Alert 발생 건을 TOI / Paybiz에서 MID 단위로 역추적하여 실제 
 등의 조치를 수행하여 자금 손실을 사전에 예방했습니다.
 
 FDS 팀/업무 일지
+
 https://app.notion.com/p/FDS-35d4fb823a9e83b3928281123aa0d524?source=copy_link
 ---
 
@@ -145,8 +146,7 @@ SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 **다�
 
 📖 **KCI 등재지 『경영컨설팅연구』 제26권 제3호 논문 게재**
 
-👨‍💻 **공동 [Uploading B2B 무역결제에서 스테이블 코인의 안정성 평가 모델 개발  실시간 건전성 지수(SRHS)와 규제 통합 프레임워크 중심.pdf…]()
-저자(First Author)**
+👨‍💻 **공동 저자**
 
 [Uploading B2B 무역결제에서 스테이블 코인의 안정성 평가 모델 개발  실시간 건전성 지수(SRHS)와 규제 통합 프레임워크 중심.pdf…]()
 
