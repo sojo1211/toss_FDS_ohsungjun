@@ -181,14 +181,20 @@ https://github.com/sojo1211/toss_FDS_ohsungjun/blob/master/SRHS.pdf
 
 ## 🏆 SafeFall Intelligence
 
-**시계열 생체신호 기반 이상탐지(Anomaly Detection) 프로젝트**
+**웨어러블 생체신호 기반 이상탐지(Anomaly Detection) 프로젝트**
 
-### 주요 내용
+### 역할
 
-- Time Series Analysis
-- AI Classification
-- Decision Label 설계
-- 이상 상황 탐지 모델 개발
+- 시계열(Time Series) 데이터 전처리
+- 이상탐지(Anomaly Detection) 모델 설계
+- Decision Label 기준 정의
+
+### 사용 기술
+
+`Python`
+`PyTorch`
+`LSTM`
+`Time Series Analysis`
 
 ### 성과
 
