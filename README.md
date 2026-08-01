@@ -1,7 +1,7 @@
 # 📌 오성준 (Oh Sungjun)
 
 <p align="center">
-  <img src="./images/profile.jpg" width="260"/>
+  <img src="./images/성준사진.jpg" width="260"/>
 </p>
 
 # Risk Operations · AI Developer · Risk Analyst
