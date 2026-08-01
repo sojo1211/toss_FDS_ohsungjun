@@ -283,4 +283,4 @@ https://github.com/sojo1211
 
 📂 **Portfolio**
 
-https://github.com/sojo1211/toss_FDS_ohsungjun
+https://sojo1211.github.io/toss_FDS_ohsungjun/
