@@ -3,14 +3,6 @@
 <p align="center">
   <img src="./성준사진.jpg" width="300" alt="오성준 프로필 사진" style="border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.1);" />
 </p>
-`Slack Core Channels`
-
-# 📌 오성준 (Oh Sungjun) — Portfolio
-
-<p align="center">
-  <img src="./성준사진.jpg" width="300" alt="오성준 프로필 사진" style="border-radius: 12px;" />
-</p>
-
 ---
 
 # 👤 Profile
