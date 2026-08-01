@@ -235,6 +235,5 @@ AML Basic 자격을 취득했으며, 향후 AML 전문 교육과 심화 자격�
 
 # 📫 Contact
 
-- 📧 Email : your_email@example.com
-- 🐙 GitHub : https://github.com/your-id
-- 💼 LinkedIn : https://linkedin.com/in/your-id
+- 📧 Email : sungjun12110@gmail.com
+- 🐙 GitHub : sojo1211@naver.com
