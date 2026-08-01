@@ -198,14 +198,26 @@ https://github.com/sojo1211/toss_FDS_ohsungjun/blob/master/SRHS.pdf
 
 ## 🏆 KB국민은행 제8회 AI Challenge
 
-**비대면 정책자금 사전검증 AI Agent 개발**
+**소상공인 비대면 정책자금 사전검증 AI Agent 개발**
 
-### 주요 내용
+### 역할
 
-- RAG 기반 AI Agent 구축
+- RAG 기반 AI Agent 개발
 - LangChain 활용
-- Data Pipeline 설계
-- UI / UX 개발
+- PDF/HWP 데이터 파이프라인 구축
+- React 기반 UI/UX 개발
+
+### 사용 기술
+
+`LangChain`
+`RAG`
+`Python`
+`ChromaDB`
+`React`
+
+### 프로젝트 의의
+
+정책 문서를 기반으로 비대면 정책자금 신청 자격을 빠르게 검토할 수 있는 AI Agent를 개발했습니다.
 
 ---
 
