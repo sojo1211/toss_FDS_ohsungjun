@@ -130,24 +130,54 @@ RMS Alert 발생 건을 MID 단위로 추적하여 실제 가맹점을 조사하
 
 스테이블코인의 건전성을 사전에 평가하기 위한 **Financial Risk Scoring Framework**를 연구했습니다.
 
+### 연구 배경
+
+Terra-UST 사태 이후 스테이블코인의 안정성을 객관적으로 평가할 수 있는 기준의 필요성이 커졌습니다.
+
+기존 평가는 담보비율이나 가격 유지 여부 등 일부 지표에 의존하는 한계가 있었으며, 사전 리스크를 종합적으로 평가하는 체계가 부족했습니다.
+
+이에 **사고 발생 이후가 아닌, 사고 이전에 건전성을 정량적으로 평가할 수 있는 Risk Scoring Framework**를 설계했습니다.
+
+---
+
 ### 주요 내용
 
-- 5개 핵심 리스크 지표(PD · LS · CR · TI · RR) 설계
-- Stablecoin Risk Health Score(SRHS) 개발
-- 금융 리스크 정량화 모델 제안
+SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 다음 **5개의 핵심 리스크 지표**로 평가하는 금융 리스크 모델입니다.
+
+- **PD (Peg Deviation)** : 목표 가격 유지 안정성
+- **LS (Liquidity Stability)** : 유동성 안정성
+- **CR (Collateral Risk)** : 담보 건전성
+- **TI (Transparency Index)** : 정보공개 투명성
+- **RR (Reserve Reliability)** : 준비자산 신뢰성
+
+각 리스크 요인을 정량화하여 하나의 **Risk Health Score**로 통합하고, 스테이블코인의 건전성을 객관적으로 비교·평가할 수 있는 프레임워크를 제안했습니다.
+
+---
+
+### 연구 의의
+
+이 연구를 통해
+
+- 금융 리스크 정의
+- Risk Factor 설계
 - Risk Scoring Framework 구축
+- 금융 리스크 정량화 모델 설계
+
+역량을 쌓을 수 있었습니다.
+
+이러한 경험은 현재 Toss CX에서 수행하고 있는 **Merchant Risk Review**, **RMS Labeling**, **Risk Assessment** 업무와도 자연스럽게 연결되고 있습니다.
+
+---
 
 ### 연구 성과
 
-🏆 한국경영컨설팅학회 **최우수 논문상**
+🏆 **한국경영컨설팅학회 최우수 논문상**
 
-📖 KCI 등재지 **『경영컨설팅연구』 제26권 제3호 논문 게재**
+📖 **KCI 등재지 『경영컨설팅연구』 제26권 제3호 논문 게재**
 
-👨‍💻 공동 저자
+👨‍💻 **공동 저자**
 
-➡️ **[Project Detail](docs/SRHS.md)**
-
-➡️ **[Paper](paper/SRHS.pdf)**
+📄 **[Paper (PDF)](./SRHS.pdf)**
 
 ---
 
