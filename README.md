@@ -177,7 +177,7 @@ SRHS(Stablecoin Risk Health Score)는 스테이블코인의 건전성을 다음 
 
 👨‍💻 **공동 저자**
 
-📄 **[Paper (PDF)](./SRHS.pdf)**
+📄 **https://github.com/sojo1211/toss_FDS_ohsungjun/blob/master/SRHS.pdf**
 
 ---
 
