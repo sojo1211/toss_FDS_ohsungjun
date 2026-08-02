@@ -1,740 +1,2187 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>오성준 · Oh Sungjun Portfolio</title>
-<meta name="description" content="용인대 AI학과 · AI비즈니스 융합전공. AI로 금융 리스크를 정량화합니다." />
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" />
-<style>
-  :root {
-    --bg: #ffffff; --bg-soft: #f7f8fa; --card: #ffffff;
-    --ink: #191f28; --ink-soft: #4e5968; --ink-faint: #8b95a1;
-    --line: #e5e8eb; --line-soft: #f2f4f6;
-    --blue: #3182f6; --blue-soft: #e8f1fe; --blue-deep: #1b64da;
-    --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
-    --shadow-md: 0 4px 16px rgba(0,0,0,0.06);
-    --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-  }
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  html { scroll-behavior: smooth; }
-  body { background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
-  a { color: inherit; text-decoration: none; }
-  ::selection { background: var(--blue); color: white; }
-  .wrap { max-width: 1100px; margin: 0 auto; padding: 0 24px; }
-  nav { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.88); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border-bottom: 1px solid var(--line-soft); }
-  .nav-inner { max-width: 1100px; margin: 0 auto; padding: 18px 24px; display: flex; justify-content: space-between; align-items: center; }
-  .nav-logo { font-size: 17px; font-weight: 700; letter-spacing: -0.01em; color: var(--blue); }
-  .nav-menu { display: flex; gap: 28px; font-size: 14px; color: var(--ink-soft); font-weight: 500; }
-  .nav-menu a { transition: color .2s; }
-  .nav-menu a:hover { color: var(--ink); }
-  .nav-github { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-soft); padding: 6px 12px; border: 1px solid var(--line); border-radius: 20px; transition: all .2s; }
-  .nav-github:hover { background: var(--ink); color: white; border-color: var(--ink); }
-  @media (max-width: 768px) { .nav-menu { display: none; } }
-  .hero { padding: 80px 0 100px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 60px; align-items: center; }
-  @media (max-width: 768px) { .hero { grid-template-columns: 1fr; text-align: center; padding: 60px 0 80px; gap: 48px; } }
-  .hero h1 { font-size: clamp(36px, 5.5vw, 54px); font-weight: 800; letter-spacing: -0.03em; line-height: 1.25; margin-bottom: 28px; }
-  .hero h1 .b { color: var(--blue); }
-  .hero h1 .wave { display: inline-block; animation: wave 2.4s ease-in-out infinite; transform-origin: 70% 70%; }
-  @keyframes wave { 0%, 60%, 100% { transform: rotate(0deg); } 10% { transform: rotate(14deg); } 20% { transform: rotate(-8deg); } 30% { transform: rotate(14deg); } 40% { transform: rotate(-4deg); } 50% { transform: rotate(10deg); } }
-  .hero-role { display: inline-block; font-size: 15px; font-weight: 700; color: var(--blue-deep); background: var(--blue-soft); padding: 8px 16px; border-radius: 10px; margin-bottom: 20px; letter-spacing: -0.01em; }
-  .hero-sub { font-size: 17px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 32px; max-width: 520px; }
-  .hero-sub strong { color: var(--ink); font-weight: 700; }
-  @media (max-width: 768px) { .hero-sub { margin: 0 auto 32px; } }
-  .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 36px; }
-  @media (max-width: 768px) { .hero-tags { justify-content: center; } }
-  .hero-tags span { font-size: 13px; padding: 6px 12px; background: var(--blue-soft); color: var(--blue-deep); border-radius: 20px; font-weight: 500; }
-  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
-  @media (max-width: 768px) { .hero-cta { justify-content: center; } }
-  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 10px; font-size: 14px; font-weight: 600; transition: all .2s; border: 1px solid transparent; }
-  .btn-primary { background: var(--blue); color: white; }
-  .btn-primary:hover { background: var(--blue-deep); transform: translateY(-1px); }
-  .btn-ghost { background: var(--bg); color: var(--ink); border-color: var(--line); }
-  .btn-ghost:hover { border-color: var(--ink); transform: translateY(-1px); }
-  .avatar-wrap { display: flex; justify-content: center; align-items: center; }
-  .avatar { width: 280px; height: 340px; border-radius: 28px; background: linear-gradient(135deg, var(--blue) 0%, #6ea8fc 50%, var(--blue-soft) 100%); padding: 5px; position: relative; box-shadow: 0 16px 48px rgba(49, 130, 246, 0.22); }
-  @media (max-width: 768px) { .avatar { width: 220px; height: 268px; border-radius: 24px; } }
-  .avatar-inner { width: 100%; height: 100%; border-radius: 24px; background: var(--bg); display: flex; align-items: center; justify-content: center; overflow: hidden; }
-  .avatar-inner img { width: 100%; height: 100%; object-fit: cover; object-position: center 30%; display: block; }
-  .avatar-initials { font-size: 88px; font-weight: 800; color: var(--blue); letter-spacing: -0.04em; }
-  @media (max-width: 768px) { .avatar-initials { font-size: 64px; } }
-  section { padding: 90px 0; }
-  section.alt { background: var(--bg-soft); }
-  .section-head { text-align: center; margin-bottom: 56px; }
-  .section-title { font-size: clamp(28px, 4vw, 36px); font-weight: 800; letter-spacing: -0.02em; margin-bottom: 12px; }
-  .section-title .b { color: var(--blue); }
-  .section-desc { font-size: 15px; color: var(--ink-soft); }
-  .about-card { max-width: 760px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 40px; box-shadow: var(--shadow-sm); }
-  @media (max-width: 640px) { .about-card { padding: 28px 24px; } }
-  .about-card p { font-size: 16px; line-height: 1.8; color: var(--ink); margin-bottom: 16px; }
-  .about-card p:last-of-type { margin-bottom: 0; }
-  .about-card strong { color: var(--blue-deep); font-weight: 700; }
-  .about-quote { margin-top: 28px; padding: 20px 24px; background: var(--blue-soft); border-radius: 12px; font-size: 15px; color: var(--blue-deep); line-height: 1.7; font-weight: 500; }
-  .edu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(248px, 1fr)); gap: 16px; max-width: 1040px; margin: 0 auto; }
-  .edu-card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 24px; transition: all .2s; position: relative; }
-  .edu-card:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: var(--shadow-md); }
-  .edu-tag { display: inline-block; font-size: 10.5px; font-weight: 700; color: var(--blue); background: var(--blue-soft); padding: 3px 8px; border-radius: 6px; letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px; }
-  .edu-title { font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 4px; letter-spacing: -0.01em; }
-  .edu-sub { font-size: 12.5px; color: var(--ink-faint); margin-bottom: 14px; line-height: 1.5; }
-  .edu-desc { font-size: 13.5px; color: var(--ink-soft); line-height: 1.65; }
-  .edu-desc strong { color: var(--blue-deep); font-weight: 700; }
-  .stack-group { margin-bottom: 36px; }
-  .stack-group:last-child { margin-bottom: 0; }
-  .stack-label { text-align: center; font-size: 13px; color: var(--ink-faint); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 20px; }
-  .stack-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(96px, 1fr)); gap: 12px; max-width: 980px; margin: 0 auto; }
-  .stack-grid.tight { max-width: 520px; }
-  .stack-grid.cols-4 { grid-template-columns: repeat(4, 1fr); max-width: 560px; }
-  @media (max-width: 640px) { .stack-grid.cols-4 { grid-template-columns: repeat(2, 1fr); max-width: 320px; } }
-  .stack-item { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; padding: 18px 10px; background: var(--card); border: 1px solid var(--line); border-radius: 14px; transition: all .2s; min-height: 108px; }
-  .stack-item:hover { border-color: var(--blue); transform: translateY(-3px); box-shadow: var(--shadow-md); }
-  .stack-item img, .stack-item > svg { width: 38px; height: 38px; object-fit: contain; }
-  .stack-item span { font-size: 12px; font-weight: 600; color: var(--ink-soft); letter-spacing: -0.01em; }
-  .stack-chips { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; max-width: 760px; margin: 18px auto 0; }
-  .stack-chips span { font-size: 12px; padding: 6px 12px; background: var(--bg); border: 1px solid var(--line); border-radius: 16px; color: var(--ink-soft); font-weight: 500; }
-  .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
-  @media (max-width: 640px) { .proj-grid { grid-template-columns: 1fr; } }
-  .proj-card { background: var(--card); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; transition: all .25s; display: flex; flex-direction: column; }
-  .proj-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: var(--blue); }
-  .proj-banner { height: 180px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
-  .proj-banner.b1 { background: linear-gradient(135deg, #1b64da 0%, #3182f6 60%, #6ea8fc 100%); }
-  .proj-banner.b2 { background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); }
-  .proj-banner.b3 { background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%); }
-  .proj-banner.b4 { background: linear-gradient(135deg, #FFB800 0%, #FFD400 60%, #FFE680 100%); }
-  .proj-banner-text { font-size: 60px; font-weight: 800; letter-spacing: -0.05em; color: white; text-shadow: 0 2px 12px rgba(0,0,0,0.18); }
-  .proj-banner.b3 .proj-banner-text { color: #92400e; text-shadow: none; }
-  .proj-banner.b4 .proj-banner-text { color: #191f28; text-shadow: none; }
-  .proj-banner-tag { position: absolute; top: 14px; right: 14px; font-size: 11px; padding: 5px 10px; background: rgba(255,255,255,0.92); color: var(--ink); border-radius: 6px; font-weight: 600; letter-spacing: 0.02em; }
-  .proj-body { padding: 24px; flex: 1; display: flex; flex-direction: column; }
-  .proj-title { font-size: 19px; font-weight: 700; margin-bottom: 4px; letter-spacing: -0.01em; }
-  .proj-date { font-size: 13px; color: var(--ink-faint); margin-bottom: 14px; }
-  .proj-desc { font-size: 14px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 16px; flex: 1; }
-  .proj-desc strong { color: var(--blue-deep); font-weight: 700; }
-  .proj-award { font-size: 13px; font-weight: 600; color: var(--blue); padding: 8px 0; border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft); margin-bottom: 16px; }
-  .proj-stack { font-size: 12px; color: var(--ink-faint); margin-bottom: 18px; line-height: 1.65; }
-  .proj-stack b { color: var(--ink-soft); font-weight: 600; }
-  .proj-actions { display: flex; gap: 8px; }
-  .proj-actions a { width: 40px; height: 40px; padding: 0; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--line); border-radius: 9px; color: var(--ink-soft); transition: all .2s; background: var(--bg); }
-  .proj-actions a:hover { background: var(--ink); color: white; border-color: var(--ink); transform: translateY(-2px); }
-  .proj-actions a.pdf:hover { background: #DC2626; border-color: #DC2626; color: white; }
-  .proj-actions a.ppt:hover { background: #D24726; border-color: #D24726; color: white; }
-  .proj-actions a.primary { background: var(--blue); color: white; border-color: var(--blue); }
-  .proj-actions a.primary:hover { background: var(--blue-deep); border-color: var(--blue-deep); }
-  .proj-actions a svg { width: 16px; height: 16px; }
-  .why-card { max-width: 820px; margin: 0 auto; background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 44px; box-shadow: var(--shadow-sm); }
-  @media (max-width: 640px) { .why-card { padding: 28px 24px; } }
-  .why-card p { font-size: 16px; line-height: 1.8; color: var(--ink-soft); margin-bottom: 16px; }
-  .why-card p strong { color: var(--blue-deep); font-weight: 700; }
-  .why-targets { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 28px; }
-  @media (max-width: 640px) { .why-targets { grid-template-columns: 1fr; } }
-  .why-target { padding: 20px; background: var(--blue-soft); border-radius: 12px; }
-  .why-target .num { font-size: 11px; font-weight: 700; color: var(--blue); letter-spacing: 0.05em; text-transform: uppercase; margin-bottom: 6px; }
-  .why-target h4 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
-  .why-target p { font-size: 13px; color: var(--ink-soft); margin: 0; line-height: 1.6; }
-  .award-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; max-width: 880px; margin: 0 auto 28px; }
-  @media (max-width: 640px) { .award-grid { grid-template-columns: 1fr; } }
-  .award-item { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; gap: 16px; transition: all .2s; }
-  .award-item:hover { border-color: var(--blue); transform: translateY(-2px); }
-  .award-item.top { border-color: var(--blue); background: var(--blue-soft); }
-  .award-info { flex: 1; min-width: 0; }
-  .award-name { font-size: 14px; font-weight: 700; color: var(--ink); margin-bottom: 4px; line-height: 1.4; }
-  .award-meta { font-size: 12px; color: var(--ink-faint); }
-  .award-badge { font-size: 12px; font-weight: 700; padding: 6px 12px; border-radius: 6px; background: var(--line-soft); color: var(--ink-soft); white-space: nowrap; }
-  .award-item.top .award-badge { background: var(--blue); color: white; }
-  .cert-row { max-width: 880px; margin: 0 auto 28px; display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
-  .cert { padding: 10px 18px; background: var(--card); border: 1px solid var(--line); border-radius: 10px; font-size: 13px; color: var(--ink); font-weight: 500; }
-  .cert b { color: var(--blue); font-weight: 700; margin-right: 4px; }
-  .awards-more { text-align: center; }
-  .awards-more a { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--ink-soft); padding: 10px 18px; border: 1px solid var(--line); border-radius: 10px; transition: all .2s; }
-  .awards-more a:hover { border-color: var(--ink); color: var(--ink); }
-  .contact-wrap { max-width: 720px; margin: 0 auto; text-align: center; }
-  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 0 auto 36px; }
-  @media (max-width: 640px) { .contact-grid { grid-template-columns: 1fr; } }
-  .contact-item { background: var(--card); border: 1px solid var(--line); border-radius: 12px; padding: 20px 24px; text-align: left; transition: all .2s; }
-  .contact-item:hover { border-color: var(--blue); transform: translateY(-2px); }
-  .contact-label { font-size: 11px; font-weight: 700; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-  .contact-val { font-size: 15px; color: var(--ink); font-weight: 500; word-break: break-all; }
-  .github-cta { display: inline-flex; align-items: center; gap: 10px; padding: 16px 28px; background: var(--ink); color: white; border-radius: 12px; font-size: 15px; font-weight: 600; transition: all .2s; }
-  .github-cta:hover { background: var(--blue); transform: translateY(-2px); box-shadow: 0 8px 24px rgba(49, 130, 246, 0.3); }
-  footer { padding: 36px 0 28px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-faint); }
-  .footer-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; padding-bottom: 20px; }
-  .footer-logo { font-size: 17px; font-weight: 800; color: var(--blue); letter-spacing: -0.01em; }
-  .footer-email { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; color: var(--ink-soft); font-weight: 500; transition: color .2s; }
-  .footer-email:hover { color: var(--ink); }
-  .footer-email svg { width: 16px; height: 16px; }
-  .footer-socials { display: flex; gap: 8px; align-items: center; }
-  .footer-socials a { width: 34px; height: 34px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--bg-soft); color: var(--ink-soft); transition: all .2s; border: 1px solid var(--line-soft); }
-  .footer-socials a:hover { background: var(--ink); color: white; transform: translateY(-2px); border-color: var(--ink); }
-  .footer-socials svg { width: 15px; height: 15px; }
-  .footer-copy { text-align: center; font-size: 12px; color: var(--ink-faint); padding-top: 20px; border-top: 1px solid var(--line-soft); }
-  .footer-copy a { color: var(--blue); font-weight: 500; }
-  @media (max-width: 640px) { .footer-row { flex-direction: column; gap: 18px; text-align: center; } }
-  .fade-in { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-  .modal { position: fixed; inset: 0; background: rgba(15, 23, 42, 0.88); z-index: 1000; display: none; justify-content: center; align-items: center; padding: 24px; backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); }
-  .modal.open { display: flex; animation: modalFade .2s ease; }
-  @keyframes modalFade { from { opacity: 0; } to { opacity: 1; } }
-  .modal-content { background: var(--bg); border-radius: 14px; width: 100%; max-width: 1100px; height: 92vh; overflow: hidden; position: relative; display: flex; flex-direction: column; box-shadow: 0 24px 64px rgba(0,0,0,0.4); }
-  .modal-head { padding: 14px 20px; background: var(--ink); color: white; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
-  .modal-title { font-size: 14px; font-weight: 600; letter-spacing: -0.01em; flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-  .modal-actions { display: flex; gap: 8px; }
-  .modal-open-new, .modal-close { background: rgba(255,255,255,0.1); border: none; color: white; cursor: pointer; padding: 6px 10px; border-radius: 6px; font-size: 12px; font-weight: 500; display: inline-flex; align-items: center; gap: 5px; transition: background .15s; font-family: inherit; }
-  .modal-open-new:hover, .modal-close:hover { background: rgba(255,255,255,0.22); }
-  .modal-close { width: 32px; height: 32px; padding: 0; font-size: 20px; justify-content: center; line-height: 1; }
-  .modal-body { flex: 1; background: #0f172a; position: relative; display: flex; align-items: center; justify-content: center; overflow: auto; }
-  .modal-body iframe { width: 100%; height: 100%; border: 0; display: block; background: white; align-self: stretch; }
-  .modal-body .modal-img { max-width: 100%; max-height: 100%; width: auto; height: auto; display: block; margin: auto; }
-  .modal-body .modal-img.hidden, .modal-body iframe.hidden { display: none; }
-  .modal-fallback { width: 100%; max-width: 520px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; padding: 40px 24px; text-align: center; color: var(--ink); }
-  .modal-fallback.hidden { display: none; }
-  .modal-fallback-icon { width: 76px; height: 76px; background: #D24726; color: white; border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 22px; font-weight: 800; letter-spacing: 0.04em; box-shadow: 0 12px 28px rgba(210, 71, 38, 0.32); }
-  .modal-fallback-title { font-size: 18px; font-weight: 700; letter-spacing: -0.01em; }
-  .modal-fallback-msg { font-size: 14px; color: var(--ink-soft); line-height: 1.7; }
-  .modal-fallback-msg .hint { display: block; margin-top: 12px; font-size: 12.5px; color: var(--ink-faint); }
-  .modal-fallback-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: var(--ink); color: white; border-radius: 10px; font-size: 14px; font-weight: 600; transition: all .2s; margin-top: 4px; }
-  .modal-fallback-btn:hover { background: var(--blue); transform: translateY(-2px); box-shadow: 0 6px 16px rgba(49,130,246,0.28); }
-  .proj-banner.clickable { cursor: zoom-in; transition: filter .2s; }
-  .proj-banner.clickable:hover { filter: brightness(1.08); }
-  .proj-banner.clickable::after { content: ''; position: absolute; bottom: 14px; left: 14px; width: 28px; height: 28px; background: rgba(255,255,255,0.95); border-radius: 50%; display: flex; align-items: center; justify-content: center; opacity: 0; transition: opacity .2s; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23191f28' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3Cline x1='11' y1='8' x2='11' y2='14'/%3E%3Cline x1='8' y1='11' x2='14' y2='11'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: center; }
-  .proj-banner.clickable:hover::after { opacity: 1; }
-  .modal-loading { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 10px; color: var(--ink-soft); font-size: 14px; pointer-events: none; }
-  .modal-loading.hidden { display: none; }
-  .modal-loading .spinner { width: 28px; height: 28px; border: 3px solid var(--line); border-top-color: var(--blue); border-radius: 50%; animation: spin 0.8s linear infinite; }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  @media (max-width: 640px) { .modal { padding: 12px; } .modal-content { height: 95vh; border-radius: 10px; } }
-</style>
-</head>
-<body>
-<nav>
-  <div class="nav-inner">
-    <a href="#" class="nav-logo">SUNGJUN</a>
-    <div class="nav-menu">
-      <a href="#about">About</a>
-      <a href="#working-level">Working-level</a>
-      <a href="#education">Education</a>
-      <a href="#stack">Tech Stack</a>
-      <a href="#projects">Projects</a>
-      <a href="#awards">Awards</a>
-      <a href="#contact">Contact</a>
-    </div>
-    <a href="https://github.com/sojo1211" target="_blank" rel="noopener" class="nav-github">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-      GitHub
-    </a>
-  </div>
-</nav>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>오성준 · Oh Sungjun Portfolio</title>
+  <meta name="description" content="용인대 AI학과 · AI비즈니스 융합전공. AI로 금융 리스크를 정량화합니다." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-soft: #f7f8fa;
+      --card: #ffffff;
+      --ink: #191f28;
+      --ink-soft: #4e5968;
+      --ink-faint: #8b95a1;
+      --line: #e5e8eb;
+      --line-soft: #f2f4f6;
+      --blue: #3182f6;
+      --blue-soft: #e8f1fe;
+      --blue-deep: #1b64da;
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+      --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
+      --sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+    }
 
-<header class="hero wrap">
-  <div>
-    <h1>안녕하세요 <span class="wave">👋</span><br/>저는 <span class="b">오성준</span> 입니다.<br/><span class="b">비즈니스 문제</span>를<br/><span class="b">AI</span>로 해결합니다.</h1>
-    <span class="hero-role">금융 FDS 및 리스크 분야에서 안심 거래망을 구축하는 Anti-Fraud Specialist</span>
-    <p class="hero-sub">저는 모델 자체보다 모델이 풀어야 할 <strong>비즈니스 문제를 먼저 정의</strong>합니다. 특히 토스씨엑스 FDS 실무를 통해 사기 거래를 현업에서 예방해왔고, <strong>이 현장 감각과 AI 이상 탐지 기술을 결합하여 금융 거래의 안전망을 고도화</strong>합니다.</p>
-    <div class="hero-tags">
-      <span>AI · Business</span>
-      <span>Anti-Fraud Strategy</span>
-      <span>토스씨엑스 FDS Team 재직 중</span>
-      <span>토스뱅크 Anti-Fraud Manager 지향</span>
-    </div>
-    <div class="hero-cta">
-      <a href="https://github.com/sojo1211/Portfolio-Ohsungjun" target="_blank" rel="noopener" class="btn btn-primary">포트폴리오 전체 보기
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-      <a href="#projects" class="btn btn-ghost">프로젝트 보기</a>
-    </div>
-  </div>
-  <div class="avatar-wrap">
-    <div class="avatar"><div class="avatar-inner"><img src="성준사진.jpg" alt="오성준 프로필 사진" /></div></div>
-  </div>
-</header>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-<section id="about" class="alt fade-in">
-  <div class="wrap">
-    <div class="section-head"><h2 class="section-title">About <span class="b">Me</span></h2><p class="section-desc">금융 안전망 구축을 향한 여정</p></div>
-    <div class="about-card">
-      <p>저는 사후 분석보다 <strong>작은 이상 신호를 먼저 포착해 위험을 예방</strong>하는 데 더 큰 가치를 둡니다. AI Service Lab에서 시계열 이상 탐지 연구를 수행하며 형성된 이 관점을, 낙상 예측 프로젝트(SafeFall)에서 실현했습니다. "사고 후 감지"에 머무른 기존 연구의 한계를 발견하고, 팀장으로서 <strong>Decision 라벨 기준을 직접 설계</strong>한 뒤 K-Means로 사용자별 전조 신호를 도출해 사고 이전 단계에서 위험을 예측하는 모델을 만들었습니다. 이 프로젝트로 용인대 창업경진대회 최우수상을 받았고, 데이터는 과거를 설명하는 도구가 아니라 <strong>미래의 위험을 예측하고 더 나은 의사결정을 돕는 도구</strong>라는 걸 배웠습니다.</p>
-      <p>이 문제의식을 금융 리스크 분야로 확장해 스테이블코인의 건전성을 정량화하는 <strong>SRHS(Stablecoin Risk Health Score) 평가 모델</strong>을 설계했습니다. 5개 핵심 리스크 지표를 구성해 3대 실물 금융 위기 사례 백테스팅을 거쳤고, 이를 통해 경영컨설팅학회 최우수상 수상 및 KCI 등재지 논문 게재(경영컨설팅연구 제26권 3호)의 결실을 맺었습니다. 이때 정답이 없는 금융 위험을 데이터와 근거로 정량화하는 설계 감각을 익혔습니다.</p>
-      <p>모델 설계를 넘어 <strong>실제 거래 현장에서 작동하는 금융 리스크 운영</strong>을 직접 경험하고자 <strong>토스씨엑스(Toss CX) FDS Team</strong>에 합류했습니다. 가맹점 온보딩 정보 매칭 검수, RMS alert 실사 및 14대 정량 라벨링, 약관 기준 소명 통제 및 공식 공문 집행, 최종 결제 OFF 제재 등을 현장에서 기민하게 조치했습니다. FDS 자동화 시스템 뒤에 존재하는 세밀한 틈새를 메우는 규제 준수와 자금 통제의 막중함을 배웠습니다.</p>
-      <p>이제는 현장의 리스크 운영 경험과 학업에서 다진 AI 기술 및 리스크 설계 역량을 유기적으로 결합하고자 합니다. <strong>토스뱅크의 Anti-Fraud Manager</strong>로서, 사기 거래의 맥락과 가맹점 패턴을 입체적으로 포착하고 선제적으로 차단하여 사용자가 가장 신뢰할 수 있는 토스뱅크의 금융 안전망을 구축하겠습니다.</p>
-      <div class="about-quote">"이상 신호 탐지부터 금융 리스크 지표 설계, 그리고 토스 현장의 실무 운영까지, 저의 목표는 항상 '거래 위험을 선제적으로 통제한다'는 한 방향을 향해 있었습니다."</div>
-    </div>
-  </div>
-</section>
+    html {
+      scroll-behavior: smooth;
+    }
 
-<section id="working-level" class="fade-in">
-  <div class="wrap">
-    <div class="section-head">
-      <h2 class="section-title">Working-level <span class="b">Experience</span></h2>
-      <p class="section-desc">금융 혁신의 최전선에서 증명해낸 리스크 통제 실무</p>
-    </div>
-    
-    <style>
-      .working-card {
-        padding: 24px;
-        background: var(--bg-soft);
-        border-radius: 14px;
-        border: 1px solid var(--line-soft);
-        transition: all 0.25s ease-in-out;
-      }
-      .working-card:hover {
-        transform: translateY(-4px);
-        border-color: var(--blue);
-        box-shadow: var(--shadow-md);
-        background: #ffffff;
-      }
-      .working-card h4 {
-        font-size: 17px;
-        font-weight: 700;
-        color: var(--blue-deep);
-        margin-bottom: 10px;
-        letter-spacing: -0.01em;
-      }
-      .working-card p {
-        font-size: 14px;
-        color: var(--ink-soft);
-        line-height: 1.7;
-        margin: 0 !important;
-      }
-    </style>
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
 
-    <div class="about-card" style="max-width: 1040px; width: 100%; border-left: 6px solid var(--blue); position: relative; overflow: hidden; box-shadow: var(--shadow-md); padding: 48px;">
-      <div style="position: absolute; top: 24px; right: 28px; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-soft); padding: 8px 16px; border-radius: 20px; letter-spacing: -0.01em; box-shadow: var(--shadow-sm);">재직 중 (Operations Supporter)</div>
-      
-      <h3 style="font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--ink); letter-spacing: -0.03em;">토스씨엑스 (Toss CX)</h3>
-      <p style="font-size: 16px; color: var(--ink-faint); margin-bottom: 36px; font-weight: 600; letter-spacing: -0.01em;">FDS Team · 리스크운영 | 2026.07 ~ 현재 (연장 계약 포함)</p>
-      
-      <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; text-align: left;">
-        <div class="working-card">
-          <h4>🔍 온보딩 팩터 vs 실제 운영 갭 검수</h4>
-          <p>가맹점 입점 시 등록된 <strong>6대 리스크 팩터</strong>(배송종류, 객단가, 판매형태, 실물/비실물 등)와 실제 웹사이트 및 거래 데이터 간의 불일치를 모니터링하여 정밀 검수합니다.</p>
-        </div>
-        
-        <div class="working-card">
-          <h4>📊 RMS 14대 기준 정량 라벨링</h4>
-          <p>RMS alert 발생 시 토스페이파트너스(TOI/Paybiz)를 통해 MID 기반으로 가맹점 웹사이트를 실사하고, <strong>환금성·배송기간 초과·상품 변질 등 14가지 RMS 기준표</strong>에 의거해 리스크 사유 정량 라벨링을 수행합니다.</p>
-        </div>
-        
-        <div class="working-card">
-          <h4>✉️ 가입 시점 분기별 소명 및 공문 통제</h4>
-          <p><strong>2023년 07월 10일 이후 가입 건</strong>은 약관 기준의 전자 메일 소명 프로세스를 집행하고, <strong>2023년 07월 10일 이전 가입 건</strong>은 내부 결재를 거친 공식 인감 공식 공문을 발송하여 제재 및 통제를 집행합니다.</p>
-        </div>
-        
-        <div class="working-card">
-          <h4>🛡️ 선제적 자금 손실 차단 & AML 내실화</h4>
-          <p>미소명 및 고위험 가맹점 대상 <strong>지급보류, 결제 OFF(연동 해제), 토스페이 비활성화</strong> 등 End-to-End 리스크 통제 실무를 수행하여 자금 손실을 선제적으로 차단하고, <strong>AML 이상거래 탐지/대응 프로세스</strong>를 체득했습니다.</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-<section id="education" class="alt fade-in">
-  <div class="wrap">
-    <div class="section-head"><h2 class="section-title">Education & <span class="b">활동</span></h2><p class="section-desc">학업 · 연구실 · 금융 IT 교육 이력</p></div>
-    <div class="edu-grid">
-      <div class="edu-card">
-        <span class="edu-tag">학력 · GPA 3.81</span>
-        <div class="edu-title">용인대학교</div>
-        <div class="edu-sub">AI학과 · AI비즈니스 융합전공 · 3학년 2학기 재학 · 2022.03 ~</div>
-        <div class="edu-desc">AI 전공으로 입학했지만 <strong>"AI는 결국 비즈니스 문제를 푸는 도구"</strong>라는 결론에 도달, 비즈니스 사고를 더하기 위해 <strong>AI비즈니스 융합전공</strong>을 추가 선택. 모델 성능보다 문제 정의를 먼저 고민하는 사고방식의 출발점.</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-tag">보안 교육</span>
-        <div class="edu-title">한국정보보호산업협회</div>
-        <div class="edu-sub">융합보안 인력양성 · 클라우드 심화 · 2024.12</div>
-        <div class="edu-desc"><strong>금융 IT 클라우드 보안</strong>·권한관리·데이터 보호 체계 학습. 금융 인프라 운영 관점의 <strong>보안 사고방식</strong> 형성.</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-tag">경영 교육</span>
-        <div class="edu-title">DB 인재개발원</div>
-        <div class="edu-sub">대학생 기업경영체험스쿨 · 2025.02</div>
-        <div class="edu-desc">재무·마케팅·운영 데이터를 기반으로 비즈니스 의사결정을 수행. <strong>데이터 기반 경영 사고</strong>를 익힘.</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-tag">연구실</span>
-        <div class="edu-title">AI Service Lab</div>
-        <div class="edu-sub">부원 → 팀장 · 2025.03 ~ 현재 · 이완주·김은화 교수님</div>
-        <div class="edu-desc">RAG 기반 QA, <strong>시계열 분석</strong>, ML/DL 모델링 연구. 데이터 파이프라인·생체신호·Edge AI 심화. 2026.1~3 <strong>팀장</strong>으로 Figma·React 프론트 담당.</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-tag">금융 교육</span>
-        <div class="edu-title">금융사관학교 68기</div>
-        <div class="edu-sub">수료 & 서포터즈 · 2025.04</div>
-        <div class="edu-desc">금융산업 구조 · <strong>리스크 관리</strong> · 디지털 금융 트렌드 체계적 학습. 국고채·금리·채권 등 시장 흐름 콘텐츠 제작·홍보.</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-tag">창업동아리</span>
-        <div class="edu-title">Code UP</div>
-        <div class="edu-sub">팀장 · 2025.09 ~ 2026</div>
-        <div class="edu-desc">SafeFall Intelligence 등 AI 서비스 프로젝트 <strong>팀장으로 총괄</strong>. 기획 → 데이터 → 모델 설계 → 사업화 전략까지 <strong>End-to-End 리드</strong>.</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-tag">글로벌 봉사</span>
-        <div class="edu-title">Code Club</div>
-        <div class="edu-sub">글로벌 SW 교육 봉사 · 2026.01</div>
-        <div class="edu-desc">영국 <strong>Raspberry Pi Foundation</strong> 시작 · <strong>실리콘밸리 기업 후원</strong>하는 전 세계 비영리 SW 교육 프로그램. 한국에서 블록체인·NFT 기반 메타버스 금융 교육 진행.</div>
-      </div>
-      <div class="edu-card">
-        <span class="edu-tag">퀀트 직무</span>
-        <div class="edu-title">코멘토 · 퀀트 운용 직무 체험</div>
-        <div class="edu-sub">현직 증권사 트레이더 · 2026.02</div>
-        <div class="edu-desc"><strong>금융공학을 활용한 퀀트 운용 실무</strong>. 주식·채권·옵션·선물을 VBA·Python으로 분석하며 <strong>투자 의사결정 사고</strong>를 익힘.</div>
-      </div>
-    </div>
-  </div>
-</section>
+    ::selection {
+      background: var(--blue);
+      color: white;
+    }
 
-<section id="stack" class="alt fade-in">
-  <div class="wrap">
-    <div class="section-head"><h2 class="section-title">Tech <span class="b">Stack</span></h2><p class="section-desc">주로 사용하는 기술과 도구</p></div>
-    <div class="stack-group">
-      <div class="stack-label">Programming · Data</div>
-      <div class="stack-grid cols-4">
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python" loading="lazy" /><span>Python</span></div>
-        <div class="stack-item">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#3182f6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5"/><path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6"/></svg>
-          <span>SQL</span>
-        </div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/pandas/150458" alt="Pandas" loading="lazy" /><span>Pandas</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/numpy/013243" alt="NumPy" loading="lazy" /><span>NumPy</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="scikit-learn" loading="lazy" /><span>scikit-learn</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/pytorch/EE4C2C" alt="PyTorch" loading="lazy" /><span>PyTorch</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/tensorflow/FF6F00" alt="TensorFlow" loading="lazy" /><span>TensorFlow</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL" loading="lazy" /><span>MySQL</span></div>
-      </div>
-    </div>
-    <div class="stack-group">
-      <div class="stack-label">Backend</div>
-      <div class="stack-grid tight">
-        <div class="stack-item"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" loading="lazy" /><span>Java</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/springboot/6DB33F" alt="Spring Boot" loading="lazy" /><span>Spring Boot</span></div>
-      </div>
-    </div>
-    <div class="stack-group">
-      <div class="stack-label">AI · Research</div>
-      <div class="stack-grid">
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/langchain/1C3C3C" alt="LangChain" loading="lazy" /><span>LangChain</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/huggingface/FFD21E" alt="HuggingFace" loading="lazy" /><span>HuggingFace</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/ollama/000000" alt="Ollama" loading="lazy" /><span>Ollama</span></div>
-        <div class="stack-item">
-          <svg width="42" height="42" viewBox="0 0 24 24" fill="none" stroke="#3182f6" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 3 3 5-6"/><circle cx="11" cy="10" r="1" fill="#3182f6"/><circle cx="14" cy="13" r="1" fill="#3182f6"/><circle cx="19" cy="7" r="1" fill="#3182f6"/></svg>
-          <span>Chroma DB</span>
-        </div>
-      </div>
-      <div class="stack-chips">
-        <span>RAG</span><span>시계열 분석</span><span>Classification</span><span>Clustering</span>
-      </div>
-    </div>
-    <div class="stack-group">
-      <div class="stack-label">Financial Domain</div>
-      <div class="stack-chips" style="margin-top:0;">
-        <span>Risk Quantification</span><span>KYC</span><span>AML</span><span>Stablecoin Risk</span><span>정책자금 검증</span><span>PG Risk</span>
-      </div>
-    </div>
-    <div class="stack-group">
-      <div class="stack-label">Frontend · Tools · AI Coding</div>
-      <div class="stack-grid">
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React" loading="lazy" /><span>React</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/git/F05032" alt="Git" loading="lazy" /><span>Git</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma" loading="lazy" /><span>Figma</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/notion/000000" alt="Notion" loading="lazy" /><span>Notion</span></div>
-        <div class="stack-item"><img src="https://cdn.simpleicons.org/claude/D97757" alt="Claude Code" loading="lazy" /><span>Claude Code</span></div>
-      </div>
-      <div class="stack-chips">
-        <span>바이브코딩 · AI-Native Dev</span>
-      </div>
-    </div>
-  </div>
-</section>
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
 
-<section id="projects" class="alt fade-in">
-  <div class="wrap">
-    <div class="section-head"><h2 class="section-title">Featured <span class="b">Projects</span></h2><p class="section-desc">카드를 클릭하면 GitHub 레포에서 자세히 보실 수 있어요<br/><span style="font-size:12.5px; color: var(--ink-faint);">KB 프로젝트를 제외한 SRHS·SafeFall·DSA는 모두 팀 프로젝트이며, 설명은 제가 직접 담당한 역할을 기준으로 작성했습니다.</span></p></div>
-    <div class="proj-grid">
-      <div class="proj-card">
-        <div class="proj-banner b4 clickable" data-image="kb_dm.png" role="button" tabindex="0" aria-label="KB 소상공인 금융 AI 에이전트 미리보기 이미지 보기"><span class="proj-banner-tag">MAIN PROJECT · MERCHANT 연결</span><span class="proj-banner-text">KB</span></div>
-        <div class="proj-body">
-          <div class="proj-title">KB 소상공인 금융 AI 에이전트</div>
-          <div class="proj-date">2026 · KB국민은행 현직자 PICK 주제 · 제8회 AI Challenge 경진대회</div>
-          <p class="proj-desc">소상공인이 정책자금 신청 자격·규제 조건·근거 문서를 스스로 찾는 데 오랜 시간이 걸린다는 문제를 해결하기 위해, 근거 문서를 인용해 답변하는 <strong>RAG 기반 금융 에이전트</strong>를 구축했습니다. KB국민은행 <strong>2026 현직자 PICK 주제</strong> 중 "소상공인 금융 에이전트"를 선택해 진행했으며, 저는 <strong>챗봇 프론트엔드 UI/UX 설계</strong>와 <strong>정책자금·금융상품 데이터 파이프라인 구축</strong>을 담당했습니다. 정책 정보가 PDF·HWP 등 다양한 형식으로 분산되어 있어 검색 정확도가 낮고 생성형 AI의 <strong>환각(Hallucination)</strong> 가능성이 있다는 문제를 해결하기 위해, PDF·HWP 문서를 <strong>마크다운(.md)으로 변환</strong>한 뒤 <strong>Gemini 2.5 모델</strong>로 전처리해 <strong>벡터DB</strong>를 구축했습니다. 답변 지침서(시스템 프롬프트)에 <strong>"문서에 있는 내용만 답변하고, 근거 문서에서 확인되지 않는 질문은 추측하지 않고 안내 문구로 우회 응답한다"</strong>는 규칙을 명시해, 모델이 아는 범위 밖의 내용은 지어내지 않고 우회하도록 설계했습니다. 또한 답변마다 <strong>참고 출처와 근거 문서를 함께 제시</strong>해 금융 서비스에서 중요한 신뢰성과 설명 가능성을 확보했으며, GitHub Pages를 통해 실시간 데모를 배포했습니다.</p>
-          <div class="proj-stack"><b>Tech:</b> RAG, React, Gemini 2.5, PDF→Markdown 파이프라인, GitHub Pages</div>
-          <div class="proj-award">🏦 KB 국민은행 제8회 AI Challenge 경진대회 참가작</div>
-          <div class="proj-actions">
-            <a href="https://sojo1211.github.io/2026_KB_AI_Challenge_Small-business-financial-agent_ohsungjun/" target="_blank" rel="noopener" class="primary" style="width: auto; padding: 0 14px; gap: 6px; font-weight: 600; font-size: 13px;" aria-label="데모 사이트 보기">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>
-              데모 보기
-            </a>
-            <a href="https://github.com/sojo1211/2026_KB_AI_Challenge_Small-business-financial-agent_ohsungjun" target="_blank" rel="noopener" aria-label="GitHub 레포지토리">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-banner b1 clickable" data-image="스테이블.jpg" role="button" tabindex="0" aria-label="SRHS 미리보기 이미지 보기"><span class="proj-banner-tag">RISK MODELING</span><span class="proj-banner-text">SRHS</span></div>
-        <div class="proj-body">
-          <div class="proj-title">스테이블코인 리스크 평가</div>
-          <div class="proj-date">2026 · 경영학과 팀 협업 · 한국경영컨설팅학회</div>
-          <p class="proj-desc"><strong>기존에 스테이블코인 리스크를 정량적으로 평가하는 표준 지표가 없다는 문제를 발견하고, 선행연구를 기반으로 SRHS(Stablecoin Risk Health Score)를 직접 설계했습니다.</strong><br/><br/><strong>Problem</strong> 선행연구들은 담보·유동성·규제 등 위험요인을 개별적으로만 다뤄, 서로 다른 스테이블코인의 위험도를 동일한 기준으로 비교할 방법이 없었습니다.<br/><strong>Solution</strong> 여러 붕괴 사례와 선행연구에서 반복적으로 제시되는 위험요인을 추출·통합해 하나의 점수 체계로 구조화했습니다. 경영학과 팀과 협업해 저는 <strong>AI 리스크 지표 5종(PD·LS·CR·TI·RR) 설계와 점수화 모델</strong>을 담당, <strong>무역결제에서 1대1 달러와 연동되는 USDT·USDC·DAI·PYUSD 4종 실시간 모니터링 시스템</strong>으로 구현했습니다. 한국 외국환거래법·CARF MCAA 규제 컨텍스트를 반영했고, Terra-Luna·FTX·USDC(SVB) 등 실제 붕괴 사례에 적용해 위험도를 비교·검증한 뒤 KCI 등재지에 논문을 게재했습니다.<br/><br/>5개 지표의 가중치는 릿지 회귀로 초기값을 추정한 뒤, <strong>FTX 파산·테라-루나 붕괴·빗썸 규제 리스크 3개 실제 위기 사례</strong>에 위기 발생 전 정상구간과 위기구간을 함께 복원해 역적용하는 백테스팅으로 검증·확정했습니다. 10%p 단위로 구성한 5개 가중치 시나리오 중, <strong>CR(담보건전성) 25% · PD(부도확률) 20% · LS(유동성) 20% · TI(거래지표) 20% · RR(규제) 15%</strong> 조합만이 세 사례 전부에서 <strong>위기 5일 전 조기 경보 + 오경보(False Positive) 0건</strong>을 동시에 충족했습니다. 이후 ±5%p 민감도 분석에서도 등급 변동 없이 점수 변동폭 10점 이내를 유지해 모델의 강건성을 추가로 검증했습니다.<br/><br/>가장 중요하게 생각한 것은 모델의 성능이 아니라 <strong>평가 기준 자체의 타당성</strong>이었습니다. 이 경험을 통해 정답이 없는 위험을 데이터와 근거로 기준화하는 역량을 키웠습니다.<br/><br/><strong>Application</strong> 같은 원리를 Merchant 심사에도 적용할 수 있다고 생각합니다. 가입 단계에서 사업자 정보·거래 패턴·업종 특성으로 위험도를 사전 산출하고, 고위험 Merchant는 추가 확인 절차로 연결해 심사 효율성과 고객 경험을 함께 개선하는 방식입니다.</p>
-          <div class="proj-stack">
-            <b>Tech:</b> React, CoinGecko API, DeFiLlama API, 순수 SVG 차트<br/>
-            <b>Validation:</b> Ridge Regression 가중치 최적화 → 3개 위기 사례 백테스팅 (FTX·테라-루나·빗썸) → 5일 조기경보·오경보 0건 · 민감도 분석 강건성 검증
-          </div>
-          <div class="proj-award">🏆 한국경영컨설팅학회 최우수상</div>
-          <div class="proj-actions">
-            <a href="SRHS.pdf" target="_blank" rel="noopener" class="primary pdf" style="width: auto; padding: 0 14px; gap: 6px; font-weight: 600; font-size: 13px;" aria-label="논문 보기">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:16px;height:16px;"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
-              논문 보기
-            </a>
-            <a href="스테이블코인.pptx" target="_blank" rel="noopener" class="ppt" aria-label="발표자료 PPT">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="7" y="18" font-size="6" font-weight="700" fill="currentColor" stroke="none">PPT</text></svg>
-            </a>
-            <a href="https://github.com/sojo1211/SRHS-STABLECOIN-RISK-HEALTH-SCORE-" target="_blank" rel="noopener" aria-label="GitHub 레포지토리">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-banner b2 clickable" data-image="창동.png" role="button" tabindex="0" aria-label="SafeFall 미리보기 이미지 보기"><span class="proj-banner-tag">TEAM LEAD</span><span class="proj-banner-text">SafeFall</span></div>
-        <div class="proj-body">
-          <div class="proj-title">SafeFall Intelligence</div>
-          <div class="proj-date">2025.09 ~ 현재 · 팀장 · Code UP</div>
-          <p class="proj-desc"><strong>기존 낙상 탐지 연구들은 92~99%의 높은 정확도에도 불구하고 대부분 "낙상이 이미 발생한 후"를 감지하는 사후 대응 방식이라는 공통된 한계를 가진다는 문제를 발견하고, 사고 이전 단계에서 위험을 예측하는 SafeFall Intelligence를 설계했습니다.</strong><br/><br/><strong>Problem</strong> 산업재해 사망 원인 1위가 추락·낙상(41.6%)이며 65세 이상 낙상 사고도 4년 새 3.2배 증가했지만, "넘어진 뒤의 알림"은 골절과 2차 사고를 막기엔 이미 늦은 대응이었습니다. 가장 큰 난관은 라벨링이었습니다 낙상 직전 전조 증상은 사용자마다 패턴이 너무 다양해, 고정된 임곗값 하나로 위험 신호를 정의할 수 없는, <strong>사람이 경계선을 직접 그을 수 없는 문제</strong>였습니다.<br/><strong>Solution</strong> 사람이 규칙으로 정의할 수 없는 문제였기에 <strong>비지도 학습(K-Means)</strong>을 도입해, 상관계수와 센서 특징점 기반 군집화로 전조 증상의 경계를 알고리즘이 데이터 기반으로 도출하도록 설계했습니다. 저는 거리·압력·HRV·혈당·SpO₂·가속도 등 다중 센서 데이터를 모델이 학습할 수 있는 형태로 만드는 전 과정을 담당했습니다: <strong>Decision 라벨 기준 설계(정상·미끄러짐·낙상)</strong>, 이상치 제거·정규화·노이즈 필터링 등 <strong>전처리</strong>, <strong>라벨 정합성 검증 및 클래스 불균형 처리</strong>, 전체 사용자 데이터에 대한 <strong>상관분석 → 히트맵 시각화</strong>로 실제 낙상과 유의미하게 연관된 센서를 확인하는 작업입니다. 상관분석 결과 압력·심박수·산소포화도는 낙상과 높은 상관성을, 혈당은 낮은 상관성을 보여 이를 특징 선택의 근거로 활용했습니다. 모델 학습에는 GitHub의 사전학습 모델을 <strong>전이학습(Transfer Learning)</strong>으로 활용했으며, 구체적으로는 사전학습된 가중치를 모두 고정(freeze)하고 <strong>출력층(Classifier)만 새로운 라벨(정상·미끄러짐·낙상)에 맞게 교체해 재학습하는 특징 추출(Feature Extraction) 방식</strong>을 적용했습니다.<br/><br/>비지도 학습 기반임에도 정확도 약 83%, F1-Score 약 82%를 달성해 "사후 감지"가 아닌 <strong>사전 예방</strong>의 실효성을 데이터로 입증했습니다.<br/><br/><strong>Application</strong> 사람마다 패턴이 달라 고정 규칙이 통하지 않는 문제는, 사람이 아니라 데이터가 경계를 찾게 해야 한다는 것이 이 프로젝트의 핵심 배움입니다. 센서 데이터 지연 0.5초가 사고를 막지 못하는 상황을 겪으며 "데이터 오류가 곧 실제 피해로 이어지는 도메인"의 무게를 체감했고, 이는 가맹점마다 거래 패턴이 제각각인 <strong>KYC·FDS 이상 탐지</strong> 문제와 본질적으로 같은 구조라고 생각합니다 정답이 정해진 규칙이 아니라, 데이터 안에서 위험의 경계를 찾아내는 일이라는 점입니다.</p>
-          <div class="proj-stack">
-            <b>Tech:</b> PyTorch, RandomForest, K-means, Linear Regression, IMU/HRV/SpO₂, Transfer Learning(특징 추출)<br/>
-            <b>Result:</b> 정확도 약 83% · F1-Score 약 82% · 비지도 학습 기반 사전 예측 검증
-          </div>
-          <div class="proj-award">🏆 용인대 창업경진대회 최우수상</div>
-          <div class="proj-actions">
-            <a href="폴링팀_오성준_김태호_윤주영__창업동아리-codeUP.pptx" target="_blank" rel="noopener" class="ppt" aria-label="발표자료 PPT">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="7" y="18" font-size="6" font-weight="700" fill="currentColor" stroke="none">PPT</text></svg>
-            </a>
-            <a href="https://github.com/sojo1211/SafeFall/tree/ict-safefall_project" target="_blank" rel="noopener" aria-label="GitHub 레포지토리">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="proj-card">
-        <div class="proj-banner b3 clickable" data-image="dsa.png" role="button" tabindex="0" aria-label="DSA 수상 인증서 보기"><span class="proj-banner-tag">DATA · BIZ</span><span class="proj-banner-text">DSA</span></div>
-        <div class="proj-body">
-          <div class="proj-title">DSA IT 아웃소싱 분석</div>
-          <div class="proj-date">2025.03 ~ 2025.04 · DSA 19기 4팀 펜타바이트</div>
-          <p class="proj-desc"><strong>IT 아웃소싱 플랫폼에서 서비스 가격·평점이 총 구매 금액에 미치는 영향과 고객 특성·거래 패턴을 결합해 수수료율 책정 기준과 매출 증가 전략을 도출하는 것이 팀에 주어진 주제였습니다.</strong><br/><br/><strong>Role</strong> 저는 <strong>"로그 + 소비자 패턴"을 통합해 서비스 가격·평점·고객 특성과 총 구매 금액을 연결하는 분석 설계</strong>를 담당했습니다. IT 아웃소싱 플랫폼의 거래 로그 데이터와 소비자 프로필 데이터를 병합하고, 서비스 가격·평점·총 구매 금액 간 관계를 보는 분석 프레임을 설계했습니다. 거래 패턴은 <strong>거래 성사율(X)</strong>과 <strong>거래 취소 원인(Y)</strong>의 함수로 정의해, 어떤 조건(가격·평점·카테고리·고객 특성)에서 취소가 많이 발생하는지 확인할 수 있는 분석 구조를 만들었습니다.<br/><br/><strong>분석 축</strong>은 크게 세 가지였습니다. ① <strong>고객 특성 분석</strong> 연령·성별·거주지에 따라 어떤 서비스가 더 잘 팔리는지, 고가 서비스 구매 비율이 높은 고객군은 누구인지, 자주 결제하는 핵심 고객군(Heavy User)을 정의해 타겟 마케팅 세그먼트로 연결했습니다. ② <strong>가격·평점 영향 분석</strong> 가격·평점과 총 구매 금액·재구매율 간의 관계를 <strong>상관분석·회귀분석</strong>으로 검증해, 가격이 높을수록 객단가는 오르지만 구매 빈도는 줄어드는 경향, 평점이 높을수록 재구매율·매출 기여도가 높아지는 경향을 확인했습니다. 이를 바탕으로 수수료율을 일괄 책정하는 대신 가격·평점·카테고리·고객 특성을 종합 반영한 <strong>차등 수수료 전략</strong>의 가능성을 검증했습니다. ③ <strong>거래 패턴 분석</strong> 거래 성사율(X)과 취소 사유(Y, 가격 불만·일정 문제·신뢰도 부족 등)를 <strong>X, Y 회귀분석</strong>으로 검증해 어떤 조건에서 취소가 몰리는지 정량적으로 확인하고, 이를 수수료·환불 정책과 UI/UX 개선 포인트를 도출하는 근거로 활용했습니다.<br/><br/><strong>수치로 보면</strong> 거래 성사율은 <strong>(성공 거래 수 ÷ 총 거래 수) × 100</strong>으로 정의해 전체 4,146건에 적용했는데, 대부분의 값이 0~0.01 구간에 몰려 있는 극단적으로 낮은 성사율 분포를 보였고 0.04 부근에서만 소수의 이례적 급증 구간이 관측됐습니다. 서비스가격·평점·총구매금액을 함께 본 결과 가격 10만 원·평점 5.0인 항목의 총구매금액이 0으로 나타나는 사례도 다수 확인되어, <strong>가격·평점이 높다고 반드시 매출로 이어지지 않는다</strong>는 점을 데이터로 확인했습니다.<br/><br/><strong>Learning</strong> 단순 집계가 아니라 가격·평점·고객 특성·거래 패턴·구매 금액을 한 구조 안에서 연결해야 실제 비즈니스 인사이트가 나온다는 점, 그리고 데이터 병합·전처리·스키마 정의가 모델링보다 결과 품질에 더 큰 영향을 준다는 점을 이 프로젝트에서 배웠습니다. 연령·성별·지역별로 구매 행동이 뚜렷하게 갈린다는 것을 확인하며 <strong>"동일한 전략은 모든 고객에게 효과가 없다"</strong>는 결론도 얻었습니다.<br/><br/><strong>Application</strong> 이 구조는 Merchant 심사 문제와 맞닿아 있다고 생각합니다. 플랫폼의 "서비스 제공자"를 가맹점으로, "가격·평점·거래 성사율·취소 패턴"을 가맹점의 업종·거래 규모·정산 이력으로 바꿔보면 같은 분석 구조가 성립합니다. 모든 가맹점에 동일한 수수료율·심사 기준을 적용하는 대신, 업종·거래 패턴·과거 이력을 종합해 <strong>차등화된 기준</strong>을 세우는 방식입니다. 특히 "어떤 조건에서 거래 취소·이상 거래가 몰리는가"를 구조화했던 경험은, 가맹점 온보딩 단계에서 이상 거래 패턴을 조기에 잡아내는 <strong>KYC·FDS</strong> 문제와 본질적으로 같은 접근이라고 생각합니다.</p>
-          <div class="proj-stack">
-            <b>Tech:</b> Python, Pandas, 상관분석·회귀분석, 데이터 시각화<br/>
-            <b>Framework:</b> 가격·평점·고객특성·거래패턴·구매금액 통합 분석 구조 설계
-          </div>
-          <div class="proj-award">🏆 데이터스테이션 실무 분석 최우수상</div>
-          <div class="proj-actions">
-            <a href="[DSA19기]펜타바이트_IT아웃소싱.pdf" target="_blank" rel="noopener" class="pdf" aria-label="PDF 문서">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><text x="7" y="18" font-size="6" font-weight="700" fill="currentColor" stroke="none">PDF</text></svg>
-            </a>
-            <a href="https://github.com/sojo1211/DSA_project" target="_blank" rel="noopener" aria-label="GitHub 레포지토리">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255, 255, 255, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--line-soft);
+    }
 
-<section class="alt fade-in">
-  <div class="wrap">
-    <div class="section-head"><h2 class="section-title">Why <span class="b">Toss Bank</span></h2><p class="section-desc">이론에서 실무로, 그리고 지능형 통제로</p></div>
-    <div class="why-card">
-      <p>이론적 리스크 평가 모델(SRHS 논문 최우수상)을 설계하며 <strong>'금융 거래의 신뢰성을 어떻게 사전에 정량화할 것인가'</strong>라는 깊은 문제의식을 가졌습니다. 여기에 안주하지 않고 실제 작동하는 시스템을 체득하고자 <strong>토스씨엑스 FDS Team의 Operations Supporter</strong>로 합류해 실무 데이터와 룰 사이의 갭을 검수하고 고위험 거래를 차단하는 <strong>현장 모니터링 및 실무 제재 프로세스</strong>를 직접 운영했습니다. 이 과정에서 규제 준수 검증과 자금세탁방지(AML) 영역에 큰 흥미를 갖게 되었습니다.</p>
-      <p>이제 저는 리스크 모델 설계 능력과 현장 실무 운영 감각을 결합하여, <strong>토스뱅크의 Anti-Fraud Manager</strong>로 도약하고자 합니다. 토스뱅크의 소매 여신 및 전월세대출 심사 신청 단계에서 발생할 수 있는 부정 의심 거래와 사기 패턴을 Python/SQL 데이터 Deep Dive를 통해 선제 규명하고, 트렌드를 반영하여 FDS 예방 룰을 지능적으로 고도화하겠습니다.</p>
-      <p>입사 후에는 토스뱅크의 여신·수신 상품 구조와 심사/운영 프로세스를 빠르게 학습하겠습니다. 데이터 분석을 기반으로 이상 거래 탐지 룰을 설계/업데이트하고, 오탐을 줄이면서 탐지 정밀도를 높여 업무 효율성과 고객 편의를 동시에 지켜내겠습니다. 나아가 <strong>AML과 결제 리스크 관리를 아우르는 통제 전문가</strong>로 확실히 자리잡기 위해, <span style="color: var(--blue-deep); font-weight: 700;">한국금융연수원 자금세탁방지(AML) 핵심요원(기초) 과정을 이수 완료(2026.08~10)하여 통제 역량의 내실을 이미 다졌습니다.</span> 데이터로 금융의 안전을 지키고 사용자가 가장 신뢰할 수 있는 토스뱅크를 만드는 주역이 되겠습니다.</p>
-    </div>
-  </div>
-</section>
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 18px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-<section id="awards" class="fade-in">
-  <div class="wrap">
-    <div class="section-head"><h2 class="section-title">Awards & <span class="b">Certificate</span></h2><p class="section-desc">수상 6회 · 자격증 · 경영컨설팅연구, 제26권, 제3호 등재</p></div>
-    <div class="award-grid">
-      <div class="award-item top"><div class="award-info"><div class="award-name">한국경영컨설팅학회 학술대회 · SRHS</div><div class="award-meta">2026 · 황상원 교수님 지도</div></div><span class="award-badge">🏆 최우수상</span></div>
-      <div class="award-item top"><div class="award-info"><div class="award-name">용인대 제2회 창업아이디어 경진대회 · SafeFall</div><div class="award-meta">2025 · 팀장 · AI 설계 총괄</div></div><span class="award-badge">🏆 최우수상</span></div>
-      <div class="award-item top"><div class="award-info"><div class="award-name">데이터스테이션 실무 데이터 분석 · DSA</div><div class="award-meta">2025 · 개인 · IT 아웃소싱 분석</div></div><span class="award-badge">🏆 최우수상</span></div>
-      <div class="award-item"><div class="award-info"><div class="award-name">단국 창업 해커톤 · Agri-SCM Intelligence</div><div class="award-meta">2025 · G7 분야 · 공급망 예측</div></div><span class="award-badge">🥉 장려상</span></div>
-    </div>
-    <div class="cert-row">
-      <div class="cert"><b>🛡️</b> 자금세탁방지(AML) 핵심요원 기초 수료 (2026.10)</div>
-      <div class="cert"><b>📜</b> SQLD · SQL Developer (2024.09)</div>
-      <div class="cert"><b>📊</b> ADsP · 데이터분석 준전문가 (2026.02)</div>
-      <div class="cert"><b>📄</b> 경영컨설팅연구, 제26권, 제3호 등재 (B2B 무역결제에서 스테이블 코인의 안정성 평가 모델 개발: 실시간 건전성 지수(SRHS)와 규제 통합 프레임워크 중심)</div>
-    </div>
-    <div class="awards-more">
-      <a href="https://github.com/sojo1211/Portfolio-Ohsungjun" target="_blank" rel="noopener">모든 수상 내역 GitHub에서 보기 →</a>
-    </div>
-  </div>
-</section>
+    .nav-logo {
+      font-size: 17px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+      color: var(--blue);
+    }
 
-<section id="contact" class="alt fade-in">
-  <div class="wrap">
-    <div class="section-head"><h2 class="section-title">Get in <span class="b">Touch</span></h2><p class="section-desc">이야기 나누고 싶습니다</p></div>
-    <div class="contact-wrap">
-      <div class="contact-grid">
-        <a href="mailto:sungjun12110@gmail.com" class="contact-item"><div class="contact-label">Personal Email</div><div class="contact-val">sungjun12110@gmail.com</div></a>
-        <a href="mailto:202278035@yiu.ac.kr" class="contact-item"><div class="contact-label">School Email</div><div class="contact-val">202278035@yiu.ac.kr</div></a>
-        <a href="https://github.com/sojo1211" target="_blank" rel="noopener" class="contact-item"><div class="contact-label">GitHub</div><div class="contact-val">github.com/sojo1211</div></a>
-        <div class="contact-item"><div class="contact-label">Affiliation</div><div class="contact-val">용인대 AI학과 · AI Service Lab</div></div>
-      </div>
-      <a href="https://github.com/sojo1211/Portfolio-Ohsungjun" target="_blank" rel="noopener" class="github-cta">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        전체 포트폴리오 (github.com/sojo1211/Portfolio-Ohsungjun)
-      </a>
-    </div>
-  </div>
-</section>
+    .nav-menu {
+      display: flex;
+      gap: 28px;
+      font-size: 14px;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
 
-<footer>
-  <div class="wrap">
-    <div class="footer-row">
-      <a href="#" class="footer-logo">SUNGJUN</a>
-      <a href="mailto:sungjun12110@gmail.com" class="footer-email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
-        sungjun12110@gmail.com
-      </a>
-      <div class="footer-socials">
-        <a href="https://github.com/sojo1211" target="_blank" rel="noopener" aria-label="GitHub">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg>
-        </a>
-        <a href="https://ohsungjun.tistory.com" target="_blank" rel="noopener" aria-label="Tistory 블로그">
-          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4.5h16v3.8h-6.1V19.5h-3.8V8.3H4z"/></svg>
-        </a>
-        <a href="mailto:sungjun12110@gmail.com" aria-label="Email">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><polyline points="3 7 12 13 21 7"/></svg>
-        </a>
-      </div>
-    </div>
-    <div class="footer-copy">© 2026 Oh Sungjun · 오성준</div>
-  </div>
-</footer>
+    .nav-menu a {
+      transition: color .2s;
+    }
 
-<div class="modal" id="docModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-content">
-    <div class="modal-head">
-      <div class="modal-title" id="modalTitle">문서 미리보기</div>
-      <div class="modal-actions">
-        <a class="modal-open-new" id="modalOpenNew" href="#" target="_blank" rel="noopener" title="새 탭에서 열기">
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14L21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
-          새 탭
-        </a>
-        <button type="button" class="modal-close" id="modalClose" aria-label="닫기">×</button>
-      </div>
-    </div>
-    <div class="modal-body">
-      <div class="modal-loading" id="modalLoading"><div class="spinner"></div><div>문서를 불러오는 중…</div></div>
-      <iframe id="modalFrame" src="about:blank" title="문서 미리보기"></iframe>
-      <img id="modalImg" class="modal-img hidden" alt="" />
-      <div class="modal-fallback hidden" id="modalFallback">
-        <div class="modal-fallback-icon">PPT</div>
-        <div class="modal-fallback-title" id="fallbackTitle">PPT 파일</div>
-        <div class="modal-fallback-msg">로컬 환경에서는 PPT 미리보기가 작동하지 않습니다. <strong>영상이 포함된 슬라이드는 PowerPoint 또는 Google Slides</strong>에서 열어주세요.<span class="hint">사이트가 공개 URL로 배포되면 모달 내 미리보기(영상 포함)가 자동 작동합니다.</span></div>
-        <a class="modal-fallback-btn" id="fallbackBtn" href="#" target="_blank" rel="noopener" download>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-          파일 다운로드 · 새 탭에서 열기
-        </a>
-      </div>
-    </div>
-  </div>
-</div>
+    .nav-menu a:hover {
+      color: var(--ink);
+    }
 
-<script>
-  const obs = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-  }, { threshold: 0.08 });
-  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+    .nav-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      padding: 6px 12px;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      transition: all .2s;
+    }
 
-  const modal = document.getElementById('docModal');
-  const modalFrame = document.getElementById('modalFrame');
-  const modalImg = document.getElementById('modalImg');
-  const modalTitle = document.getElementById('modalTitle');
-  const modalOpenNew = document.getElementById('modalOpenNew');
-  const modalLoading = document.getElementById('modalLoading');
-  const modalFallback = document.getElementById('modalFallback');
-  const fallbackBtn = document.getElementById('fallbackBtn');
-  const fallbackTitle = document.getElementById('fallbackTitle');
+    .nav-github:hover {
+      background: var(--ink);
+      color: white;
+      border-color: var(--ink);
+    }
 
-  function openViewer(url, title, type) {
-    modalTitle.textContent = title || '문서 미리보기';
-    modalOpenNew.href = url;
-    modalLoading.classList.remove('hidden');
-    const isImage = type === 'image' || /\.(jpe?g|png|gif|webp|svg)$/i.test(url);
-    const isPpt = type === 'ppt' || /\.pptx?$/i.test(url);
-    const isHttp = /^https?:/.test(location.protocol);
-
-    modalImg.classList.add('hidden');
-    modalFrame.classList.add('hidden');
-    modalFallback.classList.add('hidden');
-    modalImg.removeAttribute('src');
-
-    if (isImage) {
-      modalFrame.src = 'about:blank';
-      modalImg.classList.remove('hidden');
-      modalImg.alt = title || '';
-      modalImg.src = url;
-    } else if (isPpt && !isHttp) {
-      modalFrame.src = 'about:blank';
-      modalLoading.classList.add('hidden');
-      modalFallback.classList.remove('hidden');
-      fallbackBtn.href = url;
-      fallbackTitle.textContent = (title ? title + ' · ' : '') + 'PPT 파일';
-    } else {
-      modalFrame.classList.remove('hidden');
-      if (isPpt) {
-        const absUrl = new URL(url, location.href).href;
-        modalFrame.src = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(absUrl);
-      } else {
-        modalFrame.src = url;
+    @media (max-width: 768px) {
+      .nav-menu {
+        display: none;
       }
     }
 
-    modal.classList.add('open');
-    document.body.style.overflow = 'hidden';
-  }
+    .hero {
+      padding: 80px 0 100px;
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
 
-  function closeViewer() {
-    modal.classList.remove('open');
-    modalFrame.src = 'about:blank';
-    modalImg.removeAttribute('src');
-    modalFallback.classList.add('hidden');
-    document.body.style.overflow = '';
-  }
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 60px 0 80px;
+        gap: 48px;
+      }
+    }
 
-  modalFrame.addEventListener('load', () => modalLoading.classList.add('hidden'));
-  modalImg.addEventListener('load', () => modalLoading.classList.add('hidden'));
-  document.getElementById('modalClose').addEventListener('click', closeViewer);
-  modal.addEventListener('click', (e) => { if (e.target === modal) closeViewer(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closeViewer(); });
+    .hero h1 {
+      font-size: clamp(36px, 5.5vw, 54px);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.25;
+      margin-bottom: 28px;
+    }
 
-  document.querySelectorAll('.proj-actions a.pdf, .proj-actions a.ppt').forEach(a => {
-    a.addEventListener('click', (e) => {
-      e.preventDefault();
-      const url = a.getAttribute('href');
-      const type = a.classList.contains('ppt') ? 'ppt' : 'pdf';
-      const card = a.closest('.proj-card');
-      const projTitle = card ? card.querySelector('.proj-title') : null;
-      openViewer(url, projTitle ? projTitle.textContent.trim() : '', type);
+    .hero h1 .b {
+      color: var(--blue);
+    }
+
+    .hero h1 .wave {
+      display: inline-block;
+      animation: wave 2.4s ease-in-out infinite;
+      transform-origin: 70% 70%;
+    }
+
+    @keyframes wave {
+
+      0%,
+      60%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      10% {
+        transform: rotate(14deg);
+      }
+
+      20% {
+        transform: rotate(-8deg);
+      }
+
+      30% {
+        transform: rotate(14deg);
+      }
+
+      40% {
+        transform: rotate(-4deg);
+      }
+
+      50% {
+        transform: rotate(10deg);
+      }
+    }
+
+    .hero-role {
+      display: inline-block;
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--blue-deep);
+      background: var(--blue-soft);
+      padding: 8px 16px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      letter-spacing: -0.01em;
+    }
+
+    .hero-sub {
+      font-size: 17px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 32px;
+      max-width: 520px;
+    }
+
+    .hero-sub strong {
+      color: var(--ink);
+      font-weight: 700;
+    }
+
+    @media (max-width: 768px) {
+      .hero-sub {
+        margin: 0 auto 32px;
+      }
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 36px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-tags {
+        justify-content: center;
+      }
+    }
+
+    .hero-tags span {
+      font-size: 13px;
+      padding: 6px 12px;
+      background: var(--blue-soft);
+      color: var(--blue-deep);
+      border-radius: 20px;
+      font-weight: 500;
+    }
+
+    .hero-cta {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 768px) {
+      .hero-cta {
+        justify-content: center;
+      }
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all .2s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: var(--blue);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: var(--blue-deep);
+      transform: translateY(-1px);
+    }
+
+    .btn-ghost {
+      background: var(--bg);
+      color: var(--ink);
+      border-color: var(--line);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--ink);
+      transform: translateY(-1px);
+    }
+
+    .avatar-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .avatar {
+      width: 280px;
+      height: 340px;
+      border-radius: 28px;
+      background: linear-gradient(135deg, var(--blue) 0%, #6ea8fc 50%, var(--blue-soft) 100%);
+      padding: 5px;
+      position: relative;
+      box-shadow: 0 16px 48px rgba(49, 130, 246, 0.22);
+    }
+
+    @media (max-width: 768px) {
+      .avatar {
+        width: 220px;
+        height: 268px;
+        border-radius: 24px;
+      }
+    }
+
+    .avatar-inner {
+      width: 100%;
+      height: 100%;
+      border-radius: 24px;
+      background: var(--bg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .avatar-inner img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 30%;
+      display: block;
+    }
+
+    .avatar-initials {
+      font-size: 88px;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -0.04em;
+    }
+
+    @media (max-width: 768px) {
+      .avatar-initials {
+        font-size: 64px;
+      }
+    }
+
+    section {
+      padding: 90px 0;
+    }
+
+    section.alt {
+      background: var(--bg-soft);
+    }
+
+    .section-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+    }
+
+    .section-title .b {
+      color: var(--blue);
+    }
+
+    .section-desc {
+      font-size: 15px;
+      color: var(--ink-soft);
+    }
+
+    .about-card {
+      max-width: 760px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 640px) {
+      .about-card {
+        padding: 28px 24px;
+      }
+    }
+
+    .about-card p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--ink);
+      margin-bottom: 16px;
+    }
+
+    .about-card p:last-of-type {
+      margin-bottom: 0;
+    }
+
+    .about-card strong {
+      color: var(--blue-deep);
+      font-weight: 700;
+    }
+
+    .about-quote {
+      margin-top: 28px;
+      padding: 20px 24px;
+      background: var(--blue-soft);
+      border-radius: 12px;
+      font-size: 15px;
+      color: var(--blue-deep);
+      line-height: 1.7;
+      font-weight: 500;
+    }
+
+    .edu-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(248px, 1fr));
+      gap: 16px;
+      max-width: 1040px;
+      margin: 0 auto;
+    }
+
+    .edu-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 24px;
+      transition: all .2s;
+      position: relative;
+    }
+
+    .edu-card:hover {
+      border-color: var(--blue);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .edu-tag {
+      display: inline-block;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: var(--blue);
+      background: var(--blue-soft);
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+
+    .edu-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .edu-sub {
+      font-size: 12.5px;
+      color: var(--ink-faint);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+
+    .edu-desc {
+      font-size: 13.5px;
+      color: var(--ink-soft);
+      line-height: 1.65;
+    }
+
+    .edu-desc strong {
+      color: var(--blue-deep);
+      font-weight: 700;
+    }
+
+    .stack-group {
+      margin-bottom: 36px;
+    }
+
+    .stack-group:last-child {
+      margin-bottom: 0;
+    }
+
+    .stack-label {
+      text-align: center;
+      font-size: 13px;
+      color: var(--ink-faint);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+    }
+
+    .stack-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+
+    .stack-grid.tight {
+      max-width: 520px;
+    }
+
+    .stack-grid.cols-4 {
+      max-width: 980px;
+    }
+
+    .stack-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 18px 14px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      transition: all .2s;
+      min-height: 100px;
+      width: 96px;
+    }
+
+    .stack-item:hover {
+      border-color: var(--blue);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .stack-item img,
+    .stack-item>svg {
+      width: 34px;
+      height: 34px;
+      object-fit: contain;
+    }
+
+    .stack-item span {
+      font-size: 11.5px;
+      font-weight: 600;
+      color: var(--ink-soft);
+      letter-spacing: -0.01em;
+      text-align: center;
+    }
+
+    .stack-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+      max-width: 760px;
+      margin: 18px auto 0;
+    }
+
+    .stack-chips span {
+      font-size: 12px;
+      padding: 6px 12px;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      color: var(--ink-soft);
+      font-weight: 500;
+    }
+
+    .proj-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .proj-card {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all .25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .proj-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--blue);
+    }
+
+    .proj-banner {
+      height: 180px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .proj-banner.b1 {
+      background: linear-gradient(135deg, #1b64da 0%, #3182f6 60%, #6ea8fc 100%);
+    }
+
+    .proj-banner.b2 {
+      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+    }
+
+    .proj-banner.b3 {
+      background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
+    }
+
+    .proj-banner.b4 {
+      background: linear-gradient(135deg, #FFB800 0%, #FFD400 60%, #FFE680 100%);
+    }
+
+    .proj-banner-text {
+      font-size: 60px;
+      font-weight: 800;
+      letter-spacing: -0.05em;
+      color: white;
+      text-shadow: 0 2px 12px rgba(0, 0, 0, 0.18);
+    }
+
+    .proj-banner.b3 .proj-banner-text {
+      color: #92400e;
+      text-shadow: none;
+    }
+
+    .proj-banner.b4 .proj-banner-text {
+      color: #191f28;
+      text-shadow: none;
+    }
+
+    .proj-banner-tag {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      font-size: 11px;
+      padding: 5px 10px;
+      background: rgba(255, 255, 255, 0.92);
+      color: var(--ink);
+      border-radius: 6px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+    }
+
+    .proj-body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .proj-title {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 4px;
+      letter-spacing: -0.01em;
+    }
+
+    .proj-date {
+      font-size: 13px;
+      color: var(--ink-faint);
+      margin-bottom: 14px;
+    }
+
+    .proj-desc {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      margin-bottom: 16px;
+      flex: 1;
+    }
+
+    .proj-desc strong {
+      color: var(--blue-deep);
+      font-weight: 700;
+    }
+
+    .proj-award {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--blue);
+      padding: 8px 0;
+      border-top: 1px solid var(--line-soft);
+      border-bottom: 1px solid var(--line-soft);
+      margin-bottom: 16px;
+    }
+
+    .proj-stack {
+      font-size: 12px;
+      color: var(--ink-faint);
+      margin-bottom: 18px;
+      line-height: 1.65;
+    }
+
+    .proj-stack b {
+      color: var(--ink-soft);
+      font-weight: 600;
+    }
+
+    .proj-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .proj-actions a {
+      width: 40px;
+      height: 40px;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 9px;
+      color: var(--ink-soft);
+      transition: all .2s;
+      background: var(--bg);
+    }
+
+    .proj-actions a:hover {
+      background: var(--ink);
+      color: white;
+      border-color: var(--ink);
+      transform: translateY(-2px);
+    }
+
+    .proj-actions a.pdf:hover {
+      background: #DC2626;
+      border-color: #DC2626;
+      color: white;
+    }
+
+    .proj-actions a.ppt:hover {
+      background: #D24726;
+      border-color: #D24726;
+      color: white;
+    }
+
+    .proj-actions a.primary {
+      background: var(--blue);
+      color: white;
+      border-color: var(--blue);
+    }
+
+    .proj-actions a.primary:hover {
+      background: var(--blue-deep);
+      border-color: var(--blue-deep);
+    }
+
+    .proj-actions a svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .why-card {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 44px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    @media (max-width: 640px) {
+      .why-card {
+        padding: 28px 24px;
+      }
+    }
+
+    .why-card p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: var(--ink-soft);
+      margin-bottom: 16px;
+    }
+
+    .why-card p strong {
+      color: var(--blue-deep);
+      font-weight: 700;
+    }
+
+    .why-targets {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    @media (max-width: 640px) {
+      .why-targets {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .why-target {
+      padding: 20px;
+      background: var(--blue-soft);
+      border-radius: 12px;
+    }
+
+    .why-target .num {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--blue);
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .why-target h4 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+    }
+
+    .why-target p {
+      font-size: 13px;
+      color: var(--ink-soft);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .award-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      max-width: 640px;
+      margin: 0 auto 28px;
+    }
+
+    .award-item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      transition: all .2s;
+    }
+
+    .award-item:hover {
+      border-color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .award-item.top {
+      border-color: var(--blue);
+      background: var(--blue-soft);
+    }
+
+    .award-info {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .award-name {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 4px;
+      line-height: 1.4;
+    }
+
+    .award-meta {
+      font-size: 12px;
+      color: var(--ink-faint);
+    }
+
+    .award-badge {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      background: var(--line-soft);
+      color: var(--ink-soft);
+      white-space: nowrap;
+    }
+
+    .award-item.top .award-badge {
+      background: var(--blue);
+      color: white;
+    }
+
+    .cert-row {
+      max-width: 880px;
+      margin: 0 auto 16px;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .cert-full {
+      max-width: 100%;
+      margin: 0 auto 28px;
+      text-align: center;
+    }
+
+    .cert-full .cert {
+      display: inline-block;
+      white-space: nowrap;
+      font-size: 12.5px;
+      padding: 10px 20px;
+      max-width: 100%;
+      overflow-x: auto;
+    }
+
+    @media (max-width: 900px) {
+      .cert-full .cert {
+        white-space: normal;
+        font-size: 12px;
+      }
+    }
+
+    .cert {
+      padding: 10px 18px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      font-size: 13px;
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .cert b {
+      color: var(--blue);
+      font-weight: 700;
+      margin-right: 4px;
+    }
+
+    .awards-more {
+      text-align: center;
+    }
+
+    .awards-more a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      padding: 10px 18px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      transition: all .2s;
+    }
+
+    .awards-more a:hover {
+      border-color: var(--ink);
+      color: var(--ink);
+    }
+
+    .contact-wrap {
+      max-width: 720px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 0 auto 36px;
+    }
+
+    @media (max-width: 640px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .contact-item {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 20px 24px;
+      text-align: left;
+      transition: all .2s;
+    }
+
+    .contact-item:hover {
+      border-color: var(--blue);
+      transform: translateY(-2px);
+    }
+
+    .contact-label {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--ink-faint);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+
+    .contact-val {
+      font-size: 15px;
+      color: var(--ink);
+      font-weight: 500;
+      word-break: break-all;
+    }
+
+    .github-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 28px;
+      background: var(--ink);
+      color: white;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 600;
+      transition: all .2s;
+    }
+
+    .github-cta:hover {
+      background: var(--blue);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(49, 130, 246, 0.3);
+    }
+
+    footer {
+      padding: 36px 0 28px;
+      border-top: 1px solid var(--line);
+      font-size: 13px;
+      color: var(--ink-faint);
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+      padding-bottom: 20px;
+    }
+
+    .footer-logo {
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: -0.01em;
+    }
+
+    .footer-email {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--ink-soft);
+      font-weight: 500;
+      transition: color .2s;
+    }
+
+    .footer-email:hover {
+      color: var(--ink);
+    }
+
+    .footer-email svg {
+      width: 16px;
+      height: 16px;
+    }
+
+    .footer-socials {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .footer-socials a {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: var(--bg-soft);
+      color: var(--ink-soft);
+      transition: all .2s;
+      border: 1px solid var(--line-soft);
+    }
+
+    .footer-socials a:hover {
+      background: var(--ink);
+      color: white;
+      transform: translateY(-2px);
+      border-color: var(--ink);
+    }
+
+    .footer-socials svg {
+      width: 15px;
+      height: 15px;
+    }
+
+    .footer-copy {
+      text-align: center;
+      font-size: 12px;
+      color: var(--ink-faint);
+      padding-top: 20px;
+      border-top: 1px solid var(--line-soft);
+    }
+
+    .footer-copy a {
+      color: var(--blue);
+      font-weight: 500;
+    }
+
+    @media (max-width: 640px) {
+      .footer-row {
+        flex-direction: column;
+        gap: 18px;
+        text-align: center;
+      }
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.88);
+      z-index: 1000;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      padding: 24px;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+
+    .modal.open {
+      display: flex;
+      animation: modalFade .2s ease;
+    }
+
+    @keyframes modalFade {
+      from {
+        opacity: 0;
+      }
+
+      to {
+        opacity: 1;
+      }
+    }
+
+    .modal-content {
+      background: var(--bg);
+      border-radius: 14px;
+      width: 100%;
+      max-width: 1100px;
+      height: 92vh;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.4);
+    }
+
+    .modal-head {
+      padding: 14px 20px;
+      background: var(--ink);
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .modal-title {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    .modal-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .modal-open-new,
+    .modal-close {
+      background: rgba(255, 255, 255, 0.1);
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: 12px;
+      font-weight: 500;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: background .15s;
+      font-family: inherit;
+    }
+
+    .modal-open-new:hover,
+    .modal-close:hover {
+      background: rgba(255, 255, 255, 0.22);
+    }
+
+    .modal-close {
+      width: 32px;
+      height: 32px;
+      padding: 0;
+      font-size: 20px;
+      justify-content: center;
+      line-height: 1;
+    }
+
+    .modal-body {
+      flex: 1;
+      background: #0f172a;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: auto;
+    }
+
+    .modal-body iframe {
+      width: 100%;
+      height: 100%;
+      border: 0;
+      display: block;
+      background: white;
+      align-self: stretch;
+    }
+
+    .modal-body .modal-img {
+      max-width: 100%;
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      display: block;
+      margin: auto;
+    }
+
+    .modal-body .modal-img.hidden,
+    .modal-body iframe.hidden {
+      display: none;
+    }
+
+    .modal-fallback {
+      width: 100%;
+      max-width: 520px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      padding: 40px 24px;
+      text-align: center;
+      color: var(--ink);
+    }
+
+    .modal-fallback.hidden {
+      display: none;
+    }
+
+    .modal-fallback-icon {
+      width: 76px;
+      height: 76px;
+      background: #D24726;
+      color: white;
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      box-shadow: 0 12px 28px rgba(210, 71, 38, 0.32);
+    }
+
+    .modal-fallback-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    .modal-fallback-msg {
+      font-size: 14px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .modal-fallback-msg .hint {
+      display: block;
+      margin-top: 12px;
+      font-size: 12.5px;
+      color: var(--ink-faint);
+    }
+
+    .modal-fallback-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 22px;
+      background: var(--ink);
+      color: white;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all .2s;
+      margin-top: 4px;
+    }
+
+    .modal-fallback-btn:hover {
+      background: var(--blue);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(49, 130, 246, 0.28);
+    }
+
+    .proj-banner.clickable {
+      cursor: zoom-in;
+      transition: filter .2s;
+    }
+
+    .proj-banner.clickable:hover {
+      filter: brightness(1.08);
+    }
+
+    .proj-banner.clickable::after {
+      content: '';
+      position: absolute;
+      bottom: 14px;
+      left: 14px;
+      width: 28px;
+      height: 28px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity .2s;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%23191f28' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'/%3E%3Cline x1='11' y1='8' x2='11' y2='14'/%3E%3Cline x1='8' y1='11' x2='14' y2='11'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+
+    .proj-banner.clickable:hover::after {
+      opacity: 1;
+    }
+
+    .modal-loading {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 10px;
+      color: var(--ink-soft);
+      font-size: 14px;
+      pointer-events: none;
+    }
+
+    .modal-loading.hidden {
+      display: none;
+    }
+
+    .modal-loading .spinner {
+      width: 28px;
+      height: 28px;
+      border: 3px solid var(--line);
+      border-top-color: var(--blue);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @media (max-width: 640px) {
+      .modal {
+        padding: 12px;
+      }
+
+      .modal-content {
+        height: 95vh;
+        border-radius: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <nav>
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">SUNGJUN</a>
+      <div class="nav-menu">
+        <a href="#about">About</a>
+        <a href="#working-level">Working-level</a>
+        <a href="#education">Education</a>
+        <a href="#stack">Tech Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#awards">Awards</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a href="https://github.com/sojo1211" target="_blank" rel="noopener" class="nav-github">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+          <path
+            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+        </svg>
+        GitHub
+      </a>
+    </div>
+  </nav>
+
+  <header class="hero wrap">
+    <div>
+      <h1>안녕하세요 <span class="wave">👋</span><br />저는 <span class="b">오성준</span> 입니다.<br /><span class="b">Risk
+          Operations</span> &<br /><span class="b">AI Developer</span></h1>
+      <span class="hero-role">Risk Operations · AI Developer · Risk Analyst</span>
+      <p class="hero-sub">Toss CX FDS/RMS <strong>리스크 운영 경험</strong>과 금융 리스크 <strong>정량화 연구</strong>를 바탕으로 데이터 기반 리스크 분석
+        및 통제 역량을 쌓아온 오성준입니다.</p>
+      <div class="hero-tags">
+        <span>Risk Operations</span>
+        <span>Financial Risk Modeling</span>
+        <span>Toss CX FDS Team · Pay Risk Management Team</span>
+        <span>Toss Bank Anti-Fraud Manager 지향</span>
+      </div>
+      <div class="hero-cta">
+        <a href="https://github.com/sojo1211/Portfolio-Ohsungjun" target="_blank" rel="noopener"
+          class="btn btn-primary">포트폴리오 전체 보기
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+        <a href="#projects" class="btn btn-ghost">프로젝트 보기</a>
+      </div>
+    </div>
+    <div class="avatar-wrap">
+      <div class="avatar">
+        <div class="avatar-inner"><img src="성준사진.jpg" alt="오성준 프로필 사진" /></div>
+      </div>
+    </div>
+  </header>
+
+  <section id="about" class="alt fade-in">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">My <span class="b">Story</span></h2>
+        <p class="section-desc">연구에서 실무로, 그리고 Anti-Fraud로</p>
+      </div>
+      <div class="about-card">
+        <p>저는 <strong>"사고를 탐지하는 것보다 사고를 예방하는 것이 리스크 관리의 본질"</strong>이라는 문제의식을 바탕으로 금융 리스크를 연구해왔습니다.</p>
+        <p>이러한 문제의식은 <strong>SRHS(Stablecoin Risk Health Score)</strong> 연구로 이어졌습니다. 스테이블코인의 건전성을 사전에 평가하기 위해
+          <strong>5개의 핵심 리스크 지표(PD · LS · CR · TI · RR)</strong>를 설계하고, 이를 하나의 <strong>Risk Health Score</strong>로 통합하는
+          금융 리스크 정량화 모델을 제안했습니다. 해당 연구는 <strong>한국경영컨설팅학회 최우수 논문상</strong>과 <strong>KCI 등재 논문 게재</strong>라는 성과로 이어졌습니다.
+        </p>
+        <p>연구를 통해 <strong>리스크를 정의하고 정량화하는 방법</strong>을 익혔다면, Toss CX에서는 <strong>실제 금융 서비스에서 리스크를 운영하고 통제하는 경험</strong>을
+          쌓았습니다. 현재는 <strong>Merchant Onboarding Risk Review, RMS Labeling, 지급보류, 결제 OFF, MID 분리</strong> 등 다양한 리스크 운영
+          업무를 수행하고 있으며, 특히 <strong>자동화된 RMS Alert를 운영 데이터와 함께 재검토하고, 소명 절차와 운영 정보를 종합적으로 확인하여 리스크를 판단하는 과정</strong>에서 가장
+          큰 흥미를 느꼈습니다.</p>
+        <p>이러한 경험을 통해 <strong>데이터를 기반으로 리스크를 분석하고, 운영 관점에서 사실관계를 검증하며 의사결정을 지원하는 역량</strong>을 쌓을 수 있었습니다. 또한 실무를 수행하면서
+          <strong>거래 데이터뿐 아니라 가맹점의 신용도, 재무상태, 소명 자료 등 다양한 정보를 종합적으로 검토하여 리스크를 판단하는 과정에서 금융 범죄 예방과 규제 준수의 중요성</strong>을
+          깊이 느꼈습니다. 이러한 경험을 계기로 <strong>AML Basic 자격을 취득</strong>했으며, 앞으로도 AML 전문 교육과 심화 학습을 통해 금융 범죄 대응 역량을 지속적으로 강화해
+          나갈 계획입니다.</p>
+        <div class="about-quote">앞으로는 <strong>금융 리스크 모델링 연구 경험과 Toss CX에서의 리스크 운영 경험, 그리고 AML에 대한 이해</strong>를 바탕으로 토스뱅크
+          <strong>Anti-Fraud Manager</strong>로서 데이터 기반 분석과 Fraud Rule 고도화에 기여하고, 더욱 안전한 금융 서비스를 만드는 데 기여하고 싶습니다.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="working-level" class="fade-in">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Working-level <span class="b">Experience</span></h2>
+        <p class="section-desc">금융 혁신의 최전선에서 증명해낸 리스크 통제 실무</p>
+      </div>
+
+      <style>
+        .working-card {
+          padding: 24px;
+          background: var(--bg-soft);
+          border-radius: 14px;
+          border: 1px solid var(--line-soft);
+          transition: all 0.25s ease-in-out;
+        }
+
+        .working-card:hover {
+          transform: translateY(-4px);
+          border-color: var(--blue);
+          box-shadow: var(--shadow-md);
+          background: #ffffff;
+        }
+
+        .working-card h4 {
+          font-size: 17px;
+          font-weight: 700;
+          color: var(--blue-deep);
+          margin-bottom: 10px;
+          letter-spacing: -0.01em;
+        }
+
+        .working-card p {
+          font-size: 14px;
+          color: var(--ink-soft);
+          line-height: 1.7;
+          margin: 0 !important;
+        }
+      </style>
+
+      <div class="about-card"
+        style="max-width: 1040px; width: 100%; border-left: 6px solid var(--blue); position: relative; overflow: hidden; box-shadow: var(--shadow-md); padding: 48px;">
+        <div
+          style="position: absolute; top: 24px; right: 28px; font-size: 13px; font-weight: 700; color: var(--blue); background: var(--blue-soft); padding: 8px 16px; border-radius: 20px; letter-spacing: -0.01em; box-shadow: var(--shadow-sm);">
+          재직 중 (Operations Supporter)</div>
+
+        <h3 style="font-size: 32px; font-weight: 800; margin-bottom: 8px; color: var(--ink); letter-spacing: -0.03em;">
+          토스씨엑스 (Toss CX)</h3>
+        <p
+          style="font-size: 16px; color: var(--ink-faint); margin-bottom: 36px; font-weight: 600; letter-spacing: -0.01em;">
+          FDS Team / Pay Risk Management Team · 리스크운영 | 2026.07 ~ 현재 (연장 계약 포함)</p>
+
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; text-align: left;">
+          <div class="working-card">
+            <h4>① Merchant Onboarding Risk Review</h4>
+            <p>가맹점 입점(Onboarding) 시 등록된 <strong>6대 Risk Factor</strong>(배송 방식, 배송 기간, 최고 객단가, 판매 형태, 실물/비실물 여부, 취소 및 환불
+              정책)와 실제 웹사이트 운영 정보를 교차 검증하여 정책 위반 가능성과 리스크 요소를 사전 식별합니다.</p>
+          </div>
+
+          <div class="working-card">
+            <h4>② RMS Labeling</h4>
+            <p>RMS Alert 발생 건을 <strong>MID 단위로 추적</strong>하여 TOI / Paybiz에서 가맹점 정보를 확인하고, 실제 웹사이트 운영 현황을 조사한 뒤
+              <strong>14대 RMS 기준</strong>(판매불가상품·환금성·배송기간 초과·운영 종료·신용불량 등)에 따라 리스크 사유를 라벨링합니다.</p>
+          </div>
+
+          <div class="working-card">
+            <h4>③ Risk Control</h4>
+            <p>계약 시점과 리스크 수준에 따라 <strong>메일 소명 요청, 공문 발송, 지급보류, 결제 OFF, MID 분리</strong> 등 다양한 운영 통제를 수행합니다. 고위험 가맹점에
+              대해서는 운영 정책에 따라 선제적인 리스크 통제 업무를 집행합니다.</p>
+          </div>
+
+          <div class="working-card">
+            <h4>④ Practical Risk Operations Experience</h4>
+            <p><strong>신용불량으로 라벨링된 가맹점</strong>의 EW 등급·재무상태·담보보증금을 종합 검토하여 소명 기한(최대 5일)을 부여하고, 지연 시 OB 연락을 요청하는 등
+              <strong>자동화 Alert와 운영 데이터를 함께 검토하여 사실관계를 확인하고 의사결정을 지원</strong>하는 역량을 쌓았습니다.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="alt fade-in">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Education & <span class="b">활동</span></h2>
+        <p class="section-desc">학업 · 연구실 · 금융 IT 교육 이력</p>
+      </div>
+      <div class="edu-grid">
+        <div class="edu-card">
+          <span class="edu-tag">학력 · GPA 3.81</span>
+          <div class="edu-title">용인대학교</div>
+          <div class="edu-sub">AI학과 · AI비즈니스 융합전공 · 3학년 2학기 재학 · 2022.03 ~</div>
+          <div class="edu-desc">AI 전공으로 입학했지만 <strong>"AI는 결국 비즈니스 문제를 푸는 도구"</strong>라는 결론에 도달, 비즈니스 사고를 더하기 위해
+            <strong>AI비즈니스 융합전공</strong>을 추가 선택. 모델 성능보다 문제 정의를 먼저 고민하는 사고방식의 출발점.</div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-tag">보안 교육</span>
+          <div class="edu-title">한국정보보호산업협회</div>
+          <div class="edu-sub">융합보안 인력양성 · 클라우드 심화 · 2024.12</div>
+          <div class="edu-desc"><strong>금융 IT 클라우드 보안</strong>·권한관리·데이터 보호 체계 학습. 금융 인프라 운영 관점의 <strong>보안 사고방식</strong>
+            형성.</div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-tag">경영 교육</span>
+          <div class="edu-title">DB 인재개발원</div>
+          <div class="edu-sub">대학생 기업경영체험스쿨 · 2025.02</div>
+          <div class="edu-desc">재무·마케팅·운영 데이터를 기반으로 비즈니스 의사결정을 수행. <strong>데이터 기반 경영 사고</strong>를 익힘.</div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-tag">연구실</span>
+          <div class="edu-title">AI Service Lab</div>
+          <div class="edu-sub">부원 → 팀장 · 2025.03 ~ 현재 · 이완주·김은화 교수님</div>
+          <div class="edu-desc">RAG 기반 QA, <strong>시계열 분석</strong>, ML/DL 모델링 연구. 데이터 파이프라인·생체신호·Edge AI 심화. 2026.1~3
+            <strong>팀장</strong>으로 Figma·React 프론트 담당.</div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-tag">금융 교육</span>
+          <div class="edu-title">금융사관학교 68기</div>
+          <div class="edu-sub">수료 & 서포터즈 · 2025.04</div>
+          <div class="edu-desc">금융산업 구조 · <strong>리스크 관리</strong> · 디지털 금융 트렌드 체계적 학습. 국고채·금리·채권 등 시장 흐름 콘텐츠 제작·홍보.
+          </div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-tag">창업동아리</span>
+          <div class="edu-title">Code UP</div>
+          <div class="edu-sub">팀장 · 2025.09 ~ 2026</div>
+          <div class="edu-desc">SafeFall Intelligence 등 AI 서비스 프로젝트 <strong>팀장으로 총괄</strong>. 기획 → 데이터 → 모델 설계 → 사업화
+            전략까지 <strong>End-to-End 리드</strong>.</div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-tag">글로벌 봉사</span>
+          <div class="edu-title">Code Club</div>
+          <div class="edu-sub">글로벌 SW 교육 봉사 · 2026.01</div>
+          <div class="edu-desc">영국 <strong>Raspberry Pi Foundation</strong> 시작 · <strong>실리콘밸리 기업 후원</strong>하는 전 세계 비영리
+            SW 교육 프로그램. 한국에서 블록체인·NFT 기반 메타버스 금융 교육 진행.</div>
+        </div>
+        <div class="edu-card">
+          <span class="edu-tag">퀀트 직무</span>
+          <div class="edu-title">코멘토 · 퀀트 운용 직무 체험</div>
+          <div class="edu-sub">현직 증권사 트레이더 · 2026.02</div>
+          <div class="edu-desc"><strong>금융공학을 활용한 퀀트 운용 실무</strong>. 주식·채권·옵션·선물을 VBA·Python으로 분석하며 <strong>투자 의사결정
+              사고</strong>를 익힘.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="stack" class="alt fade-in">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Tech <span class="b">Stack</span></h2>
+        <p class="section-desc">핵심 역량 기술과 도구</p>
+      </div>
+
+      <div class="stack-group">
+        <div class="stack-label">Financial Risk</div>
+        <div class="stack-grid cols-4">
+          <div class="stack-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3182f6" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M12 2l8 4v6c0 5-3.4 8.4-8 10-4.6-1.6-8-5-8-10V6z" />
+              <path d="M9 12l2 2 4-4" />
+            </svg><span>FDS</span></div>
+          <div class="stack-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3182f6" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z" />
+              <line x1="12" y1="9" x2="12" y2="13" />
+              <line x1="12" y1="17" x2="12.01" y2="17" />
+            </svg><span>RMS</span></div>
+          <div class="stack-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3182f6" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="10" rx="2" />
+              <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+            </svg><span>AML</span></div>
+          <div class="stack-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3182f6" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg><span>TOI</span></div>
+          <div class="stack-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3182f6" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="5" width="20" height="14" rx="2" />
+              <line x1="2" y1="10" x2="22" y2="10" />
+            </svg><span>Paybiz</span></div>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <div class="stack-label">Data Analysis</div>
+        <div class="stack-grid cols-4">
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/python/3776AB" alt="Python"
+              loading="lazy" /><span>Python</span></div>
+          <div class="stack-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3182f6" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <ellipse cx="12" cy="5" rx="9" ry="3" />
+              <path d="M3 5v6c0 1.66 4.03 3 9 3s9-1.34 9-3V5" />
+              <path d="M3 11v6c0 1.66 4.03 3 9 3s9-1.34 9-3v-6" />
+            </svg><span>SQL</span></div>
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/pandas/150458" alt="Pandas"
+              loading="lazy" /><span>Pandas</span></div>
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/numpy/013243" alt="NumPy"
+              loading="lazy" /><span>NumPy</span></div>
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/scikitlearn/F7931E" alt="scikit-learn"
+              loading="lazy" /><span>scikit-learn</span></div>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <div class="stack-label">AI</div>
+        <div class="stack-grid cols-4">
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/langchain/1C3C3C" alt="LangChain"
+              loading="lazy" /><span>LangChain</span></div>
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/claude/D97757" alt="Claude Code"
+              loading="lazy" /><span>Claude Code</span></div>
+          <div class="stack-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3182f6" stroke-width="1.6"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 3v18h18" />
+              <path d="M7 14l4-4 3 3 5-6" />
+              <circle cx="11" cy="10" r="1" fill="#3182f6" />
+              <circle cx="14" cy="13" r="1" fill="#3182f6" />
+              <circle cx="19" cy="7" r="1" fill="#3182f6" />
+            </svg><span>Vector DB</span></div>
+          <div class="stack-item"><svg viewBox="0 0 24 24" fill="none" stroke="#3182f6" stroke-width="1.7"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+            </svg><span>RAG</span></div>
+        </div>
+      </div>
+
+      <div class="stack-group">
+        <div class="stack-label">Collaboration</div>
+        <div class="stack-grid cols-4">
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/git/F05032" alt="Git"
+              loading="lazy" /><span>Git</span></div>
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/react/61DAFB" alt="React"
+              loading="lazy" /><span>React</span></div>
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma"
+              loading="lazy" /><span>Figma</span></div>
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/notion/000000" alt="Notion"
+              loading="lazy" /><span>Notion</span></div>
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/slack/4A154B" alt="Slack"
+              loading="lazy" /><span>Slack</span></div>
+          <div class="stack-item"><img src="https://cdn.simpleicons.org/tailwindcss/06B6D4" alt="Tailwind CSS"
+              loading="lazy" /><span>Tailwind</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="alt fade-in">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Featured <span class="b">Projects</span></h2>
+        <p class="section-desc">토스뱅크 Anti-Fraud Manager 역량과 맞닿아 있는 프로젝트들입니다<br /><span
+            style="font-size:12.5px; color: var(--ink-faint);">SRHS·SafeFall은 팀 프로젝트이며, 설명은 제가 직접 담당한 역할을 기준으로
+            작성했습니다.</span></p>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card">
+          <div class="proj-banner b4 clickable" data-image="kb_dm.png" role="button" tabindex="0"
+            aria-label="KB 소상공인 금융 AI 에이전트 미리보기 이미지 보기"><span class="proj-banner-tag">신뢰성 · 설명가능성</span><span
+              class="proj-banner-text">KB</span></div>
+          <div class="proj-body">
+            <div class="proj-title">KB국민은행 제8회 AI Challenge</div>
+            <div class="proj-date">2026 · KB국민은행 현직자 PICK 주제 · 제8회 AI Challenge 경진대회</div>
+            <p class="proj-desc">소상공인이 정책자금 신청 자격·규제 조건·근거 문서를 스스로 찾는 데 오랜 시간이 걸린다는 문제를 해결하기 위해, 근거 문서를 인용해 답변하는
+              <strong>RAG 기반 금융 에이전트</strong>를 구축했습니다. KB국민은행 <strong>2026 현직자 PICK 주제</strong> 중 "소상공인 금융 에이전트"를 선택해
+              진행했으며, 저는 <strong>RAG 기반 AI Agent 개발, LangChain 활용, PDF/HWP 데이터 파이프라인 구축, React 기반 UI/UX 개발</strong>을
+              담당했습니다. 정책 정보가 PDF·HWP 등 다양한 형식으로 분산되어 있어 검색 정확도가 낮고 생성형 AI의 <strong>환각(Hallucination)</strong> 가능성이 있다는
+              문제를 해결하기 위해, PDF·HWP 문서를 <strong>마크다운(.md)으로 변환</strong>한 뒤 <strong>Gemini 2.5 모델</strong>로 전처리해
+              <strong>ChromaDB 기반 벡터DB</strong>를 구축했습니다. 답변 지침서(시스템 프롬프트)에 <strong>"문서에 있는 내용만 답변하고, 근거 문서에서 확인되지 않는 질문은
+                추측하지 않고 안내 문구로 우회 응답한다"</strong>는 규칙을 명시해, 모델이 아는 범위 밖의 내용은 지어내지 않고 우회하도록 설계했으며, 답변마다 <strong>참고 출처와 근거
+                문서를 함께 제시</strong>해 금융 서비스에서 중요한 신뢰성과 설명 가능성을 확보했습니다.<br /><br /><strong>Anti-Fraud 관점의 적용</strong>
+              FDS·AML 판단 역시 "왜 이 거래가 이상 거래로 분류되었는가"를 설명할 수 있어야 규제 대응과 오탐 검증이 가능합니다. 근거 문서 없이는 답하지 않도록 설계했던 이 경험은,
+              <strong>탐지 결과에 근거(Feature·Rule)를 함께 제시해 오탐을 줄이고 심사자의 의사결정을 지원하는 토스뱅크 FDS 룰 고도화</strong>에도 그대로 적용할 수 있다고
+              생각합니다.</p>
+            <div class="proj-stack"><b>Tech:</b> LangChain, RAG, Python, ChromaDB, React, Gemini 2.5, PDF→Markdown
+              파이프라인, GitHub Pages</div>
+            <div class="proj-award">🏦 KB 국민은행 제8회 AI Challenge 경진대회 참가작</div>
+            <div class="proj-actions">
+              <a href="https://sojo1211.github.io/2026_KB_AI_Challenge_Small-business-financial-agent_ohsungjun/"
+                target="_blank" rel="noopener" class="primary"
+                style="width: auto; padding: 0 14px; gap: 6px; font-weight: 600; font-size: 13px;"
+                aria-label="데모 사이트 보기">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="width:16px;height:16px;">
+                  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+                  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+                </svg>
+                데모 보기
+              </a>
+              <a href="https://github.com/sojo1211/2026_KB_AI_Challenge_Small-business-financial-agent_ohsungjun"
+                target="_blank" rel="noopener" aria-label="GitHub 레포지토리">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-banner b1 clickable" data-image="스테이블.jpg" role="button" tabindex="0"
+            aria-label="SRHS 미리보기 이미지 보기"><span class="proj-banner-tag">사전 예방 · 조기 경보</span><span
+              class="proj-banner-text">SRHS</span></div>
+          <div class="proj-body">
+            <div class="proj-title">Stablecoin Risk Health Score (SRHS)</div>
+            <div class="proj-date">2026 · 경영학과 팀 협업 · 한국경영컨설팅학회</div>
+            <p class="proj-desc">스테이블코인의 건전성을 <strong>사전에 평가하기 위한 Financial Risk Scoring Framework</strong>를
+              연구했습니다.<br /><br /><strong>Problem</strong> Terra-LUNA 붕괴와 FTX 파산 등 연이은 시장 사건은 디지털 자산에 대한 신뢰를 크게 훼손했고, 대규모
+              자금 인출(Bank Run)과 유동성 위기를 초래했습니다. 이러한 사례는 <strong>위험이 현실화된 이후 대응하는 방식만으로는 투자자와 시장을 보호하기 어렵다</strong>는 점을
+              보여주었으며, 기존 평가는 담보비율(Collateral Ratio)이나 페그(Peg) 유지 여부 등 일부 지표 중심으로 이루어져 유동성, 준비자산의 신뢰성, 정보공개 수준 등 다양한 리스크
+              요인을 종합적으로 반영하지 못하는 한계가 있었습니다.<br /><strong>Solution</strong> 사고 발생 이후의 사후 분석이 아닌, 사고 이전에 스테이블코인의 건전성을
+              정량적으로 평가할 수 있는 금융 리스크 평가 프레임워크인 SRHS를 설계했습니다. 경영학과 팀과 협업해 저는 <strong>AI 리스크 지표 5종(PD·LS·CR·TI·RR) 설계와 점수화
+                모델</strong>을 담당, <strong>무역결제에서 1대1 달러와 연동되는 USDT·USDC·DAI·PYUSD 4종 실시간 모니터링 시스템</strong>으로 구현했습니다. 각
+              리스크 요인을 정량화하여 하나의 <strong>Risk Health Score</strong>로 통합하고, 한국 외국환거래법·CARF MCAA 규제 컨텍스트를 반영했으며
+              Terra-Luna·FTX·USDC(SVB) 등 실제 붕괴 사례에 적용해 위험도를 비교·검증한 뒤 KCI 등재지에 논문을 게재했습니다.<br /><br />5개 지표의 가중치는 릿지 회귀로
+              초기값을 추정한 뒤, <strong>FTX 파산·테라-루나 붕괴·빗썸 규제 리스크 3개 실제 위기 사례</strong>에 위기 발생 전 정상구간과 위기구간을 함께 복원해 역적용하는
+              백테스팅으로 검증·확정했습니다. 10%p 단위로 구성한 5개 가중치 시나리오 중, <strong>CR(담보건전성) 25% · PD(부도확률) 20% · LS(유동성) 20% ·
+                TI(거래지표) 20% · RR(규제) 15%</strong> 조합만이 세 사례 전부에서 <strong>위기 5일 전 조기 경보 + 오경보(False Positive)
+                0건</strong>을 동시에 충족했습니다. 이후 ±5%p 민감도 분석에서도 등급 변동 없이 점수 변동폭 10점 이내를 유지해 모델의 강건성을 추가로
+              검증했습니다.<br /><br />가장 중요하게 생각한 것은 모델의 성능이 아니라 <strong>평가 기준 자체의 타당성</strong>이었습니다. 이 경험을 통해 정답이 없는 위험을
+              데이터와 근거로 기준화하는 역량을 키웠으며, 이는 현재 Toss CX에서 수행하고 있는 <strong>Merchant Risk Review, RMS Labeling, Risk
+                Assessment</strong> 업무와도 자연스럽게 연결되고 있습니다.<br /><br /><strong>Anti-Fraud 관점의 적용</strong> 위기 5일 전 조기 경보와
+              오경보 0건을 동시에 만족하는 가중치를 찾아낸 이 경험은, 토스뱅크의 <strong>여신·전월세대출 심사</strong>에도 그대로 적용할 수 있다고 생각합니다. 신청 단계의 소득·거래·신용
+              정보로 부정 의심 점수를 사전 산출하고, 실제 사기 사례로 룰을 역검증(백테스팅)해 <strong>오탐을 줄이면서 탐지 시점을 앞당기는 FDS 예방 룰</strong>로 고도화하는
+              방식입니다.</p>
+            <div class="proj-stack">
+              <b>Tech:</b> React, CoinGecko API, DeFiLlama API, 순수 SVG 차트<br />
+              <b>Validation:</b> Ridge Regression 가중치 최적화 → 3개 위기 사례 백테스팅 (FTX·테라-루나·빗썸) → 5일 조기경보·오경보 0건 · 민감도 분석 강건성
+              검증
+            </div>
+            <div class="proj-award">🏆 한국경영컨설팅학회 최우수 논문상 · KCI 등재지 『경영컨설팅연구』 제26권 제3호 게재</div>
+            <div class="proj-actions">
+              <a href="SRHS.pdf" target="_blank" rel="noopener" class="primary pdf"
+                style="width: auto; padding: 0 14px; gap: 6px; font-weight: 600; font-size: 13px;" aria-label="논문 보기">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round" style="width:16px;height:16px;">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                </svg>
+                논문 보기
+              </a>
+              <a href="스테이블코인.pptx" target="_blank" rel="noopener" class="ppt" aria-label="발표자료 PPT">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" /><text x="7" y="18" font-size="6" font-weight="700"
+                    fill="currentColor" stroke="none">PPT</text>
+                </svg>
+              </a>
+              <a href="https://github.com/sojo1211/SRHS-STABLECOIN-RISK-HEALTH-SCORE-" target="_blank" rel="noopener"
+                aria-label="GitHub 레포지토리">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="proj-card">
+          <div class="proj-banner b2 clickable" data-image="창동.png" role="button" tabindex="0"
+            aria-label="SafeFall 미리보기 이미지 보기"><span class="proj-banner-tag">이상탐지 · 사전예측</span><span
+              class="proj-banner-text">SafeFall</span></div>
+          <div class="proj-body">
+            <div class="proj-title">SafeFall Intelligence</div>
+            <div class="proj-date">2025.09 ~ 현재 · 팀장 · Code UP</div>
+            <p class="proj-desc"><strong>웨어러블 생체신호 기반 이상탐지(Anomaly Detection) 프로젝트</strong>로, 기존 낙상 탐지 연구들은 92~99%의 높은
+              정확도에도 불구하고 대부분 "낙상이 이미 발생한 후"를 감지하는 사후 대응 방식이라는 공통된 한계를 가진다는 문제를 발견하고, 사고 이전 단계에서 위험을 예측하는 SafeFall
+              Intelligence를 설계했습니다.<br /><br /><strong>Problem</strong> 산업재해 사망 원인 1위가 추락·낙상(41.6%)이며 65세 이상 낙상 사고도 4년 새
+              3.2배 증가했지만, "넘어진 뒤의 알림"은 골절과 2차 사고를 막기엔 이미 늦은 대응이었습니다. 가장 큰 난관은 라벨링이었습니다 낙상 직전 전조 증상은 사용자마다 패턴이 너무 다양해,
+              고정된 임곗값 하나로 위험 신호를 정의할 수 없는, <strong>사람이 경계선을 직접 그을 수 없는 문제</strong>였습니다.<br /><strong>Solution</strong>
+              사람이 규칙으로 정의할 수 없는 문제였기에 <strong>비지도 학습(K-Means)</strong>을 도입해, 상관계수와 센서 특징점 기반 군집화로 전조 증상의 경계를 알고리즘이 데이터
+              기반으로 도출하도록 설계했습니다. 저는 <strong>시계열(Time Series) 데이터 전처리, 이상탐지(Anomaly Detection) 모델 설계, Decision Label 기준
+                정의</strong>를 담당했습니다: 거리·압력·HRV·혈당·SpO₂·가속도 등 다중 센서 데이터를 모델이 학습할 수 있는 형태로 만드는 전 과정으로 <strong>Decision 라벨
+                기준 설계(정상·미끄러짐·낙상)</strong>, 이상치 제거·정규화·노이즈 필터링 등 전처리, 라벨 정합성 검증 및 클래스 불균형 처리, 전체 사용자 데이터에 대한 상관분석 → 히트맵
+              시각화로 실제 낙상과 유의미하게 연관된 센서를 확인하는 작업입니다. 상관분석 결과 압력·심박수·산소포화도는 낙상과 높은 상관성을, 혈당은 낮은 상관성을 보여 이를 특징 선택의 근거로
+              활용했습니다. 모델 학습에는 GitHub의 사전학습 모델을 <strong>전이학습(Transfer Learning)</strong>으로 활용했으며, 구체적으로는 사전학습된 가중치를 모두
+              고정(freeze)하고 <strong>출력층(Classifier)만 새로운 라벨(정상·미끄러짐·낙상)에 맞게 교체해 재학습하는 특징 추출(Feature Extraction)
+                방식</strong>을 적용했습니다.<br /><br />비지도 학습 기반임에도 정확도 약 83%, F1-Score 약 82%를 달성해 "사후 감지"가 아닌 <strong>사전
+                예방</strong>의 실효성을 데이터로 입증했습니다.<br /><br /><strong>Anti-Fraud 관점의 적용</strong> 사람마다 패턴이 달라 고정 임곗값이 통하지 않는
+              문제는, 고객·거래마다 정상 패턴이 제각각인 <strong>이상 거래 탐지(FDS)</strong> 문제와 본질적으로 같은 구조라고 생각합니다. 정해진 규칙이 아니라 데이터 안에서 위험의
+              경계를 알고리즘이 스스로 찾도록 설계했던 경험은, 토스뱅크에서 <strong>고정 룰만으로 잡히지 않는 신종 사기 패턴을 비지도 학습으로 조기에 포착</strong>하는 데 활용할 수
+              있습니다. 또한 센서 데이터 지연 0.5초가 사고를 막지 못하는 상황을 겪으며 "데이터 오류가 곧 실제 피해로 이어지는 도메인"의 무게를 체감했고, 이는 실시간성이 중요한 결제·여신 FDS
+              운영에도 동일하게 적용됩니다.</p>
+            <div class="proj-stack">
+              <b>Tech:</b> Python, PyTorch, LSTM, Time Series Analysis, RandomForest, K-means, Linear Regression,
+              IMU/HRV/SpO₂, Transfer Learning(특징 추출)<br />
+              <b>Result:</b> 정확도 약 83% · F1-Score 약 82% · 비지도 학습 기반 사전 예측 검증
+            </div>
+            <div class="proj-award">🏆 용인대학교 창업경진대회 최우수상</div>
+            <div class="proj-actions">
+              <a href="폴링팀_오성준_김태호_윤주영__창업동아리-codeUP.pptx" target="_blank" rel="noopener" class="ppt"
+                aria-label="발표자료 PPT">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                  stroke-linejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" /><text x="7" y="18" font-size="6" font-weight="700"
+                    fill="currentColor" stroke="none">PPT</text>
+                </svg>
+              </a>
+              <a href="https://github.com/sojo1211/SafeFall/tree/ict-safefall_project" target="_blank" rel="noopener"
+                aria-label="GitHub 레포지토리">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt fade-in">
+    <div class="wrap">
+
+      <div class="section-head">
+        <h2 class="section-title">Why <span class="b">Toss Bank</span></h2>
+        <p class="section-desc">이론에서 실무로, 그리고 지능형 통제로</p>
+      </div>
+      <div class="why-card">
+        <p>이론적 리스크 평가 모델(SRHS 논문 최우수상)을 설계하며 <strong>'금융 거래의 신뢰성을 어떻게 사전에 정량화할 것인가'</strong>라는 깊은 문제의식을 가졌습니다. 여기에 안주하지
+          않고 실제 작동하는 시스템을 체득하고자 <strong>토스씨엑스 FDS Team / Pay Risk Management Team의 Operations Supporter</strong>로 합류해 실무
+          데이터와 룰 사이의 갭을 검수하고 고위험 거래를 차단하는 <strong>현장 모니터링 및 실무 제재 프로세스</strong>를 직접 운영했습니다. 이 과정에서 규제 준수 검증과 자금세탁방지(AML)
+          영역에 큰 흥미를 갖게 되었습니다.</p>
+        <p>이제 저는 리스크 모델 설계 능력과 현장 실무 운영 감각을 결합하여, <strong>토스뱅크의 Anti-Fraud Manager</strong>로 도약하고자 합니다. 토스뱅크의 소매 여신 및
+          전월세대출 심사 신청 단계에서 발생할 수 있는 부정 의심 거래와 사기 패턴을 Python/SQL 데이터 Deep Dive를 통해 선제 규명하고, 트렌드를 반영하여 FDS 예방 룰을 지능적으로
+          고도화하겠습니다.</p>
+        <p>입사 후에는 토스뱅크의 여신·수신 상품 구조와 심사/운영 프로세스를 빠르게 학습하겠습니다. 데이터 분석을 기반으로 이상 거래 탐지 룰을 설계/업데이트하고, 오탐을 줄이면서 탐지 정밀도를 높여 업무
+          효율성과 고객 편의를 동시에 지켜내겠습니다. 나아가 <strong>AML과 결제 리스크 관리를 아우르는 통제 전문가</strong>로 확실히 자리잡기 위해, <span
+            style="color: var(--blue-deep); font-weight: 700;">한국금융연수원 자금세탁방지(AML) 핵심요원(기초) 과정을 이수 완료하여 통제 역량의 내실을 이미
+            다졌습니다.</span> 데이터로 금융의 안전을 지키고 사용자가 가장 신뢰할 수 있는 토스뱅크를 만드는 주역이 되겠습니다.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="awards" class="fade-in">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Awards & <span class="b">Certificate</span></h2>
+        <p class="section-desc">수상 4회 · 자격증 · 경영컨설팅연구, 제26권, 제3호 등재</p>
+      </div>
+      <div class="award-grid">
+        <div class="award-item top">
+          <div class="award-info">
+            <div class="award-name">한국경영컨설팅학회 학술대회 · SRHS</div>
+            <div class="award-meta">2026 · 황상원 교수님 지도</div>
+          </div><span class="award-badge">🏆 최우수상</span>
+        </div>
+        <div class="award-item top">
+          <div class="award-info">
+            <div class="award-name">용인대 제2회 창업아이디어 경진대회 · SafeFall</div>
+            <div class="award-meta">2025 · 팀장 · AI 설계 총괄</div>
+          </div><span class="award-badge">🏆 최우수상</span>
+        </div>
+        <div class="award-item">
+          <div class="award-info">
+            <div class="award-name">단국 창업 해커톤 · Agri-SCM Intelligence</div>
+            <div class="award-meta">2025 · G7 분야 · 공급망 예측</div>
+          </div><span class="award-badge">🥉 장려상</span>
+        </div>
+      </div>
+      <div class="cert-row">
+        <div class="cert"><b>🛡️</b> 자금세탁방지(AML) Basic</div>
+        <div class="cert"><b>📜</b> SQLD · SQL Developer</div>
+        <div class="cert"><b>📊</b> ADsP · 데이터분석 준전문가</div>
+      </div>
+      <div class="cert-full">
+        <div class="cert"><b>📄</b> 경영컨설팅연구, 제26권, 제3호 등재 (B2B 무역결제에서 스테이블 코인의 안정성 평가 모델 개발: 실시간 건전성 지수(SRHS)와 규제 통합
+          프레임워크 중심)</div>
+      </div>
+      <div class="awards-more">
+        <a href="https://github.com/sojo1211/Portfolio-Ohsungjun" target="_blank" rel="noopener">모든 수상 내역 GitHub에서 보기
+          →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="alt fade-in">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="section-title">Get in <span class="b">Touch</span></h2>
+        <p class="section-desc">이야기 나누고 싶습니다</p>
+      </div>
+      <div class="contact-wrap">
+        <div class="contact-grid">
+          <a href="mailto:sungjun12110@gmail.com" class="contact-item">
+            <div class="contact-label">Personal Email</div>
+            <div class="contact-val">sungjun12110@gmail.com</div>
+          </a>
+          <a href="mailto:202278035@yiu.ac.kr" class="contact-item">
+            <div class="contact-label">School Email</div>
+            <div class="contact-val">202278035@yiu.ac.kr</div>
+          </a>
+          <a href="https://github.com/sojo1211" target="_blank" rel="noopener" class="contact-item">
+            <div class="contact-label">GitHub</div>
+            <div class="contact-val">github.com/sojo1211</div>
+          </a>
+          <div class="contact-item">
+            <div class="contact-label">Affiliation</div>
+            <div class="contact-val">용인대 AI학과 · AI Service Lab</div>
+          </div>
+        </div>
+        <a href="https://github.com/sojo1211/Portfolio-Ohsungjun" target="_blank" rel="noopener" class="github-cta">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path
+              d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+          </svg>
+          전체 포트폴리오 (github.com/sojo1211/Portfolio-Ohsungjun)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div class="footer-row">
+        <a href="#" class="footer-logo">SUNGJUN</a>
+        <a href="mailto:sungjun12110@gmail.com" class="footer-email">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+            stroke-linejoin="round">
+            <rect x="3" y="5" width="18" height="14" rx="2" />
+            <polyline points="3 7 12 13 21 7" />
+          </svg>
+          sungjun12110@gmail.com
+        </a>
+        <div class="footer-socials">
+          <a href="https://github.com/sojo1211" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12" />
+            </svg>
+          </a>
+          <a href="https://ohsungjun.tistory.com" target="_blank" rel="noopener" aria-label="Tistory 블로그">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M4 4.5h16v3.8h-6.1V19.5h-3.8V8.3H4z" />
+            </svg>
+          </a>
+          <a href="mailto:sungjun12110@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+              stroke-linejoin="round">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <polyline points="3 7 12 13 21 7" />
+            </svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-copy">© 2026 Oh Sungjun · 오성준</div>
+    </div>
+  </footer>
+
+  <div class="modal" id="docModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-content">
+      <div class="modal-head">
+        <div class="modal-title" id="modalTitle">문서 미리보기</div>
+        <div class="modal-actions">
+          <a class="modal-open-new" id="modalOpenNew" href="#" target="_blank" rel="noopener" title="새 탭에서 열기">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M15 3h6v6" />
+              <path d="M10 14L21 3" />
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            </svg>
+            새 탭
+          </a>
+          <button type="button" class="modal-close" id="modalClose" aria-label="닫기">×</button>
+        </div>
+      </div>
+      <div class="modal-body">
+        <div class="modal-loading" id="modalLoading">
+          <div class="spinner"></div>
+          <div>문서를 불러오는 중…</div>
+        </div>
+        <iframe id="modalFrame" src="about:blank" title="문서 미리보기"></iframe>
+        <img id="modalImg" class="modal-img hidden" alt="" />
+        <div class="modal-fallback hidden" id="modalFallback">
+          <div class="modal-fallback-icon">PPT</div>
+          <div class="modal-fallback-title" id="fallbackTitle">PPT 파일</div>
+          <div class="modal-fallback-msg">로컬 환경에서는 PPT 미리보기가 작동하지 않습니다. <strong>영상이 포함된 슬라이드는 PowerPoint 또는 Google
+              Slides</strong>에서 열어주세요.<span class="hint">사이트가 공개 URL로 배포되면 모달 내 미리보기(영상 포함)가 자동 작동합니다.</span></div>
+          <a class="modal-fallback-btn" id="fallbackBtn" href="#" target="_blank" rel="noopener" download>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+              <polyline points="7 10 12 15 17 10" />
+              <line x1="12" y1="15" x2="12" y2="3" />
+            </svg>
+            파일 다운로드 · 새 탭에서 열기
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+    const modal = document.getElementById('docModal');
+    const modalFrame = document.getElementById('modalFrame');
+    const modalImg = document.getElementById('modalImg');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalOpenNew = document.getElementById('modalOpenNew');
+    const modalLoading = document.getElementById('modalLoading');
+    const modalFallback = document.getElementById('modalFallback');
+    const fallbackBtn = document.getElementById('fallbackBtn');
+    const fallbackTitle = document.getElementById('fallbackTitle');
+
+    function openViewer(url, title, type) {
+      modalTitle.textContent = title || '문서 미리보기';
+      modalOpenNew.href = url;
+      modalLoading.classList.remove('hidden');
+      const isImage = type === 'image' || /\.(jpe?g|png|gif|webp|svg)$/i.test(url);
+      const isPpt = type === 'ppt' || /\.pptx?$/i.test(url);
+      const isHttp = /^https?:/.test(location.protocol);
+
+      modalImg.classList.add('hidden');
+      modalFrame.classList.add('hidden');
+      modalFallback.classList.add('hidden');
+      modalImg.removeAttribute('src');
+
+      if (isImage) {
+        modalFrame.src = 'about:blank';
+        modalImg.classList.remove('hidden');
+        modalImg.alt = title || '';
+        modalImg.src = url;
+      } else if (isPpt && !isHttp) {
+        modalFrame.src = 'about:blank';
+        modalLoading.classList.add('hidden');
+        modalFallback.classList.remove('hidden');
+        fallbackBtn.href = url;
+        fallbackTitle.textContent = (title ? title + ' · ' : '') + 'PPT 파일';
+      } else {
+        modalFrame.classList.remove('hidden');
+        if (isPpt) {
+          const absUrl = new URL(url, location.href).href;
+          modalFrame.src = 'https://view.officeapps.live.com/op/embed.aspx?src=' + encodeURIComponent(absUrl);
+        } else {
+          modalFrame.src = url;
+        }
+      }
+
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeViewer() {
+      modal.classList.remove('open');
+      modalFrame.src = 'about:blank';
+      modalImg.removeAttribute('src');
+      modalFallback.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    modalFrame.addEventListener('load', () => modalLoading.classList.add('hidden'));
+    modalImg.addEventListener('load', () => modalLoading.classList.add('hidden'));
+    document.getElementById('modalClose').addEventListener('click', closeViewer);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeViewer(); });
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal.classList.contains('open')) closeViewer(); });
+
+    document.querySelectorAll('.proj-actions a.pdf, .proj-actions a.ppt').forEach(a => {
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        const url = a.getAttribute('href');
+        const type = a.classList.contains('ppt') ? 'ppt' : 'pdf';
+        const card = a.closest('.proj-card');
+        const projTitle = card ? card.querySelector('.proj-title') : null;
+        openViewer(url, projTitle ? projTitle.textContent.trim() : '', type);
+      });
     });
-  });
 
-  document.querySelectorAll('.proj-banner.clickable').forEach(b => {
-    const open = () => {
-      const url = b.dataset.image;
-      if (!url) return;
-      const card = b.closest('.proj-card');
-      const t = card ? card.querySelector('.proj-title') : null;
-      openViewer(url, t ? t.textContent.trim() : '', 'image');
-    };
-    b.addEventListener('click', open);
-    b.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
-  });
+    document.querySelectorAll('.proj-banner.clickable').forEach(b => {
+      const open = () => {
+        const url = b.dataset.image;
+        if (!url) return;
+        const card = b.closest('.proj-card');
+        const t = card ? card.querySelector('.proj-title') : null;
+        openViewer(url, t ? t.textContent.trim() : '', 'image');
+      };
+      b.addEventListener('click', open);
+      b.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } });
+    });
 
-</script>
+  </script>
 </body>
+
 </html>
