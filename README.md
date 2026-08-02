@@ -250,8 +250,8 @@ https://github.com/sojo1211/toss_FDS_ohsungjun/blob/master/SRHS.pdf
 # 📜 Certifications
 
 - AML Basic
-- SQLD (Planned)
-- ADsP (Planned)
+- SQLD 
+- ADsP 
 
 ---
 
