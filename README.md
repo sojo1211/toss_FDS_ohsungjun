@@ -1,128 +1,288 @@
-# 프로젝트 명세서: 토스뱅크 Anti-Fraud Manager 맞춤형 포트폴리오 (toss_FDS_ohsungjun)
+# 📌 오성준 (Oh Sungjun)
 
-**Toss CX FDS/RMS 실무 역량**과 **AI 데이터 분석/리스크 정량화 학술 연구 성과**를 결합하여, **토스뱅크 Anti-Fraud Manager** 직무에 최적화된 오성준 님의 싱글 페이지 포트폴리오 웹사이트 구축을 목표로 합니다.
+<p align="center">
+  <img src="./성준사진.jpg" width="260" alt="오성준 프로필"/>
+</p>
 
----
+# Risk Operations · AI Developer · Risk Analyst
 
-## 👤 프로필 개요 (Profile Overview)
-
-* **이름:** 오성준 (Oh Sungjun)
-* **소속:** 토스씨엑스 (Toss CX) FDS Team / Pay Risk Management Team
-* **역할:** Operations Supporter (리스크 운영) / AI Developer & Risk Analyst
-* **타겟 직무:** 토스뱅크 Anti-Fraud Manager (여신 사기 방지 및 리스크 관리)
+> **Toss CX FDS/RMS 리스크 운영 경험과 금융 리스크 정량화 연구를 바탕으로 데이터 기반 리스크 분석 및 통제 역량을 쌓아온 오성준입니다.**
 
 ---
 
-## 🎯 핵심 메시지 및 메인 카피 (Hero Section)
+# 👤 Profile
 
-* **메인 타이틀:** Toss CX FDS / RMS Risk Operations Specialist
-* **서브 타이틀 / 훅:**
-  > "온보딩 데이터 검수부터 14대 RMS 라벨링, 약관 기반 리스크 통제, 그리고 AI 데이터 분석까지 갖춘 준비된 Anti-Fraud 전문가 오성준입니다."
-  >
-
----
-
-## 💼 현직 실무 역량 (Current Work Experience: Toss CX)
-
-### 1. 온보딩 6대 Risk Factor 정밀 검수
-
-* 가맹점 입점(Onboarding) 시 제출된 6대 리스크 팩터와 실제 웹사이트 운영 데이터 간의 Discrepancy(불일치) 교차 검증.
-* **주요 검수 항목:** 배송 종류(국내/해외), 배송/서비스 소요 시간, 최고 객단가, 판매 형태(중개/다단계/사전예약 등), 실물/비실물 구분, 취소/환불 규정.
-
-### 2. MID 조회 및 14대 RMS 기준표 정량 라벨링
-
-* RMS Alert 발생 건을 토스페이파트너스(TOI/Paybiz)에서 MID 단위로 역추적 후 가맹점 웹사이트 실사 점검.
-* **14대 RMS 라벨링 기준:** ① 판매불가상품 ② 환금성판매 ③ 배송기간 1달 초과 ④ 판매상품 불명확 ⑤ 유의 상품 판매 ⑥ 운영종료 ⑦ URL 확인 ⑧ 신용불량 ⑨ 기본환불한도과다 ⑩ 기업회생/파산 ⑪ 수익/환불 보장 문구 ⑫ 3개월 거래 미발생 ⑬ 취소주기 ⑭ 상품 변질.
-
-### 3. 계약 시점별 약관/공문 차등 리스크 통제 (2023.07.10 분기)
-
-* **2023.07.10 이후 가입 가맹점:** 전자금융거래 이용약관 기반 메일 소명 요청 (일반 3일 / 신용불량 5일 타이트 관리).
-* **2023.07.10 이전 가입 가맹점:** 서면 계약 조항 준수를 위한 내부 결재 및 정식 공문(인감 날인) 발송.
-
-### 4. 선제적 자금 손실 차단 (Pre-signal Action)
-
-* 미소명 및 고위험 가맹점 대상 지급보류, 결제 OFF(연동 해제), MID 분리, 서비스 비활성화 조치로 2차 연체 및 손실 사전 예방.
+- **Name** : 오성준 (Oh Sungjun)
+- **Current** : Toss CX FDS Team / Pay Risk Management Team
+- **Target Position** : Toss Bank Anti-Fraud Manager
 
 ---
 
-## 🎓 학술 연구 & 핵심 프로젝트 (Research & Projects)
+# 🔍 Core Competencies
 
-### 1. SRHS (Stablecoin Risk Health Score)
+## Risk Operations
 
-* **내용:** 스테이블코인 붕괴 예방을 위한 5개 핵심 리스크 지표(PD·LS·CR·TI·RR) 정량화 프레임워크 설계.
-* **성과:** 한국경영컨설팅학회 최우수상 수상 & KCI 등재지 『경영컨설팅연구』 제26권 3호 논문 게재.
+- Merchant Onboarding Risk Review
+- RMS Labeling
+- Merchant Risk Assessment
+- Risk Review
+- Pre-signal Risk Control
 
-### 2. SafeFall Intelligence
+## Financial Risk Modeling
 
-* **내용:** 시계열 생체신호 이상 탐지(Anomaly Detection) 및 Decision 라벨 설계.
-* **성과:** 용인대학교 창업경진대회 최우수상 수상.
+- Stablecoin Risk Health Score (SRHS)
+- Risk Scoring Framework
+- Financial Risk Quantification
 
-### 3. KB국민은행 제8회 AI Challenge
+## Data Analysis
 
-* **내용:** 소상공인 비대면 정책자금 사전 검증 RAG 기반 AI 에이전트 구축 (데이터 파이프라인 및 UI/UX).
+- Python
+- SQL
+- Pandas
+- NumPy
+- scikit-learn
 
----
+## AI Development
 
-## 🛠️ 기술 스택 & 도구 (Tech Stack Architecture)
-
-### 1️⃣ Financial Risk & Systems (최상단)
-
-* **Systems:** `RMS` · `FDS` · `AML` · `TOI Admin` · `SFDC (Paybiz)`
-* **Domain:** `소매여신/SOHO Risk` · `비대면 서류 검수` · `가맹점 온보딩 Factor 검수` · `14대 RMS 라벨링` · `약관/공문 프로세스`
-
-### 2️⃣ Data Analysis & Validation
-
-* **Languages & Libs:** `Python` · `Pandas` · `NumPy` · `scikit-learn` · `SQL`
-* **Analysis & Logic:** `Data Deep Dive` · `시계열 이상 탐지 (Anomaly Detection)` · `Fraud-Rule Optimization` · `Pre-signal Analysis`
-
-### 3️⃣ AI Engine & Fast Prototyping
-
-* **Tools & Models:** `Claude Code` · `LangChain` · `RAG` · `Vector DB (Chroma)` · `PyTorch`
-* **Methodology:** `AI-Native Dev (Vibe Coding)` · `Fast Prototyping` · `PDF/HWP Data Pipeline`
-
-### 4️⃣ Tools & Collaboration
-
-* `Git` · `React` · `Tailwind CSS` · `Figma` · `Notion` · `Slack Core Channels`
+- LangChain
+- Claude Code
+- RAG
+- Vector DB
 
 ---
 
+# 💼 Current Work Experience
 
+## Toss CX FDS Team / Pay Risk Management Team
 
-### 💡 My Story: '설계'에서 '실무'로, 그리고 토스뱅크의 'Anti-Fraud 고도화'로
+### ① Merchant Onboarding Risk Review
 
-#### 1️⃣ 문제의식의 시작: "금융 거래와 자산의 신뢰성을 어떻게 사전에 검증할 것인가?"
+가맹점 입점(Onboarding) 시 등록된 **6대 Risk Factor**와 실제 웹사이트 운영 정보를 교차 검증하여 정책 위반 가능성과 리스크 요소를 식별했습니다.
 
-저는 AI와 데이터를 공부하며 **“사고가 발생한 뒤 감지하는 것은 늦는다. 금융 자산과 거래의 신뢰성을 데이터 기반으로 사전 정량화하고 예방하는 것이 리스크 관리의 본질”**이라는 깊은 문제의식을 갖게 되었습니다.
+**주요 검수 항목**
 
-이 문제의식을 바탕으로 스테이블코인의 붕괴 리스크를 사전에 탐지하기 위해 **5대 핵심 리스크 지표(PD·LS·CR·TI·RR)를 설계**하고 정량화 모델을 수립하는 **SRHS 프로젝트**를 진행했습니다. 이 연구로 학술대회 최우수상을 수상하고 KCI 등재지 논문화(주저자)를 진행하면서, 데이터를 비즈니스 통제 지표로 가공하는 리스크 모델 설계의 초석을 다졌습니다.
+- 배송 방식
+- 배송 기간
+- 최고 객단가
+- 판매 형태
+- 실물 / 비실물 여부
+- 취소 및 환불 정책
 
-#### 2️⃣ 실제 운영으로의 확장: "설계를 넘어, 실제로 작동하는 RMS(Risk Management System)의 현장으로"
+등록 정보와 실제 운영 정보 간의 불일치를 확인하여 정책 위반 가능성을 검토하고 리스크를 사전에 식별하는 업무를 수행했습니다.
 
-하지만 리스크 모델은 이론에 머물러서는 안 되며, 실제 대규모 거래가 발생하는 금융 시스템 속에서 어떻게 작동하고 자금을 통제하는지 실증해야 한다고 믿었습니다. 이에 따라 **토스씨엑스(Toss CX) FDS Team의 Operations Supporter(리스크운영)**로 합류하여 생생한 실무에 뛰어들었습니다.
+---
 
-가맹점 입점 시 등록된 6대 팩터와 실제 운영되는 실데이터 사이의 리스크를 포착하고, 14대 RMS 기준에 맞춰 리스크 사유를 정량 라벨링했습니다. 더 나아가 고위험 가맹점 대상의 소명 프로세스 집행, 인감 날인 공식 공문 발송 제재, 그리고 최종 결제 OFF 및 지급보류까지 리스크 통제의 최전선에서 전 과정을 직접 직접 운영했습니다.
+### ② RMS Labeling
 
-#### 3️⃣ 현장에서 찾은 흥미: "자동화 룰의 틈새를 메우는 통제와 AML"
+RMS Alert 발생 건을 **MID 단위로 추적**하여 TOI / Paybiz에서 가맹점 정보를 확인하고, 실제 웹사이트 운영 현황을 조사한 뒤 **14대 RMS 기준**에 따라 리스크 사유를 라벨링했습니다.
 
-실무에서 데이터를 매일 모니터링하며 가장 큰 흥미를 느낀 지점은 “시스템이 정의한 자동화 룰과 실제 우회/변칙 거래 데이터 사이에 존재하는 미세한 틈새를 포착하고 메워나가는 과정”이었습니다.
+**대표 검수 항목**
 
-특히 이상거래 탐지뿐만 아니라 가맹점과 거래 흐름 전반의 규제 준수 여부를 검증하는 일에 깊은 매력을 느꼈습니다. 실무를 수행하며 리스크 통제 프로세스의 고도화에 큰 열정을 가져, 이미 **AML(자금세탁방지) 기초 자격은 취득 완료**한 상태이며, 전문 과정은 아직 이수하지 않았으나 향후 **전문 AML 교육 및 심화 자격증 취득**을 계획하고 있습니다.
+- 판매불가상품
+- 환금성 판매
+- 배송기간 초과
+- 판매상품 불명확
+- 운영 종료
+- URL 확인
+- 신용불량
+- 기본 환불한도 과다
+- 기업회생 / 파산
+- 수익·환불 보장 문구
+- 거래 미발생
+- 취소주기
+- 상품 변질
 
-#### 4️⃣ 미래의 도약: "토스뱅크 비대면 여신의 Anti-Fraud 고도화"
+라벨링 결과를 기반으로 운영 정책에 따른 후속 리스크 검토 및 통제 절차를 지원했습니다.
 
-이러한 **이론적 리스크 설계(SRHS 논문) ➡️ 실제 FDS 운영 실무(Toss CX) ➡️ 고도화된 통제(AML 기초 자격 취득 및 심화 계획)**로 이어지는 저의 성장 스토리의 종착지는 **토스뱅크의 Anti-Fraud Manager**입니다.
+---
 
-현장에서 체득한 '실무형 리스크 운영 감각(Operations)'을 토스뱅크의 비대면 소매 여신(SOHO, 전월세대출 등) 심사 및 신청 단계에 이식하고 싶습니다. 신청 시점의 이상 패턴을 데이터 Deep Dive(Python/SQL)를 통해 분석하고, 트렌드를 즉각 반영하는 지능형 Fraud-Rule을 설계하여 토스뱅크의 금융 생태계를 가장 안전하게 지켜내고 기여하겠습니다
+### ③ Risk Control
 
+계약 시점과 리스크 수준에 따라 다양한 운영 통제를 수행했습니다.
 
+- 메일 소명 요청
+- 공문 발송
+- 지급보류
+- 결제 OFF
+- MID 분리
 
-## 🎨 UI/UX 디자인 가이드라인
+고위험 가맹점에 대해서는 운영 정책에 따라 선제적인 리스크 통제 업무를 수행했습니다.
 
-* **컬러 팔레트:** 토스 특유의 신뢰감 있는 블루 컬러(Toss Blue: `#0040FF` 또는 `#3182F6`), 깔끔한 다크/라이트 모드 지원.
-* **폰트:** Pretendard 또는 Toss Product Sans 느낌의 깔끔한 Sans-serif.
-* **레이아웃 구조:**
-  1. **Hero Section:** 타이틀, 서브타이틀, 프로필 요약, 주요 링크(GitHub, Contact).
-  2. **Tech Stack Section:** 4개 카테고리별 태그 카드 형태 배치 (Financial Risk가 맨 위에 오도록).
-  3. **Current Role (Toss CX):** 타임라인 및 4가지 핵심 프로세스(온보딩, 14대 라벨링, 약관/공문, 손실차단) 시각화.
-  4. **Research & Projects:** SRHS, SafeFall, KB RAG 프로젝트 카드 및 배지(학회 최우수상, KCI 게재 등).
-  5. **Contact / Outro:** 이메일, 연락처, 토스뱅크 Anti-Fraud를 향한 비전 문구.
+---
+
+### ④ Practical Risk Operations Experience
+
+실무에서 가장 흥미를 느낀 부분은 **자동화된 RMS Alert를 그대로 처리하는 것이 아니라, 운영 데이터를 함께 검토하며 리스크를 재확인하는 과정**이었습니다.
+
+대표 사례로 **신용불량으로 라벨링된 가맹점**을 검토한 경험이 있습니다.
+
+해당 가맹점의 **EW 등급, 재무상태, 담보보증금 등 내부 관리 정보를 종합적으로 검토**하여 리스크 수준을 판단했고, 계약 기준에 따라 **최대 5일의 소명 기한**을 부여했습니다.
+
+소명 회신이 지연되는 경우에는 **3일 경과 시점에 Outbound(OB) 연락을 요청**하여 회신을 독려했고, 최종적으로 제출된 소명 자료를 검토하여 내부 기준에 따라 후속 절차를 진행했습니다.
+
+이 경험을 통해 **자동화된 Alert 결과뿐만 아니라 운영 데이터와 실제 정보를 함께 검토하여 사실관계를 확인하고, 내부 정책에 따라 리스크를 판단하고 의사결정을 지원하는 운영 역량**을 쌓을 수 있었습니다.
+
+---
+
+# 🎓 Research & Projects
+
+## 🏆 Stablecoin Risk Health Score (SRHS)
+
+스테이블코인의 건전성을 **사전에 평가하기 위한 Financial Risk Scoring Framework**를 연구했습니다.
+
+### 연구 배경
+
+Terra-LUNA 붕괴와 FTX 파산 등 연이은 시장 사건은 디지털 자산에 대한 신뢰를 크게 훼손했고, 대규모 자금 인출(Bank Run)과 유동성 위기를 초래했습니다.
+
+이러한 사례는 **위험이 현실화된 이후 대응하는 방식만으로는 투자자와 시장을 보호하기 어렵다**는 점을 보여주었으며, 스테이블코인의 건전성을 **사전에 객관적으로 평가할 수 있는 정량적 기준**의 필요성을 시사했습니다.
+
+기존 평가는 담보비율(Collateral Ratio)이나 페그(Peg) 유지 여부 등 일부 지표 중심으로 이루어져 **유동성, 준비자산의 신뢰성, 정보공개 수준 등 다양한 리스크 요인을 종합적으로 반영하지 못하는 한계**가 있었습니다.
+
+이에 **사고 발생 이후의 사후 분석이 아닌, 사고 이전에 스테이블코인의 건전성을 정량적으로 평가할 수 있는 금융 리스크 평가 프레임워크인 SRHS(Stablecoin Risk Health Score)를 설계**했습니다.
+
+### 주요 내용
+
+SRHS는 스테이블코인의 건전성을 다음 **5개의 핵심 리스크 지표**로 평가하는 금융 리스크 모델입니다.
+
+- **PD (Peg Deviation)** : 목표 가격 유지 안정성
+- **LS (Liquidity Stability)** : 유동성 안정성
+- **CR (Collateral Risk)** : 담보 건전성
+- **TI (Transparency Index)** : 정보공개 투명성
+- **RR (Reserve Reliability)** : 준비자산 신뢰성
+
+각 리스크 요인을 정량화하여 하나의 **Risk Health Score**로 통합하고, 스테이블코인의 건전성을 객관적으로 비교·평가할 수 있는 **Risk Scoring Framework**를 제안했습니다.
+
+### 연구 의의
+
+이 연구를 통해
+
+- 금융 리스크 정의
+- Risk Factor 설계
+- Risk Scoring Framework 구축
+- 금융 리스크 정량화 모델 설계
+- 데이터 기반 의사결정 지표 설계
+
+역량을 쌓을 수 있었습니다.
+
+이러한 경험은 현재 Toss CX에서 수행하고 있는 **Merchant Risk Review, RMS Labeling, Risk Assessment** 업무와도 자연스럽게 연결되고 있습니다.
+
+### 연구 성과
+
+🏆 **한국경영컨설팅학회 최우수 논문상**
+
+📖 **KCI 등재지 『경영컨설팅연구』 제26권 제3호 논문 게재**
+
+👨‍💻 **공동 저자**
+
+📄 **Paper (PDF)**  
+https://github.com/sojo1211/toss_FDS_ohsungjun/blob/master/SRHS.pdf
+
+---
+
+## 🏆 SafeFall Intelligence
+
+**웨어러블 생체신호 기반 이상탐지(Anomaly Detection) 프로젝트**
+
+### 역할
+
+- 시계열(Time Series) 데이터 전처리
+- 이상탐지(Anomaly Detection) 모델 설계
+- Decision Label 기준 정의
+
+### 사용 기술
+
+`Python`
+`PyTorch`
+`LSTM`
+`Time Series Analysis`
+
+### 성과
+
+🏆 용인대학교 창업경진대회 최우수상
+
+---
+
+## 🏆 KB국민은행 제8회 AI Challenge
+
+**소상공인 비대면 정책자금 사전검증 AI Agent 개발**
+
+### 역할
+
+- RAG 기반 AI Agent 개발
+- LangChain 활용
+- PDF/HWP 데이터 파이프라인 구축
+- React 기반 UI/UX 개발
+
+### 사용 기술
+
+`LangChain`
+`RAG`
+`Python`
+`ChromaDB`
+`React`
+
+### 프로젝트 의의
+
+정책 문서를 기반으로 비대면 정책자금 신청 자격을 빠르게 검토할 수 있는 AI Agent를 개발했습니다.
+
+---
+
+# 🛠 Tech Stack
+
+## Financial Risk
+
+`FDS` `RMS` `AML` `TOI` `Paybiz`
+
+## Data Analysis
+
+`Python` `SQL` `Pandas` `NumPy` `scikit-learn`
+
+## AI
+
+`LangChain` `Claude Code` `RAG` `Vector DB`
+
+## Collaboration
+
+`Git` `React` `Tailwind CSS` `Figma` `Slack` `Notion`
+
+---
+
+# 📜 Certifications
+
+- AML Basic
+- SQLD (Planned)
+- ADsP (Planned)
+
+---
+
+# 💡 My Story
+
+저는 **"사고를 탐지하는 것보다 사고를 예방하는 것이 리스크 관리의 본질"** 이라는 문제의식을 바탕으로 금융 리스크를 연구해왔습니다.
+
+이러한 문제의식은 **SRHS(Stablecoin Risk Health Score)** 연구로 이어졌습니다. 스테이블코인의 건전성을 사전에 평가하기 위해 **5개의 핵심 리스크 지표(PD · LS · CR · TI · RR)** 를 설계하고, 이를 하나의 **Risk Health Score**로 통합하는 금융 리스크 정량화 모델을 제안했습니다. 해당 연구는 **한국경영컨설팅학회 최우수 논문상**과 **KCI 등재 논문 게재**라는 성과로 이어졌습니다.
+
+연구를 통해 **리스크를 정의하고 정량화하는 방법**을 익혔다면, Toss CX에서는 **실제 금융 서비스에서 리스크를 운영하고 통제하는 경험**을 쌓았습니다.
+
+현재는 **Merchant Onboarding Risk Review, RMS Labeling, 지급보류, 결제 OFF, MID 분리** 등 다양한 리스크 운영 업무를 수행하고 있으며, 특히 **자동화된 RMS Alert를 운영 데이터와 함께 재검토하고, 소명 절차와 운영 정보를 종합적으로 확인하여 리스크를 판단하는 과정**에서 가장 큰 흥미를 느꼈습니다.
+
+이러한 경험을 통해 **데이터를 기반으로 리스크를 분석하고, 운영 관점에서 사실관계를 검증하며 의사결정을 지원하는 역량**을 쌓을 수 있었습니다.
+
+또한 실무를 수행하면서 **거래 데이터뿐 아니라 가맹점의 신용도, 재무상태, 소명 자료 등 다양한 정보를 종합적으로 검토하여 리스크를 판단하는 과정에서 금융 범죄 예방과 규제 준수의 중요성**을 깊이 느꼈습니다. 이러한 경험을 계기로 **AML Basic 자격을 취득**했으며, 앞으로도 AML 전문 교육과 심화 학습을 통해 금융 범죄 대응 역량을 지속적으로 강화해 나갈 계획입니다.
+
+앞으로는 **금융 리스크 모델링 연구 경험과 Toss CX에서의 리스크 운영 경험, 그리고 AML에 대한 이해를 바탕으로** 토스뱅크 **Anti-Fraud Manager**로서 **데이터 기반 분석과 Fraud Rule 고도화에 기여하고, 더욱 안전한 금융 서비스를 만드는 데 기여하고 싶습니다.**
+
+---
+
+# 📫 Contact
+
+📧 **Email**
+
+**sungjun12110@gmail.com**
+
+🐙 **GitHub**
+
+https://github.com/sojo1211
+
+📂 **Portfolio**
+
+https://sojo1211.github.io/toss_FDS_ohsungjun/
