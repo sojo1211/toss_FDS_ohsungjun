@@ -164,7 +164,7 @@ SRHS는 스테이블코인의 건전성을 다음 **5개의 핵심 리스크 지
 
 역량을 쌓을 수 있었습니다.
 
-이러한 경험은 현재 Toss CX에서 수행하고 있는 **Merchant Risk Review, RMS Labeling, Risk Assessment** 업무와도 자연스럽게 연결되고 있습니다.
+이러한 경험은 현재 Toss CX에서 수행하고 있는 **Merchant Risk Review, RMS Labeling, Risk Assessment** 업무와도 자연스럽게 연결되고 있습니다. 나아가 위기 5일 전 조기 경보와 오경보 0건을 동시에 만족하는 가중치를 백테스팅으로 검증한 경험은, **FDS 예방 룰의 오탐을 줄이면서 탐지 시점을 앞당기는 룰 고도화 방식**으로 직접 연결됩니다.
 
 ### 연구 성과
 
