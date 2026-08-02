@@ -185,9 +185,9 @@ https://github.com/sojo1211/toss_FDS_ohsungjun/blob/master/SRHS.pdf
 
 ### 역할
 
-- 시계열(Time Series) 데이터 전처리
-- 이상탐지(Anomaly Detection) 모델 설계
-- Decision Label 기준 정의
+- 시계열(Time Series) 데이터 전처리 및 다중 센서 상관분석
+- 비지도 학습(K-Means) 기반 Decision Label 기준 설계 (정상·미끄러짐·낙상)
+- Transfer Learning 기반 이상탐지 모델 설계 (정확도 83%, F1 82%)
 
 ### 사용 기술
 
