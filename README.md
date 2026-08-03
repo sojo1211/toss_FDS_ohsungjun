@@ -21,7 +21,7 @@
 # 👤 Profile
 
 - **Name** : 오성준 (Oh Sungjun)
-- **Current** : Toss CX FDS Team / Pay Risk Management Team
+- **Current** : Toss CX FDS Team / Pay Risk Management Team (2026.07 ~ 2027.01.19, 6개월)
 - **Target Position** : Toss Bank Anti-Fraud Manager
 
 ---
@@ -54,7 +54,7 @@
 
 # 💼 Current Work Experience
 
-## Toss CX FDS Team / Pay Risk Management Team
+## Toss CX FDS Team / Pay Risk Management Team (2026.07 ~ 2027.01.19, 6개월)
 
 ### ① Merchant Onboarding Risk Review
 

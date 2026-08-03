@@ -31,7 +31,7 @@
 
 ## 💼 Work Experience
 
-### 🔥 2026.07 ~ 현재 | Toss CX FDS Team / Pay Risk Management Team (재직 중)
+### 🔥 2026.07 ~ 2027.01.19 (6개월) | Toss CX FDS Team / Pay Risk Management Team
 **Operations Supporter (리스크 운영supporter)**
 * **Merchant Onboarding Risk Review**: 가맹점 입점 검수 시 6대 Risk Factor(배송 방식/기간, 최고 객단가, 판매 형태 등)와 웹사이트 운영 상태 교차 검증 및 선제적 리스크 차단.
 * **RMS Labeling & Control**: TOI / Paybiz 시스템을 활용해 RMS Alert 발생 건을 MID 단위로 추적하고, 14대 RMS 기준에 따라 리스크 등급 라벨링 및 조치 집행(지급보류, 결제 OFF, MID 분리).
