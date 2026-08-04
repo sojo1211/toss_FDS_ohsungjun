@@ -24,6 +24,7 @@
 ## 🚀 About Me
 
 * **이론적 연구와 실무 제재 프로세스의 융합**: 금융 리스크 정량화 모델(SRHS)을 직접 설계하고 백테스팅으로 **오탐률(False Positive)과 정상 유저 UX 마찰을 최소화하는 최적 임곗값(Threshold)**을 검증한 연구 경험과, Toss CX 현장에서 가맹점 리스크(Merchant Risk) 및 제재 업무를 직접 운영한 실무 감각을 모두 갖추고 있습니다.
+* **비대면 실명인증(e-KYC) 및 지능형 사기방지(Anti-Fraud) 아키텍처 설계**: C2C 안전 거래를 위해 판매자 OCR 본인인증(민감정보 마스킹/암호화), 공공 API 실시간 검증, LangChain AI Agent 기반의 다단계 위험도 분석 로직을 적용한 **Safe-Trade AI** 시스템을 설계하고 구현했습니다.
 * **비지도 학습 & 유저 시계열 로그 이상 탐지 역량**: 유저의 서비스 이용/이체 로그(시계열) 및 IP/디바이스 식별자 전처리 역량을 바탕으로, 사람이 고정된 규칙(Rule)으로 정의할 수 없는 이상 패턴을 데이터 군집화(K-Means, RandomForest 등) 알고리즘을 통해 탐지 경계선을 스스로 도출해내는 모델을 설계했습니다.
 * **설명 가능하고 신뢰할 수 있는 RAG Agent 설계**: 환각(Hallucination)을 제어하고 근거 문서에 기반해 정확히 검수·답변하는 AI RAG 파이프라인 개발 경험을 가지고 있습니다.
 
@@ -54,19 +55,25 @@
 
 ## 🧑💻 Featured Projects
 
-### 1️⃣ Stablecoin Risk Health Score (SRHS)
+### 1️⃣ Safe-Trade AI (지능형 중고거래 사기 방지 시스템)
+* **내용**: 중고거래 플랫폼 내 빈번한 사기 피해를 방지하기 위해 금융권의 비대면 실명 확인(e-KYC) 프로세스를 C2C 모델로 이식한 안전 거래 시스템.
+* **담당 역할**: 판매자 신원 검증을 위한 OCR 본인인증 모듈 설계, 민감 정보 마스킹 및 암호화(Privacy by Design), 공공데이터 API 연동, LangChain 기반 AI Agent를 활용한 다단계 위험 분석 및 맥락 기반 경고 피드백 리포트 생성 구현.
+* **Anti-Fraud 적용**: 금융권의 핵심 보안 로직인 e-KYC를 C2C 플랫폼에 적용하고 가맹점/유저 정보 교차 검증 및 다각적 위험 등급을 판정하는 로직은 보이스피싱, 명의도용, 대포통장 등 이상거래를 사전에 차단하는 토스뱅크 FDS의 핵심 메커니즘과 일치합니다. Mock-up API 및 보안 설계 역량을 바탕으로 FDS 룰 고도화에 즉각 기여합니다.
+* **Repo**: [toss_FDS_ohsungjun](https://github.com/sojo1211/toss_FDS_ohsungjun)
+
+### 2️⃣ Stablecoin Risk Health Score (SRHS)
 * **내용**: B2B 무역결제 등에서 활용되는 스테이블코인의 건전성을 사전에 평가하기 위한 **Financial Risk Scoring Framework** 연구.
 * **담당 역할**: 5대 핵심 리스크 지표(PD·LS·CR·TI·RR) 설계, Ridge Regression을 활용한 가중치 설계 및 FTX·Terra-Luna 등 실제 위기 데이터를 복원한 백테스팅 및 민감도 분석(위기 5일 전 조기 경보, 오경보 0건 검증 완료).
 * **Anti-Fraud 적용**: 여신·대출 심사 단계에서 신청 데이터로 사전 이상 거래 점수를 산출하고, 실제 사기 사례 데이터를 통한 룰 백테스팅으로 **정상 유저 UX 마찰을 최소화하는 오탐률(False Positive) 관리 및 최적 임곗값(Threshold) 설계**에 기여.
 * **Paper (PDF)**: [SRHS.pdf](https://github.com/sojo1211/toss_FDS_ohsungjun/blob/master/SRHS.pdf)
 
-### 2️⃣ SafeFall Intelligence
+### 3️⃣ SafeFall Intelligence
 * **내용**: 다중 바이오센서 시계열 데이터를 활용해 사고 이전 단계의 이상 징후를 예측하는 **비지도 학습 기반 이상탐지(Anomaly Detection) 시스템**.
 * **담당 역할**: 시계열 센서 데이터 노이즈 필터링 및 상관분석 시각화, 비지도 학습(K-Means) 기반 정상/전조증상 라벨링 기준 도출, Transfer Learning(특징 추출 방식)을 통한 Anomaly Detection 모델 설계 (F1-Score 82% 달성).
 * **Anti-Fraud 적용**: 유저의 서비스 이용/이체 로그(시계열) 및 IP/디바이스 식별자 전처리 경험을 바탕으로, 사용자별로 정상 거래 패턴이 제각각인 **개인 유저 단위 이상거래 탐지(User FDS)** 영역에서 **비지도 학습 군집화 모델을 통한 보이스피싱, 명의도용, 대포통장, 작업대출 등 신종/우회 금융 사기 패턴 조기 포착**에 활용.
 * **Repo**: [SafeFall Repository](https://github.com/sojo1211/SafeFall/tree/ict-safefall_project)
 
-### 3️⃣ KB국민은행 제8회 AI Challenge (현직자 PICK)
+### 4️⃣ KB국민은행 제8회 AI Challenge (현직자 PICK)
 * **내용**: 흩어진 오프라인 정책 문서로부터 환각 없이 신뢰성 있는 금융 근거를 인용해 답변하는 **RAG 기반 금융 AI Agent**.
 * **담당 역할**: PDF/HWP 문서의 Markdown 구조화 데이터 전처리 파이프라인 개발, ChromaDB 벡터DB 구축, 시스템 프롬프트(안내 지침서) 설계 및 React UI 구축.
 * **Anti-Fraud 적용**: 리스크 분석관의 FDS/AML 의사결정 생산성을 높이기 위한 **'내부 FDS 가이드라인 및 규정 자동 검색 RAG Agent'** 혹은 **'이상거래 탐지 사유 설명 생성 시스템'**으로 확장.
